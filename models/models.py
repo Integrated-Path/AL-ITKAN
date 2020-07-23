@@ -6,43 +6,43 @@ AL-ITKAN job Application form adjustment """
 
 
 
-class ItkApplFOrm(models.Model):
+class ItkApplForm(models.Model):
     _inherit="hr.applicant"
 
     SKILL_LEVEL = [("not familiar","Not Familiar"),
-                                        ("beginner","Beginner"),
-                                        ("Integerermediate","Integerermediate"),
-                                        ("advacned","Advanced"),
-                                        ("exper","Expert")]
+                    ("beginner","Beginner"),
+                    ("Intermediate","Intermediate"),
+                    ("advacned","Advanced"),
+                    ("expert","Expert")]
 
 
     """ Personal Details """
 
-    surname = fields.Char(string="Surname",required="True")
-    address = fields.CHar(string="address",required="True")
-    hai = fields.Char(string="Hai",required="True")
-    sec = fields.Char(string="Sec",required="True")
-    st = fields.Char(string="St",required="True")
-    house = fields.Char(string="House",required="True")
-    Nearest = fields.Char(string="Nearest POR",required="True")
-    birthdate = fields.Date(string="Birthdate",required="True")
-    place_of_birth = fields.Char(string="Place of Birth",required="True")
-    gender = fields.Selection([("male","Male"),("female","Female")],required="True")
-    height = fiels.Integer(string="Height",required="True")
-    weight = fields.Integer(string="Weigh",required="True")
+    surname = fields.Char(string="Surname",required=True)
+    address = fields.Char(string="address",required=True)
+    hai = fields.Char(string="Hai",required=True)
+    sec = fields.Char(string="Sec",required=True)
+    st = fields.Char(string="St",required=True)
+    house = fields.Char(string="House",required=True)
+    Nearest = fields.Char(string="Nearest POR",required=True)
+    birthdate = fields.Date(string="Birthdate",required=True)
+    place_of_birth = fields.Char(string="Place of Birth",required=True)
+    gender = fields.Selection([("male","Male"),("female","Female")],required=True)
+    height = fields.Integer(string="Height",required=True)
+    weight = fields.Integer(string="Weigh",required=True)
     citizenship = fields.Many2one("res.country")
-    religion = fields.Char(string="Religion",required="True")
+    religion = fields.Char(string="Religion",required=True)
     social_status=fields.Selection([("single","Single"),
                                     ("enganged","Engaged"),
                                     ("married","Married"),
                                     ("seperated","Seperated"),
                                     ("widowed","Widowed"),
-                                    ("divorced","Divorced")],required="True")
+                                    ("divorced","Divorced")],required=True)
     
     """Family Information"""
 
-    father_profession = fields.Char(string="Father`s Profession",required="True")
-    mother_profession = fields.Char(string="Mother`s Profession",required="True")
+    father_profession = fields.Char(string="Father`s Profession",required=True)
+    mother_profession = fields.Char(string="Mother`s Profession",required=True)
     
     first_name = fields.Char(string="First Name")
     profession = fields.Char(string="Profession")
@@ -70,21 +70,21 @@ class ItkApplFOrm(models.Model):
     
 
     """ Health and Limitations """
-    health_status = field.Selection(string="Your Health Status?",[("excellent","Excellent"),
-                                    ("good","Good"),
-                                    ("average","Average"),
-                                    ("below average","Below Average"),
-                                    ("poor","Poor"),
-                                    ("very poor"),("Very Poor")],required="True")
+    health_status = fields.Selection([("excellent","Excellent"),
+                                     ("good","Good"),
+                                     ("average","Average"),
+                                     ("below average","Below Average"),
+                                     ("poor","Poor"),
+                                     ("very poor","Very Poor")],required=True,string="Your Health Status?")
 
     """ Have you suffered or are you suffering from any Terminal Illness or Chronic Disease?"""
-    disease = fields.Boolean(string="")
+    disease = fields.Selection([("yes","YES"),("no","NO")])
 
     """ Are there any limitations on your ability to perform in your prospective field of work?"""
-    limitaions = fields.Boolean(string="")
+    limitaions = fields.Selection([("yes","YES"),("no","NO")])
 
     """Are there any limitations on your ability to engage in all types of travel? Inside or outside Iraq"""
-    limitaions_travel = fields.Boolean(string="")
+    limitaions_travel = fields.Selection([("yes","YES"),("no","NO")])
 
 
 
@@ -128,38 +128,38 @@ class ItkApplFOrm(models.Model):
 
 
     """ Education """
-    primary_name = field.Char(string="Primary",required="True")
+    primary_name = fields.Char(string="Primary",required=True)
     primary_years = fields.Integer(string="# of Years")
     primary_avg = fields.Integer(string="Average(%)")
 
 
-    Integerermediate_name = field.Char(string="Integerermediate",required="True")
+    Integerermediate_name = fields.Char(string="Integerermediate",required=True)
     Integerermediate_years = fields.Integer(string="# of Years")
     Integerermediate_avg = fields.Integer(string="Average(%)")
 
 
-    secondary_name = field.Char(string="Secondary",required="True")
+    secondary_name = fields.Char(string="Secondary",required=True)
     secondary_years = fields.Integer(string="# of Years")
     secondary_avg = fields.Integer(string="Average(%)")
 
 
-    college_name = field.Char(string="College or Institte",required="True")
+    college_name = fields.Char(string="College or Institte",required=True)
     college_years = fields.Integer(string="# of Years")
     college_avg = fields.Integer(string="Average(%)")
 
 
-    other_name = field.Char(string="Other ",required="True")
+    other_name = fields.Char(string="Other ",required=True)
     other_years = fields.Integer(string="# of Years")
     other_avg = fields.Integer(string="Average(%)")
 
 
-    other_1_name = field.Char(string="Other 1",required="True")
+    other_1_name = fields.Char(string="Other 1",required=True)
     other_1_years = fields.Integer(string="# of Years")
     other_1_avg = fields.Integer(string="Average(%)")
 
 
     highest_acad = fields.Char(string="Highest Academic Qalification")
-    highest_grad_year = fiels.Integer(strin"Graduation Year)
+    highest_grad_year = fields.Integer(string="Graduation Year")
     highest_uni = fields.Char(string="University")
     highest_country = fields.Char(string="Country")
 
@@ -295,9 +295,9 @@ class ItkApplFOrm(models.Model):
     employer_name = fields.Char(string="")
     job_title = fields.Char(string="")
     employer_address = fields.Char(string="")
-    emp[loyer_province = fields.Char(string="")]
-    from_date = fields.Date()
-    to_date = fields.date()
+    employer_province = fields.Char(string="")
+    from_date = fields.Date(string="Date")
+    to_date = fields.Date(string="Date")
     starting_slry = fields.Integer()
     ending_slry = fields.Integer()
     supervisor = fields.Char(string="")
@@ -309,9 +309,9 @@ class ItkApplFOrm(models.Model):
     employer_name_1 = fields.Char(string="")
     job_title_1 = fields.Char(string="")
     employer_address_1 = fields.Char(string="")
-    employer_province_1 = fields.Char(string="")]
-    from_date_1 = fields.Date()
-    to_date_1 = fields.date()
+    employer_province_1 = fields.Char(string="")
+    from_date_1 = fields.Date(string="Date")
+    to_date_1 = fields.Date(string="Date")
     starting_slry_1 = fields.Integer()
     ending_slry_1 = fields.Integer()
     supervisor_1 = fields.Char(string="")
@@ -324,9 +324,9 @@ class ItkApplFOrm(models.Model):
     employer_name_2 = fields.Char(string="")
     job_title_2 = fields.Char(string="")
     employer_address_2 = fields.Char(string="")
-    employer_province_2 = fields.Char(string="")]
-    from_date_2 = fields.Date()
-    to_date_2 = fields.date()
+    employer_province_2 = fields.Char(string="")
+    from_date_2 = fields.Date(string="Date")
+    to_date_2 = fields.Date(string="Date")
     starting_slry_2 = fields.Integer()
     ending_slry_2 = fields.Integer()
     supervisor_2 = fields.Char(string="")
@@ -337,12 +337,12 @@ class ItkApplFOrm(models.Model):
     """ Additional Information """
     union_member = fields.Selection([("yes","YES"),("no","NO")])
     driver_license = fields.Selection([("yes","YES"),("no","NO")])
-    driver_license_date = fields.Date()
+    driver_license_date = fields.Date(string="Date")
     means_of_transport = fields.Char(string="")
     good_appoint = fields.Selection([("yes","YES"),("no","NO")])
     smoking =fields.Selection([("yes","YES"),("no","NO")])
     long_hours =fields.Selection([("yes","YES"),("no","NO")])
-    start_date = fields.Date()
+    start_date = fields.Date(string="Date")
     planning_to_study = fields.Selection([("yes","YES"),("no","NO")])
     presently_employed = fields.Selection([("yes","YES"),("no","NO")])
     contact_employer = fields.Selection([("yes","YES"),("no","NO")])
@@ -385,7 +385,7 @@ class ItkApplFOrm(models.Model):
 
     """ Signature """
     signature = fields.Char(string="")
-    Date = fields.Date()
+    Date = fields.Date(string="Date")
 
 
 
@@ -398,7 +398,7 @@ class ItkApplFOrm(models.Model):
     no_crim_req = fields.Binary()
     letter_rec_1 = fields.Binary()
     letter_rec_2 = fields.Binary()
-    
+
 
 
 
