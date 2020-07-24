@@ -21,10 +21,10 @@ class ItkApplForm(models.Model):
     surname = fields.Char(string="Surname",required=True)
     address = fields.Char(string="address",required=True)
     hai = fields.Char(string="Hai",required=True)
-    sec = fields.Char(string="Sec",required=True)
-    st = fields.Char(string="St",required=True)
+    sec = fields.Char(string="Sec.",required=True)
+    st = fields.Char(string="Street",required=True)
     house = fields.Char(string="House",required=True)
-    Nearest = fields.Char(string="Nearest POR",required=True)
+    nearest = fields.Char(string="Nearest POR",required=True)
     birthdate = fields.Date(string="Birthdate",required=True)
     place_of_birth = fields.Char(string="Place of Birth",required=True)
     gender = fields.Selection([("male","Male"),("female","Female")],required=True)
@@ -94,48 +94,48 @@ class ItkApplForm(models.Model):
  
     """ Arabic """
 
-    ar_r = fields.Integer(string="")
-    ar_w = fields.Integer(string="")
-    ar_s = fields.Integer(string="")
-    ar_u = fields.Integer(string="")
-    ar_o = fields.Integer(string="")
+    ar_r = fields.Integer(string="Reading")
+    ar_w = fields.Integer(string="Writing")
+    ar_s = fields.Integer(string="Speaking")
+    ar_u = fields.Integer(string="Understanding")
+    ar_o = fields.Integer(string="Overall")
 
     """ English """
 
-    en_r = fields.Integer(string="")
-    en_w = fields.Integer(string="")
-    en_s = fields.Integer(string="")
-    en_u = fields.Integer(string="")
-    en_o = fields.Integer(string="")
+    en_r = fields.Integer(string="Reading")
+    en_w = fields.Integer(string="Writing")
+    en_s = fields.Integer(string="Speaking")
+    en_u = fields.Integer(string="Understanding")
+    en_o = fields.Integer(string="Overall")
 
     """ Other """
 
-    other_name = fields.Char(string="")
-    other_r = fields.Integer(string="")
-    other_w = fields.Integer(string="")
-    other_s = fields.Integer(string="")
-    other_u = fields.Integer(string="")
-    other_o = fields.Integer(string="")
+    other_name = fields.Char(string="Name")
+    other_r = fields.Integer(string="Reading")
+    other_w = fields.Integer(string="Writing")
+    other_s = fields.Integer(string="Speaking")
+    other_u = fields.Integer(string="Understanding")
+    other_o = fields.Integer(string="Overall")
 
     """ Other 1 """
 
-    other_name_1 = fields.Char(string="")
-    other_r_1 = fields.Integer(string="")
-    other_w_1 = fields.Integer(string="")
-    other_s_1 = fields.Integer(string="")
-    other_u_1 = fields.Integer(string="")
-    other_o_1 = fields.Integer(string="")
+    other_name_1 = fields.Char(string="Name")
+    other_r_1 = fields.Integer(string="Reading")
+    other_w_1 = fields.Integer(string="Writing")
+    other_s_1 = fields.Integer(string="Speaking")
+    other_u_1 = fields.Integer(string="Understanding")
+    other_o_1 = fields.Integer(string="Overall")
 
 
     """ Education """
-    primary_name = fields.Char(string="Primary",required=True)
+    primary_name = fields.Char(string="Name",required=True)
     primary_years = fields.Integer(string="# of Years")
     primary_avg = fields.Integer(string="Average(%)")
 
 
-    Integerermediate_name = fields.Char(string="Integerermediate",required=True)
-    Integerermediate_years = fields.Integer(string="# of Years")
-    Integerermediate_avg = fields.Integer(string="Average(%)")
+    Intermediate_name = fields.Char(string="Integerermediate",required=True)
+    Intermediate_years = fields.Integer(string="# of Years")
+    Intermediate_avg = fields.Integer(string="Average(%)")
 
 
     secondary_name = fields.Char(string="Secondary",required=True)
@@ -216,21 +216,21 @@ class ItkApplForm(models.Model):
     
     """ Administration Skills """
 
-    business_correspondence_skill_level = fields.Selection(SKILL_LEVEL)
-    effective_communication_skill_level = fields.Selection(SKILL_LEVEL)
-    customer_service_skill_level = fields.Selection(SKILL_LEVEL)
-    team_work_skill_level = fields.Selection(SKILL_LEVEL)
-    Integerernet_and_research_skill_level = fields.Selection(SKILL_LEVEL)
-    ms_office_and_outlook_skill_level = fields.Selection(SKILL_LEVEL)
-    office_machine_skill_level = fields.Selection(SKILL_LEVEL)
-    typing_skill_level = fields.Selection(SKILL_LEVEL)
-    time_management_skill_level = fields.Selection(SKILL_LEVEL)
-    attention_to_detail_level = fields.Selection(SKILL_LEVEL)
-    goal_oriented_skill_level = fields.Selection(SKILL_LEVEL)
-    multi_tasking_skill_level = fields.Selection(SKILL_LEVEL)
-    follow_up_skill_level = fields.Selection(SKILL_LEVEL)
-    employee_relation_skill_level = fields.Selection(SKILL_LEVEL)
-    supervision_skill_level = fields.Selection(SKILL_LEVEL)
+    business_correspondence_skill_level = fields.Selection(SKILL_LEVEL,string="Business Corrispondence")
+    effective_communication_skill_level = fields.Selection(SKILL_LEVEL,string="Effective Communication")
+    customer_service_skill_level = fields.Selection(SKILL_LEVEL,string="Customer Service")
+    team_work_skill_level = fields.Selection(SKILL_LEVEL,string="Team Work")
+    Internet_and_research_skill_level = fields.Selection(SKILL_LEVEL,string="Internet and Research")
+    ms_office_and_outlook_skill_level = fields.Selection(SKILL_LEVEL,string="MS office and Outlook")
+    office_machine_skill_level = fields.Selection(SKILL_LEVEL,string="Office Equipment")
+    typing_skill_level = fields.Selection(SKILL_LEVEL,string="Typing")
+    time_management_skill_level = fields.Selection(SKILL_LEVEL,string="Time Management")
+    attention_to_detail_level = fields.Selection(SKILL_LEVEL,string="Attention to Details")
+    goal_oriented_skill_level = fields.Selection(SKILL_LEVEL,string="Goal Oriented")
+    multi_tasking_skill_level = fields.Selection(SKILL_LEVEL,string="Multitasking")
+    follow_up_skill_level = fields.Selection(SKILL_LEVEL,string="Follow-up Skills")
+    employee_relation_skill_level = fields.Selection(SKILL_LEVEL,string="Employee Relations")
+    supervision_skill_level = fields.Selection(SKILL_LEVEL,string="Supervision")
 
     """ Sales Skills """
 
@@ -253,25 +253,25 @@ class ItkApplForm(models.Model):
 
     "Training and Certifications"
 
-    t1 = fields.Char(string="")
-    t1_year = fields.Integer(string="")
-    t1_awarded_by = fields.Char(string="")
-    t1_country_city = fields.Char(string="")
+    t1 = fields.Char(string="Name")
+    t1_year = fields.Integer(string="Year")
+    t1_awarded_by = fields.Char(string="Awarded By")
+    t1_country_city = fields.Char(string="Country/City")
 
-    t2 = fields.Char(string="")
-    t2_year = fields.Integer(string="")
-    t2_awarded_by = fields.Char(string="")
-    t2_country_city = fields.Char(string="")
+    t2 = fields.Char(string="Name")
+    t2_year = fields.Integer(string="Year")
+    t2_awarded_by = fields.Char(string="Awarded By")
+    t2_country_city = fields.Char(string="Country/City")
 
-    t3 = fields.Char(string="")
-    t3_year = fields.Integer(string="")
-    t3_awarded_by = fields.Char(string="")
-    t3_country_city = fields.Char(string="")
+    t3 = fields.Char(string="Name")
+    t3_year = fields.Integer(string="Year")
+    t3_awarded_by = fields.Char(string="Awarded By")
+    t3_country_city = fields.Char(string="Country/City")
 
-    t4 = fields.Char(string="")
-    t4_year = fields.Integer(string="")
-    t4_awarded_by = fields.Char(string="")
-    t4_country_city = fields.Char(string="")
+    t4 = fields.Char(string="Name")
+    t4_year = fields.Integer(string="Year")
+    t4_awarded_by = fields.Char(string="Awarded By")
+    t4_country_city = fields.Char(string="Country/City")
 
     t5 = fields.Char(string="")
     t5_year = fields.Integer(string="")
@@ -290,62 +290,62 @@ class ItkApplForm(models.Model):
 
     """ Employment History """
 
-    contact_disclaimer = fields.Boolean(string="")
+    contact_disclaimer = fields.Boolean(string="Can we contact your previous employer(s)")
 
-    employer_name = fields.Char(string="")
-    job_title = fields.Char(string="")
-    employer_address = fields.Char(string="")
-    employer_province = fields.Char(string="")
-    from_date = fields.Date(string="Date")
-    to_date = fields.Date(string="Date")
-    starting_slry = fields.Integer()
-    ending_slry = fields.Integer()
-    supervisor = fields.Char(string="")
-    super_phone = fields.Char(string="")
-    reason_for_leaving = fields.Char(string="")
-
-
-
-    employer_name_1 = fields.Char(string="")
-    job_title_1 = fields.Char(string="")
-    employer_address_1 = fields.Char(string="")
-    employer_province_1 = fields.Char(string="")
-    from_date_1 = fields.Date(string="Date")
-    to_date_1 = fields.Date(string="Date")
-    starting_slry_1 = fields.Integer()
-    ending_slry_1 = fields.Integer()
-    supervisor_1 = fields.Char(string="")
-    super_phone_1 = fields.Char(string="")
-    reason_for_leaving_1 = fields.Char(string="")
+    employer_name = fields.Char(string="Employer Names")
+    job_title = fields.Char(string="Job Title")
+    employer_address = fields.Char(string="Employer addres")
+    employer_province = fields.Char(string="Employer Province")
+    from_date = fields.Date(string="From")
+    to_date = fields.Date(string="To")
+    starting_slry = fields.Integer(string="Starting Salary")
+    ending_slry = fields.Integer(string="Last Salary")
+    supervisor = fields.Char(string="Supervisor")
+    super_phone = fields.Char(string="Supervisor Phone No.")
+    reason_for_leaving = fields.Char(string="Reason for Leaving")
 
 
 
+    employer_name_1 = fields.Char(string="Employer Names")
+    job_title_1 = fields.Char(string="Job Title")
+    employer_address_1 = fields.Char(string="Employer addres")
+    employer_province_1 = fields.Char(string="Employer Province")
+    from_date_1 = fields.Date(string="From")
+    to_date_1 = fields.Date(string="To")
+    starting_slry_1 = fields.Integer(string="Starting Salary")
+    ending_slry_1 = fields.Integer(string="Last Salary")
+    supervisor_1 = fields.Char(string="Supervisor")
+    super_phone_1 = fields.Char(string="Supervisor Phone No.")
+    reason_for_leaving_1 = fields.Char(string="Reason for Leaving")
 
-    employer_name_2 = fields.Char(string="")
-    job_title_2 = fields.Char(string="")
-    employer_address_2 = fields.Char(string="")
-    employer_province_2 = fields.Char(string="")
-    from_date_2 = fields.Date(string="Date")
-    to_date_2 = fields.Date(string="Date")
-    starting_slry_2 = fields.Integer()
-    ending_slry_2 = fields.Integer()
-    supervisor_2 = fields.Char(string="")
-    super_phone_2 = fields.Char(string="")
-    reason_for_leaving_2 = fields.Char(string="")
+
+
+
+    employer_name_2 = fields.Char(string="Employer Names")
+    job_title_2 = fields.Char(string="Job Title")
+    employer_address_2 = fields.Char(string="Employer addres")
+    employer_province_2 = fields.Char(string="Employer Province")
+    from_date_2 = fields.Date(string="From")
+    to_date_2 = fields.Date(string="To")
+    starting_slry_2 = fields.Integer(string="Starting Salary")
+    ending_slry_2 = fields.Integer(string="Last Salary")
+    supervisor_2 = fields.Char(string="Supervisor")
+    super_phone_2 = fields.Char(string="Supervisor Phone No.")
+    reason_for_leaving_2 = fields.Char(string="Reason for Leaving")
 
 
     """ Additional Information """
-    union_member = fields.Selection([("yes","YES"),("no","NO")])
-    driver_license = fields.Selection([("yes","YES"),("no","NO")])
-    driver_license_date = fields.Date(string="Date")
-    means_of_transport = fields.Char(string="")
-    good_appoint = fields.Selection([("yes","YES"),("no","NO")])
-    smoking =fields.Selection([("yes","YES"),("no","NO")])
-    long_hours =fields.Selection([("yes","YES"),("no","NO")])
-    start_date = fields.Date(string="Date")
-    planning_to_study = fields.Selection([("yes","YES"),("no","NO")])
-    presently_employed = fields.Selection([("yes","YES"),("no","NO")])
-    contact_employer = fields.Selection([("yes","YES"),("no","NO")])
+    union_member = fields.Selection([("yes","YES"),("no","NO")],string="Are you a member of the Iraqi Engineers union?")
+    driver_license = fields.Selection([("yes","YES"),("no","NO")],string="Do you have a valid drivers license?")
+    driver_license_date = fields.Date(string="Driver license issue Date")
+    means_of_transport = fields.Char(string="What is your means of transport?(Personal Car, Public, etc.")
+    good_appoint = fields.Selection([("yes","YES"),("no","NO")],string="Are you good with keeping appointments?")
+    smoking =fields.Selection([("yes","YES"),("no","NO")],string="Do you smoke?")
+    long_hours =fields.Selection([("yes","YES"),("no","NO")],string="Can you handle long work hours?")
+    start_date = fields.Date(string="What is your preferred start date?")
+    planning_to_study = fields.Selection([("yes","YES"),("no","NO")],string="do you plan to complete studies, currently or in the future?")
+    presently_employed = fields.Selection([("yes","YES"),("no","NO")],string="Are you currently employed?")
+    contact_employer = fields.Selection([("yes","YES"),("no","NO")],string="Can we contact your past employers?")
 
 
     "Skills 2"
