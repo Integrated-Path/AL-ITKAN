@@ -18,31 +18,31 @@ class ItkApplForm(models.Model):
 
     """ Personal Details """
 
-    surname = fields.Char(string="Surname",required=True)
-    address = fields.Char(string="address",required=True)
-    hai = fields.Char(string="Hai",required=True)
-    sec = fields.Char(string="Sec.",required=True)
-    st = fields.Char(string="Street",required=True)
-    house = fields.Char(string="House",required=True)
-    nearest = fields.Char(string="Nearest POR",required=True)
-    birthdate = fields.Date(string="Birthdate",required=True)
-    place_of_birth = fields.Char(string="Place of Birth",required=True)
-    gender = fields.Selection([("male","Male"),("female","Female")],required=True)
-    height = fields.Integer(string="Height",required=True)
-    weight = fields.Integer(string="Weigh",required=True)
+    surname = fields.Char(string="Surname")
+    address = fields.Char(string="address")
+    hai = fields.Char(string="Hai")
+    sec = fields.Char(string="Sec.")
+    st = fields.Char(string="Street")
+    house = fields.Char(string="House")
+    nearest = fields.Char(string="Nearest POR")
+    birthdate = fields.Date(string="Birthdate")
+    place_of_birth = fields.Char(string="Place of Birth")
+    gender = fields.Selection([("male","Male"),("female","Female")])
+    height = fields.Integer(string="Height")
+    weight = fields.Integer(string="Weigh")
     citizenship = fields.Many2one("res.country")
-    religion = fields.Char(string="Religion",required=True)
+    religion = fields.Char(string="Religion")
     social_status=fields.Selection([("single","Single"),
                                     ("enganged","Engaged"),
                                     ("married","Married"),
                                     ("seperated","Seperated"),
                                     ("widowed","Widowed"),
-                                    ("divorced","Divorced")],required=True)
+                                    ("divorced","Divorced")])
     
     """Family Information"""
 
-    father_profession = fields.Char(string="Father`s Profession",required=True)
-    mother_profession = fields.Char(string="Mother`s Profession",required=True)
+    father_profession = fields.Char(string="Father`s Profession")
+    mother_profession = fields.Char(string="Mother`s Profession")
     
     first_name = fields.Char(string="First Name")
     profession = fields.Char(string="Profession")
@@ -75,7 +75,7 @@ class ItkApplForm(models.Model):
                                      ("average","Average"),
                                      ("below average","Below Average"),
                                      ("poor","Poor"),
-                                     ("very poor","Very Poor")],required=True,string="Your Health Status?")
+                                     ("very poor","Very Poor")],string="Your Health Status?")
 
     """ Have you suffered or are you suffering from any Terminal Illness or Chronic Disease?"""
     disease = fields.Selection([("yes","YES"),("no","NO")])
@@ -128,32 +128,32 @@ class ItkApplForm(models.Model):
 
 
     """ Education """
-    primary_name = fields.Char(string="Name",required=True)
+    primary_name = fields.Char(string="Name")
     primary_years = fields.Integer(string="# of Years")
     primary_avg = fields.Integer(string="Average(%)")
 
 
-    Intermediate_name = fields.Char(string="Integerermediate",required=True)
+    Intermediate_name = fields.Char(string="Integerermediate")
     Intermediate_years = fields.Integer(string="# of Years")
     Intermediate_avg = fields.Integer(string="Average(%)")
 
 
-    secondary_name = fields.Char(string="Secondary",required=True)
+    secondary_name = fields.Char(string="Secondary")
     secondary_years = fields.Integer(string="# of Years")
     secondary_avg = fields.Integer(string="Average(%)")
 
 
-    college_name = fields.Char(string="College or Institte",required=True)
+    college_name = fields.Char(string="College or Institte")
     college_years = fields.Integer(string="# of Years")
     college_avg = fields.Integer(string="Average(%)")
 
 
-    other_name = fields.Char(string="Other ",required=True)
+    other_name = fields.Char(string="Other ")
     other_years = fields.Integer(string="# of Years")
     other_avg = fields.Integer(string="Average(%)")
 
 
-    other_1_name = fields.Char(string="Other 1",required=True)
+    other_1_name = fields.Char(string="Other 1")
     other_1_years = fields.Integer(string="# of Years")
     other_1_avg = fields.Integer(string="Average(%)")
 
@@ -357,6 +357,7 @@ class ItkApplForm(models.Model):
                     ("poor","Poor"),
                     ("very poor","Very Poor")]
 
+   
     team_work = fields.Selection(SKILLS_SET_2)
     pressure = fields.Selection(SKILLS_SET_2)
     travel = fields.Selection(SKILLS_SET_2)
@@ -364,44 +365,85 @@ class ItkApplForm(models.Model):
 
     """ references non relatives  """
 
-    ref_name = fields.Char(string="")
-    ref_realtion = fields.Char(string="")
-    ref_phone = fields.Char(string="")
+    ref_name = fields.Char(string="Name")
+    ref_realtion = fields.Char(string="Relation")
+    ref_phone = fields.Char(string="Phone No.")
 
-    ref_name_1 = fields.Char(string="")
-    ref_realtion_1 = fields.Char(string="")
-    ref_phone_1 = fields.Char(string="")
+    ref_name_1 = fields.Char(string="Name")
+    ref_realtion_1 = fields.Char(string="Relation")
+    ref_phone_1 = fields.Char(string="Phone No.")
 
     """ refrences Relatives """
 
-    ref_r_name = fields.Char(string="")
-    ref_r_realtion = fields.Char(string="")
-    ref_r_phone = fields.Char(string="")
+    ref_r_name = fields.Char(string="Name")
+    ref_r_realtion = fields.Char(string="Relation")
+    ref_r_phone = fields.Char(string="Phone No.")
 
-    ref_r_name_1 = fields.Char(string="")
-    ref_r_realtion_1 = fields.Char(string="")
-    ref_r_phone_1 = fields.Char(string="")
+    ref_r_name_1 = fields.Char(string="Name")
+    ref_r_realtion_1 = fields.Char(string="Relation")
+    ref_r_phone_1 = fields.Char(string="Phone No.")
 
 
     """ Signature """
-    signature = fields.Char(string="")
-    Date = fields.Date(string="Date")
+    signature = fields.Char(string="Please sign your name")
+    sig_date = fields.Date(string="Date")
 
 
 
     """ Supporting Documents """
-    national_id = fields.Binary()
-    citizenship_cert = fields.Binary()
-    accomodation_id = fields.Binary()
-    uni_degree = fields.Binary()
-    medical = fields.Binary()
-    no_crim_req = fields.Binary()
-    letter_rec_1 = fields.Binary()
-    letter_rec_2 = fields.Binary()
+    photo = fields.Binary(string="Photo")
+    national_id = fields.Binary(string="National ID")
+    citizenship_cert = fields.Binary(string="Citizenship Certificate")
+    accomodation_id = fields.Binary(string="Accomidation ID")
+    uni_degree = fields.Binary(string="University Degree")
+    medical = fields.Binary(string="Medical Test")
+    no_crim_req = fields.Binary(string="No Criminal Record")
+    letter_rec_1 = fields.Binary(string="Letter of Recommendation 1")
+    letter_rec_2 = fields.Binary(string="Letter of Recommendation 1")
 
 
 
+    """ To be filled by Company """
+    int_name_1 = fields.Char(string="Name")
+    int_name_2 = fields.Char(string="Name")
+    int_name_3 = fields.Char(string="Name")
+    int_name_4 = fields.Char(string="Name")
 
+    english_1 = fields.Char(string="English")
+    english_2 = fields.Char(string="English")
+    english_3 = fields.Char(string="English")
+    english_4 = fields.Char(string="English")
+    
+    comp_1 = fields.Char(string="Computer")
+    comp_2 = fields.Char(string="Computer")
+    comp_3 = fields.Char(string="Computer")
+    comp_4 = fields.Char(string="Computer")
+
+    personality_1 = fields.Char(string="Personality")
+    personality_2 = fields.Char(string="Personality")
+    personality_3 = fields.Char(string="Personality")
+    personality_4 = fields.Char(string="Personality")
+
+    look_1 = fields.Char(string="Look")
+    look_2 = fields.Char(string="Look")
+    look_3 = fields.Char(string="Look")
+    look_4 = fields.Char(string="Look")
+
+    logic_1 =fields.Char(string="Logic")
+    logic_2 =fields.Char(string="Logic")
+    logic_3 =fields.Char(string="Logic")
+    logic_4 =fields.Char(string="Logic")
+
+
+    iq_1=fields.Char(string="IQ")
+    iq_2=fields.Char(string="IQ")
+    iq_3=fields.Char(string="IQ")
+    iq_4=fields.Char(string="IQ")
+
+    comment_1 = fields.Char(string="Comment")
+    comment_2 = fields.Char(string="Comment")
+    comment_3 = fields.Char(string="Comment")
+    comment_4 = fields.Char(string="Comment")
 
     
 

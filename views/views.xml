@@ -112,7 +112,7 @@
                       <field name="college_avg"/>
                     </group>        
                   </group>
-                  <group colspan="2" col="2"  string="Technical Skillzzz">
+                  <group colspan="2" col="2"  string="Technical Skills">
                     <group >
                       <field name="skill_1_Desc"/>
                       <field name="skill_2_Desc"/>
@@ -134,7 +134,7 @@
                       <field name="skill_8_level"/> 
                     </group>                                     
                   </group>
-                  <group colspan="2" col="2" string="Administration Skillzzz">
+                  <group colspan="2" col="2" string="Administration Skills">
                     <group>
                       <field name="business_correspondence_skill_level"/>
                       <field name="effective_communication_skill_level"/>
@@ -156,7 +156,7 @@
                     </group>
 
                   </group>
-                  <group colspan="2" col="2" string="Sales Skillzzz">
+                  <group colspan="2" col="2" string="Sales Skills">
                     <group>
                       <field name="relationship_building_skill_level"/>
                       <field name="time_management_skill_level"/>
@@ -246,13 +246,96 @@
                       <field name="presently_employed"/>
                       <field name="contact_employer"/>
                     </group>
-
-
-
                   </group>
-
-
-
+                  <group colspan="2" col="2" string="Other References">
+                    <group>
+                      <field name="ref_name"/>
+                      <field name="ref_realtion"/>
+                      <field name="ref_phone"/>
+                    </group>
+                    <group>
+                      <field name="ref_name_1"/>
+                      <field name="ref_realtion_1"/>
+                      <field name="ref_phone_1"/>
+                    </group>
+                  </group>
+                  <group colspan="2" col="2" string="Relative References">
+                    <group>
+                      <field name="ref_r_name"/>
+                      <field name="ref_r_realtion"/>
+                      <field name="ref_r_phone"/>
+                    </group>
+                    <group>
+                      <field name="ref_r_name_1"/>
+                      <field name="ref_r_realtion_1"/>
+                      <field name="ref_r_phone_1"/>
+                    </group>
+                  </group>
+                  <group colspan="2" col="2" string="Supporting Documetns">
+                    <group>
+                      <field name="photo"/> 
+                      <field name="national_id"/>
+                      <field name="citizenship_cert"/>
+                      <field name="accomodation_id"/>
+                      <field name="uni_degree"/>
+                    </group>
+                    <group>
+                      <field name="medical"/>
+                      <field name="no_crim_req"/>
+                      <field name="letter_rec_1"/>
+                      <field name="letter_rec_2"/>
+                    </group>
+                  </group>
+                  <group string="Signature">
+                    <field name="signature"/>
+                    <field name="sig_date"/>
+                  </group>
+                  <group colspan="2" col="2" string="To be filled by company">
+                    <group>
+                      <field name="int_name_1"/>
+                      <field name="english_1"/>
+                      <field name="comp_1"/>
+                      <field name="personality_1"/>
+                      <field name="look_1"/>
+                      <field name="logic_1"/>
+                      <field name="iq_1"/>
+                      <field name="comment_1"/>
+                    </group>
+                    <group>
+                      <field name="int_name_2"/>
+                      <field name="english_2"/>
+                      <field name="comp_2"/>
+                      <field name="personality_2"/>
+                      <field name="look_2"/>
+                      <field name="logic_2"/>
+                      <field name="iq_2"/>
+                      <field name="comment_2"/>
+                    </group>
+                      
+                      <group>
+                      <field name="int_name_3"/>
+                      <field name="english_3"/>
+                      <field name="comp_3"/>
+                      <field name="personality_3"/>
+                      <field name="look_3"/>
+                      <field name="logic_3"/>
+                      <field name="iq_3"/>
+                      <field name="comment_3"/>
+                    </group>
+                      
+                      <group>
+                      <field name="int_name_4"/>
+                      <field name="english_4"/>
+                      <field name="comp_4"/>
+                      <field name="personality_4"/>
+                      <field name="look_4"/>
+                      <field name="logic_4"/>
+                      <field name="iq_4"/>
+                      <field name="comment_4"/>
+                    </group>
+                      
+                      
+                  </group>
                 </xpath>
 
                 <!-- hidden existing fields that they dont need-->
