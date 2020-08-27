@@ -37,14 +37,14 @@
                   <group colspan="2" col="2" string="Family Information">
                     <field name="father_profession"/>
                     <field name="mother_profession"/>            
-                    <field name="first_name_1" />
-                    <field name="profession_1" />
+                    <field name="first_name_0" />
+                    <field name="profession_0" />
+                    <field name="first_name_1"/>
+                    <field name="profession_1"/>
                     <field name="first_name_2"/>
                     <field name="profession_2"/>
                     <field name="first_name_3"/>
                     <field name="profession_3"/>
-                    <field name="first_name_4"/>
-                    <field name="profession_4"/>
                   </group>
                   <group string="Health and Limitations">
                     <field name="health_status"/>
@@ -74,12 +74,12 @@
                       <field name="en_o"/>
                     </group>
                     <group  string="Other">
-                      <field name="other_name"/>
-                      <field name="other_r"/>
-                      <field name="other_w"/>
-                      <field name="other_s"/>
-                      <field name="other_u"/>
-                      <field name="other_o"/>
+                      <field name="other_name_0"/>
+                      <field name="other_r_0"/>
+                      <field name="other_w_0"/>
+                      <field name="other_s_0"/>
+                      <field name="other_u_0"/>
+                      <field name="other_o_0"/>
                     </group>
                     <group  string="Other">
                       <field name="other_name_1"/>
@@ -116,22 +116,22 @@
                     <group >
                       <field name="skill_1_Desc"/>
                       <field name="skill_2_Desc"/>
+                      <field name="skill_0_Desc"/>
+                      <field name="skill_1_Desc"/>
+                      <field name="skill_2_Desc"/>
                       <field name="skill_3_Desc"/>
                       <field name="skill_4_Desc"/>
-                      <field name="skill_5_Desc"/>
-                      <field name="skill_6_Desc"/>
-                      <field name="skill_7_Desc"/>
-                      <field name="skill_8_Desc"/>                  
+                      <field name="skill_5_Desc"/>                  
                     </group>
                     <group >                    
                       <field name="skill_1_level"/>
                       <field name="skill_2_level"/>
+                      <field name="skill_0_level"/>
+                      <field name="skill_1_level"/>
+                      <field name="skill_2_level"/>
                       <field name="skill_3_level"/>
                       <field name="skill_4_level"/>
-                      <field name="skill_5_level"/>
-                      <field name="skill_6_level"/>
-                      <field name="skill_7_level"/>
-                      <field name="skill_8_level"/> 
+                      <field name="skill_5_level"/> 
                     </group>                                     
                   </group>
                   <group colspan="2" col="2" string="Administration Skills">
@@ -188,14 +188,14 @@
                       <field name="t2_country_city"/>
                     </group>
                     <group>
-                      <field name="t3"/>
-                      <field name="t3_year"/>
-                      <field name="t3_awarded_by"/>
-                      <field name="t3_country_city"/>
-                      <field name="t4"/>
-                      <field name="t4_year"/>
-                      <field name="t4_awarded_by"/>
-                      <field name="t4_country_city"/>
+                      <field name="t0"/>
+                      <field name="t0_year"/>
+                      <field name="t0_awarded_by"/>
+                      <field name="t0_country_city"/>
+                      <field name="t1"/>
+                      <field name="t1_year"/>
+                      <field name="t1_awarded_by"/>
+                      <field name="t1_country_city"/>
                     </group>
                   </group>
                   <group colspan="2" col="2" string="Employment History">
@@ -215,20 +215,35 @@
                       <field name="reason_for_leaving"/>                           
                     </group>
                     <group>
-                      <field name="employer_name_2"/>
-                      <field name="job_title_2"/>
-                      <field name="employer_address_2"/>
-                      <field name="employer_province_2"/> 
-                      <field name="from_date_2"/>
-                      <field name="to_date_2"/>
-                      <field name="starting_slry_2"/>
-                      <field name="ending_slry_2"/>
-                      <field name="from_date_2"/>
-                      <field name="to_date_2"/>
-                      <field name="supervisor_2"/>
-                      <field name="super_phone_2"/> 
-                      <field name="reason_for_leaving_2"/>                           
-                    </group>                                      
+                      <field name="employer_name_0"/>
+                      <field name="job_title_0"/>
+                      <field name="employer_address_0"/>
+                      <field name="employer_province_0"/> 
+                      <field name="from_date_0"/>
+                      <field name="to_date_0"/>
+                      <field name="starting_slry_0"/>
+                      <field name="ending_slry_0"/>
+                      <field name="from_date_0"/>
+                      <field name="to_date_0"/>
+                      <field name="supervisor_0"/>
+                      <field name="super_phone_0"/> 
+                      <field name="reason_for_leaving_0"/>                           
+                    </group>
+                    <group>
+                      <field name="employer_name_1"/>
+                      <field name="job_title_1"/>
+                      <field name="employer_address_1"/>
+                      <field name="employer_province_1"/> 
+                      <field name="from_date_1"/>
+                      <field name="to_date_1"/>
+                      <field name="starting_slry_1"/>
+                      <field name="ending_slry_1"/>
+                      <field name="from_date_1"/>
+                      <field name="to_date_1"/>
+                      <field name="supervisor_1"/>
+                      <field name="super_phone_1"/> 
+                      <field name="reason_for_leaving_1"/>                           
+                    </group>                                                             
                   </group>
                   <group colspan="2" col="2" string="Additional Information">
                     <group>
@@ -250,24 +265,24 @@
                   <group colspan="2" col="2" string="Other References">
                     <group>
                       <field name="ref_name"/>
-                      <field name="ref_realtion"/>
+                      <field name="ref_relation"/>
                       <field name="ref_phone"/>
                     </group>
                     <group>
                       <field name="ref_name_1"/>
-                      <field name="ref_realtion_1"/>
+                      <field name="ref_relation_1"/>
                       <field name="ref_phone_1"/>
                     </group>
                   </group>
                   <group colspan="2" col="2" string="Relative References">
                     <group>
                       <field name="ref_r_name"/>
-                      <field name="ref_r_realtion"/>
+                      <field name="ref_r_relation"/>
                       <field name="ref_r_phone"/>
                     </group>
                     <group>
                       <field name="ref_r_name_1"/>
-                      <field name="ref_r_realtion_1"/>
+                      <field name="ref_r_relation_1"/>
                       <field name="ref_r_phone_1"/>
                     </group>
                   </group>

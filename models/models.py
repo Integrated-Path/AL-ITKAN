@@ -47,6 +47,9 @@ class ItkApplForm(models.Model):
     first_name = fields.Char(string="First Name")
     profession = fields.Char(string="Profession")
 
+    first_name_0 = fields.Char(string="First Name")
+    profession_0 = fields.Char(string="Profession")
+
     first_name_1 = fields.Char(string="First Name")
     profession_1 = fields.Char(string="Profession")
 
@@ -64,9 +67,6 @@ class ItkApplForm(models.Model):
 
     first_name_6 = fields.Char(string="First Name")
     profession_6 = fields.Char(string="Profession")
-
-    first_name_7 = fields.Char(string="First Name")
-    profession_7 = fields.Char(string="Profession")
     
 
     """ Health and Limitations """
@@ -110,12 +110,12 @@ class ItkApplForm(models.Model):
 
     """ Other """
 
-    other_name = fields.Char(string="Name")
-    other_r = fields.Integer(string="Reading")
-    other_w = fields.Integer(string="Writing")
-    other_s = fields.Integer(string="Speaking")
-    other_u = fields.Integer(string="Understanding")
-    other_o = fields.Integer(string="Overall")
+    other_name_0 = fields.Char(string="Name")
+    other_r_0 = fields.Integer(string="Reading")
+    other_w_0 = fields.Integer(string="Writing")
+    other_s_0 = fields.Integer(string="Speaking")
+    other_u_0 = fields.Integer(string="Understanding")
+    other_o_0 = fields.Integer(string="Overall")
 
     """ Other 1 """
 
@@ -148,9 +148,9 @@ class ItkApplForm(models.Model):
     college_avg = fields.Integer(string="Average(%)")
 
 
-    other_name = fields.Char(string="Other ")
-    other_years = fields.Integer(string="# of Years")
-    other_avg = fields.Integer(string="Average(%)")
+    other_0_name = fields.Char(string="Other ")
+    other_0_years = fields.Integer(string="# of Years")
+    other_0_avg = fields.Integer(string="Average(%)")
 
 
     other_1_name = fields.Char(string="Other 1")
@@ -188,29 +188,29 @@ class ItkApplForm(models.Model):
     skill_2_Desc = fields.Char(string="")
     skill_2_level = fields.Selection(SKILL_LEVEL)
 
-    skill_3_Desc = fields.Char(string="")
-    skill_3_level = fields.Selection(SKILL_LEVEL)
+    skill_0_Desc = fields.Char(string="")
+    skill_0_level = fields.Selection(SKILL_LEVEL)
     
 
+    skill_1_Desc = fields.Char(string="")
+    skill_1_level = fields.Selection(SKILL_LEVEL)                                    
+
+
+    skill_2_Desc = fields.Char(string="")
+    skill_2_level = fields.Selection(SKILL_LEVEL)
+
+
+    skill_3_Desc = fields.Char(string="")
+    skill_3_level = fields.Selection(SKILL_LEVEL)
+
+
+
     skill_4_Desc = fields.Char(string="")
-    skill_4_level = fields.Selection(SKILL_LEVEL)                                    
+    skill_4_level = fields.Selection(SKILL_LEVEL)
 
 
     skill_5_Desc = fields.Char(string="")
     skill_5_level = fields.Selection(SKILL_LEVEL)
-
-
-    skill_6_Desc = fields.Char(string="")
-    skill_6_level = fields.Selection(SKILL_LEVEL)
-
-
-
-    skill_7_Desc = fields.Char(string="")
-    skill_7_level = fields.Selection(SKILL_LEVEL)
-
-
-    skill_8_Desc = fields.Char(string="")
-    skill_8_level = fields.Selection(SKILL_LEVEL)
 
     
     
@@ -258,35 +258,35 @@ class ItkApplForm(models.Model):
     t1_awarded_by = fields.Char(string="Awarded By")
     t1_country_city = fields.Char(string="Country/City")
 
+    t0 = fields.Char(string="Name")
+    t0_year = fields.Integer(string="Year")
+    t0_awarded_by = fields.Char(string="Awarded By")
+    t0_country_city = fields.Char(string="Country/City")
+
+    t1 = fields.Char(string="Name")
+    t1_year = fields.Integer(string="Year")
+    t1_awarded_by = fields.Char(string="Awarded By")
+    t1_country_city = fields.Char(string="Country/City")
+
     t2 = fields.Char(string="Name")
     t2_year = fields.Integer(string="Year")
     t2_awarded_by = fields.Char(string="Awarded By")
     t2_country_city = fields.Char(string="Country/City")
 
-    t3 = fields.Char(string="Name")
-    t3_year = fields.Integer(string="Year")
-    t3_awarded_by = fields.Char(string="Awarded By")
-    t3_country_city = fields.Char(string="Country/City")
+    t3 = fields.Char(string="")
+    t3_year = fields.Integer(string="")
+    t3_awarded_by = fields.Char(string="")
+    t3_country_city = fields.Char(string="")
 
-    t4 = fields.Char(string="Name")
-    t4_year = fields.Integer(string="Year")
-    t4_awarded_by = fields.Char(string="Awarded By")
-    t4_country_city = fields.Char(string="Country/City")
+    t4 = fields.Char(string="")
+    t4_year = fields.Integer(string="")
+    t4_awarded_by = fields.Char(string="")
+    t4_country_city = fields.Char(string="")
 
     t5 = fields.Char(string="")
     t5_year = fields.Integer(string="")
     t5_awarded_by = fields.Char(string="")
     t5_country_city = fields.Char(string="")
-
-    t6 = fields.Char(string="")
-    t6_year = fields.Integer(string="")
-    t6_awarded_by = fields.Char(string="")
-    t6_country_city = fields.Char(string="")
-
-    t7 = fields.Char(string="")
-    t7_year = fields.Integer(string="")
-    t7_awarded_by = fields.Char(string="")
-    t7_country_city = fields.Char(string="")
 
     """ Employment History """
 
@@ -306,6 +306,21 @@ class ItkApplForm(models.Model):
 
 
 
+    employer_name_0 = fields.Char(string="Employer Names")
+    job_title_0 = fields.Char(string="Job Title")
+    employer_address_0 = fields.Char(string="Employer addres")
+    employer_province_0 = fields.Char(string="Employer Province")
+    from_date_0 = fields.Date(string="From")
+    to_date_0 = fields.Date(string="To")
+    starting_slry_0 = fields.Integer(string="Starting Salary")
+    ending_slry_0 = fields.Integer(string="Last Salary")
+    supervisor_0 = fields.Char(string="Supervisor")
+    super_phone_0 = fields.Char(string="Supervisor Phone No.")
+    reason_for_leaving_0 = fields.Char(string="Reason for Leaving")
+
+
+
+
     employer_name_1 = fields.Char(string="Employer Names")
     job_title_1 = fields.Char(string="Job Title")
     employer_address_1 = fields.Char(string="Employer addres")
@@ -317,21 +332,6 @@ class ItkApplForm(models.Model):
     supervisor_1 = fields.Char(string="Supervisor")
     super_phone_1 = fields.Char(string="Supervisor Phone No.")
     reason_for_leaving_1 = fields.Char(string="Reason for Leaving")
-
-
-
-
-    employer_name_2 = fields.Char(string="Employer Names")
-    job_title_2 = fields.Char(string="Job Title")
-    employer_address_2 = fields.Char(string="Employer addres")
-    employer_province_2 = fields.Char(string="Employer Province")
-    from_date_2 = fields.Date(string="From")
-    to_date_2 = fields.Date(string="To")
-    starting_slry_2 = fields.Integer(string="Starting Salary")
-    ending_slry_2 = fields.Integer(string="Last Salary")
-    supervisor_2 = fields.Char(string="Supervisor")
-    super_phone_2 = fields.Char(string="Supervisor Phone No.")
-    reason_for_leaving_2 = fields.Char(string="Reason for Leaving")
 
 
     """ Additional Information """
@@ -366,21 +366,21 @@ class ItkApplForm(models.Model):
     """ references non relatives  """
 
     ref_name = fields.Char(string="Name")
-    ref_realtion = fields.Char(string="Relation")
+    ref_relation = fields.Char(string="Relation")
     ref_phone = fields.Char(string="Phone No.")
 
     ref_name_1 = fields.Char(string="Name")
-    ref_realtion_1 = fields.Char(string="Relation")
+    ref_relation_1 = fields.Char(string="Relation")
     ref_phone_1 = fields.Char(string="Phone No.")
 
     """ refrences Relatives """
 
     ref_r_name = fields.Char(string="Name")
-    ref_r_realtion = fields.Char(string="Relation")
+    ref_r_relation = fields.Char(string="Relation")
     ref_r_phone = fields.Char(string="Phone No.")
 
     ref_r_name_1 = fields.Char(string="Name")
-    ref_r_realtion_1 = fields.Char(string="Relation")
+    ref_r_relation_1 = fields.Char(string="Relation")
     ref_r_phone_1 = fields.Char(string="Phone No.")
 
 
