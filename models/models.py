@@ -247,40 +247,35 @@ class ItkApplForm(models.Model):
 
     "Training and Certifications"
 
-    t1 = fields.Char(string="Name")
-    t1_year = fields.Integer(string="Year")
-    t1_awarded_by = fields.Char(string="Awarded By")
-    t1_country_city = fields.Char(string="Country/City")
-
-    t0 = fields.Char(string="Name")
+    t0 = fields.Char(string="Certifiacate 1")
     t0_year = fields.Integer(string="Year")
     t0_awarded_by = fields.Char(string="Awarded By")
     t0_country_city = fields.Char(string="Country/City")
 
-    t1 = fields.Char(string="Name")
+    t1 = fields.Char(string="Certifiacate 2")
     t1_year = fields.Integer(string="Year")
     t1_awarded_by = fields.Char(string="Awarded By")
     t1_country_city = fields.Char(string="Country/City")
 
-    t2 = fields.Char(string="Name")
+    t2 = fields.Char(string="Certifiacate 3")
     t2_year = fields.Integer(string="Year")
     t2_awarded_by = fields.Char(string="Awarded By")
     t2_country_city = fields.Char(string="Country/City")
 
-    t3 = fields.Char(string="")
-    t3_year = fields.Integer(string="")
-    t3_awarded_by = fields.Char(string="")
-    t3_country_city = fields.Char(string="")
+    t3 = fields.Char(string="Certifiacate 4")
+    t3_year = fields.Integer(string="Year")
+    t3_awarded_by = fields.Char(string="Awarded By")
+    t3_country_city = fields.Char(string="Country/City")
 
-    t4 = fields.Char(string="")
-    t4_year = fields.Integer(string="")
-    t4_awarded_by = fields.Char(string="")
-    t4_country_city = fields.Char(string="")
+    t4 = fields.Char(string="Certifiacate 5")
+    t4_year = fields.Integer(string="Year")
+    t4_awarded_by = fields.Char(string="Awarded By")
+    t4_country_city = fields.Char(string="Country/City")
 
-    t5 = fields.Char(string="")
-    t5_year = fields.Integer(string="")
-    t5_awarded_by = fields.Char(string="")
-    t5_country_city = fields.Char(string="")
+    t5 = fields.Char(string="Certifiacate 6")
+    t5_year = fields.Integer(string="Year")
+    t5_awarded_by = fields.Char(string="Awarded By")
+    t5_country_city = fields.Char(string="Country/City")
 
     """ Employment History """
 
