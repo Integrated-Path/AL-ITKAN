@@ -174,16 +174,6 @@
                   </group>
                   <group colspan="2" col="2" string="Training and Certifications">
                     <group>
-                      <field name="t1"/>
-                      <field name="t1_year"/>
-                      <field name="t1_awarded_by"/>
-                      <field name="t1_country_city"/>
-                      <field name="t2"/>
-                      <field name="t2_year"/>
-                      <field name="t2_awarded_by"/>
-                      <field name="t2_country_city"/>
-                    </group>
-                    <group>
                       <field name="t0"/>
                       <field name="t0_year"/>
                       <field name="t0_awarded_by"/>
@@ -192,6 +182,26 @@
                       <field name="t1_year"/>
                       <field name="t1_awarded_by"/>
                       <field name="t1_country_city"/>
+                    </group>
+                    <group>
+                      <field name="t2"/>
+                      <field name="t2_year"/>
+                      <field name="t2_awarded_by"/>
+                      <field name="t2_country_city"/>
+                      <field name="t3"/>
+                      <field name="t3_year"/>
+                      <field name="t3_awarded_by"/>
+                      <field name="t3_country_city"/>
+                    </group>
+                    <group>
+                      <field name="t4"/>
+                      <field name="t4_year"/>
+                      <field name="t4_awarded_by"/>
+                      <field name="t4_country_city"/>
+                      <field name="t5"/>
+                      <field name="t5_year"/>
+                      <field name="t5_awarded_by"/>
+                      <field name="t5_country_city"/>
                     </group>
                   </group>
                   <group colspan="2" col="2" string="Employment History">
