@@ -30,7 +30,7 @@ class ItkApplForm(models.Model):
     gender = fields.Selection([("male","Male"),("female","Female")])
     height = fields.Integer(string="Height")
     weight = fields.Integer(string="Weigh")
-    citizenship = fields.Many2one("res.country")
+    citizenship = fields.Char()
     religion = fields.Char(string="Religion")
     social_status=fields.Selection([("single","Single"),
                                     ("engaged","Engaged"),
