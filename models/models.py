@@ -182,12 +182,6 @@ class ItkApplForm(models.Model):
 
     """ Technical Skills """
 
-    skill_1_Desc = fields.Char(string="")
-    skill_1_level = fields.Selection(SKILL_LEVEL)
-
-    skill_2_Desc = fields.Char(string="")
-    skill_2_level = fields.Selection(SKILL_LEVEL)
-
     skill_0_Desc = fields.Char(string="")
     skill_0_level = fields.Selection(SKILL_LEVEL)
     
