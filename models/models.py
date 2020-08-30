@@ -12,7 +12,7 @@ class ItkApplForm(models.Model):
     SKILL_LEVEL = [("not familiar","Not Familiar"),
                     ("beginner","Beginner"),
                     ("Intermediate","Intermediate"),
-                    ("advacned","Advanced"),
+                    ("advanced","Advanced"),
                     ("expert","Expert")]
 
 
