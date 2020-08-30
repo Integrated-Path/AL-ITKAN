@@ -33,7 +33,7 @@ class ItkApplForm(models.Model):
     citizenship = fields.Many2one("res.country")
     religion = fields.Char(string="Religion")
     social_status=fields.Selection([("single","Single"),
-                                    ("enganged","Engaged"),
+                                    ("engaged","Engaged"),
                                     ("married","Married"),
                                     ("seperated","Seperated"),
                                     ("widowed","Widowed"),
