@@ -114,8 +114,6 @@
                   </group>
                   <group colspan="2" col="2"  string="Technical Skills">
                     <group >
-                      <field name="skill_1_Desc"/>
-                      <field name="skill_2_Desc"/>
                       <field name="skill_0_Desc"/>
                       <field name="skill_1_Desc"/>
                       <field name="skill_2_Desc"/>
@@ -124,8 +122,6 @@
                       <field name="skill_5_Desc"/>                  
                     </group>
                     <group >                    
-                      <field name="skill_1_level"/>
-                      <field name="skill_2_level"/>
                       <field name="skill_0_level"/>
                       <field name="skill_1_level"/>
                       <field name="skill_2_level"/>
