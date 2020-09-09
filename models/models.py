@@ -30,7 +30,7 @@ class ItkApplForm(models.Model):
     gender = fields.Selection([("male","Male"),("female","Female")])
     height = fields.Integer(string="Height")
     weight = fields.Integer(string="Weigh")
-    citizenship = fields.Char()
+    citizenship = fields.Char(string="Citizenship")
     religion = fields.Char(string="Religion")
     social_status=fields.Selection([("single","Single"),
                                     ("engaged","Engaged"),
@@ -434,5 +434,16 @@ class ItkApplForm(models.Model):
     comment_3 = fields.Char(string="Comment")
     comment_4 = fields.Char(string="Comment")
 
+
+
+class ItkanProduct(models.Model):
+   _inherit="product.template"
+
+
+   country_of_origin = fields.Char(string="Country of Origin")
     
 
+   
+
+
+   

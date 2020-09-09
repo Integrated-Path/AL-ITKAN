@@ -36,7 +36,9 @@
                 <xpath expr="/form/sheet/group/group[2]" position="after">
                   <group colspan="2" col="2" string="Family Information">
                     <field name="father_profession"/>
-                    <field name="mother_profession"/>            
+                    <field name="mother_profession"/>
+                    <field name="first_name" />
+                    <field name="profession" />
                     <field name="first_name_0" />
                     <field name="profession_0" />
                     <field name="first_name_1"/>
