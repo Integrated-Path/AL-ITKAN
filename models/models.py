@@ -446,4 +446,81 @@ class ItkanProduct(models.Model):
    
 
 
+class ItkanEmployee(models.Model):
+   _inherit = "hr.employee"
    
+   DIVISIONS = [("GM office","GM office"),("Technical","Technical"),("Sales","Sales"),("Finance","Finance"),("HRA","HRA"),("Logistics","Logistics")]
+   UNITS = [("Arab North, Middle and South","Arab North, Middle and South"),
+            ("Baghdad","Baghdad"),
+            ("Cleaning Staff","Cleaning Staff"),
+            ("DX","DX"),
+            ("Enraff Meditron","Enraff Meditron"),
+            ("Fleet","Fleet"),
+            ("Fleet and Technicains","Fleet and Technicains"),
+            ("Gettinge","Gettinge"),
+            ("Guards","Guards"),
+            ("Karl Storz","Karl Storz"),
+            ("Karl Storz & DX","Karl Storz & DX"),
+            ("Kimadia","Kimadia"),
+            ("KRG","KRG"),
+            ("Legal","Legal"),
+            ("Medifa Maquet H&M","Medifa Maquet h&M"),
+            ("Mindray","Mindray"),
+            ("Modalities","Modalities"),
+            ("North","North"),
+            ("Packaging projects","Packaging projects"),
+            ("Reception","Reception"),
+            ("Resources","Resources"),
+            ("Siemens Lab","Siemens Lab"),
+            ("Siemens Radiology","Siemens Radiology"),
+            ("Siemens US","Siemens US"),
+            ("Social Marketing & Marcom","Social Marketing $ Marcom"),
+            ("South","South"),
+            ("Support Centre","Support Centre"),
+            ("Technicians","Technicians"),
+            ("Training","Training")]
+
+   SUBUNITS=[("Arab North","Arab North"),
+            ("AT","AT"),
+            ("AT/MM","AT/MM"),
+            ("Baghdad, karbalaa and Babel and Karkook","Baghdad, Karbalaa and Babel and Karkook"),
+            ("Civil","Civil"),
+            ("CT","CT"),
+            ("CT/MM","CT/MM"),
+            ("CT/PET CT","CT/PET CT"),
+            ("DX","DX"),
+            ("DX/MM","DX/MM"),
+            ("Erbil","Erbil"),
+            ("Erbil Office","Erbil Office"),
+            ("Fleet","Fleet"),
+            ("Fleet and Technicains","Fleet and Technicains"),
+            ("IT/MM","IT/MM"),
+            ("Karbalaa","Karbalaa"),
+            ("KS","KS"),
+            ("KS/MM","KS/MM"),
+            ("Kut","Kut"),
+            ("Mech.","Mech."),
+            ("Mech./MM","Mech./MM"),
+            ("MI/MM","MI/MM"),
+            ("Mindray","Mindray"),
+            ("Missan","Missan"),
+            ("MM","MM"),
+            ("MR","MR"),
+            ("MR/MM","MR/MM"),
+            ("OR","OR"),
+            ("OR/MM","OR/MM"),
+            ("Projects","Projects"),
+            ("Siemens","Siemens"),
+            ("Simawa","Simawa"),
+            ("Soly","Soly"),
+            ("Sulaymaniyah Office","Sulaymaniyah Office"),
+            ("Technicians","Technicians"),
+            ("TH","TH"),
+            ("US","US"),
+            ("XP","XP"),
+            ("XP/MM","XP/MM")]
+
+
+   divisions = fields.Selection(DIVISIONS,string="Division")
+   units = fields.Selection(UNITS,string="Unit")
+   subunits = fields.Selection(SUBUNITS,string="Subunit")
