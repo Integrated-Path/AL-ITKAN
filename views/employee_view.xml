@@ -19,6 +19,19 @@
                 </xpath>
             </field>
         </record>
+        <record id="ITK_employee_search" model="ir.ui.view">
+            <field name="name">ITK_employee</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_filter"/>
+            <field name="arch" type="xml">
+                <field name="job_id" position="after">
+               
+                    <field name="divisions"/>
+                    <field name="units" />
+                    <field name="subunits" />
+                </field>
+            </field>
+        </record>
     
     </data>
 </odoo>
