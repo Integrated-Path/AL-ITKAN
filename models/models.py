@@ -441,6 +441,7 @@ class ItkanProduct(models.Model):
 
 
    country_of_origin = fields.Char(string="Country of Origin")
+   dangerous_goods = fields.Boolean(string="Dangrous Goods")
     
 
    

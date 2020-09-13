@@ -10,8 +10,15 @@
                     
                     
                         <field name="country_of_origin"/>
-                    
+                        <field name="dangerous_goods"  />
+                        
+
                 </xpath>
+                
+                <field name="name" position="after">
+                    <img src="al-itkan/static/img/danger1.png" height="30" width="30" attrs="{'invisible':[('dangerous_goods', '=', False)]}" />
+                </field>
+            
 
 
             </field>
@@ -20,3 +27,7 @@
 
     </data>
 </odoo>
+
+
+
+
