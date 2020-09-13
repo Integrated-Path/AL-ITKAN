@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields, api
+import datetime
 
 """Added by AhmedNaseem @IntegerEGRATEDPATH in 23/7/2020 , 
 AL-ITKAN job Application form adjustment """
@@ -435,14 +436,29 @@ class ItkApplForm(models.Model):
     comment_4 = fields.Char(string="Comment")
 
 
+    skype_id = fields.Char(string="Skype ID")
+    external_ref = fields.Char(string="External Reference")
+
+
+
+
+class ItkanJob(models.Model):
+   _inherit="hr.job"
+
+   opening_date = fields.Date(string="Vacancy Opening Date",default=datetime.datetime.now())
+   card_image = fields.Binary(string="Vacany Card Image")
+
+
+
+
 
 class ItkanProduct(models.Model):
    _inherit="product.template"
-
+   SELECTIONS=[("Dangerous Good","Dangerous Good"),("Dry Ice","Dry Ice")]
 
    country_of_origin = fields.Char(string="Country of Origin")
-   dangerous_goods = fields.Boolean(string="Dangrous Goods")
-    
+   dangerous_goods = fields.Selection(SELECTIONS,string="Dangerous Goods and Storage")
+
 
    
 

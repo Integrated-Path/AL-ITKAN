@@ -28,7 +28,8 @@
         'views/views.xml',
         'views/templates.xml',
         'views/product_view.xml',
-        "views/employee_view.xml"
+        "views/employee_view.xml",
+        "views/jobs_view.xml"
         
         
     ],

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ITK_Job" model="ir.ui.view">
+            <field name="name">ITK_Job</field>
+            <field name="model">hr.job</field>
+            <field name="inherit_id" ref="hr.view_hr_job_form"/>
+            <field name="arch" type="xml">
+                <field name="address_id" position="after">
+                    <field name="opening_date"/>
+                    <field name="card_image"/>
+                </field>
+            
+
+
+            </field>
+
+        </record>
+
+    </data>
+</odoo>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

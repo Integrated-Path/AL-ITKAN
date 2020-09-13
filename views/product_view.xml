@@ -16,7 +16,9 @@
                 </xpath>
                 
                 <field name="name" position="after">
-                    <img src="al-itkan/static/img/danger1.png" height="30" width="30" attrs="{'invisible':[('dangerous_goods', '=', False)]}" />
+                    
+                    <img src="al-itkan/static/img/danger1.png" height="30"  width="30" attrs="{'invisible':[('dangerous_goods', '!=', 'Dangerous Good')]}" />
+                    <img src="al-itkan/static/img/ice.png" height="30" width="30" attrs="{'invisible':[('dangerous_goods', '!=', 'Dry Ice')]}" />
                 </field>
             
 

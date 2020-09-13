@@ -19,6 +19,8 @@
                     <field name="nearest"/>
                     <field name="citizenship"/>
                     <field name="social_status"/>
+                    <field name="skype_id"/>
+                    <field name="external_ref" readonly="1"/>
                     
                 </field>
                 <field name="source_id" position="after">
