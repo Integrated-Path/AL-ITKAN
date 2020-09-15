@@ -17,6 +17,10 @@
                     <field name="subunits"/>
                     
                 </xpath>
+
+                <field name="user_id" position="before">
+                    <field name="applicant_id" />
+                </field>
             </field>
         </record>
         <record id="ITK_employee_search" model="ir.ui.view">
