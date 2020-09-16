@@ -449,7 +449,11 @@ class ItkanJob(models.Model):
    card_image = fields.Binary(string="Vacany Card Image")
 
 
-
+   def set_recruit(self):
+      self.opening_date = datetime.datetime.now()
+      res = super(ItkanJob,self).set_recruit()
+      
+      return res
 
 
 class ItkanProduct(models.Model):
