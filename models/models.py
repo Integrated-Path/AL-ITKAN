@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields, api
+from odoo.tools.translate import _
 import datetime
 
 """Added by AhmedNaseem @IntegerEGRATEDPATH in 23/7/2020 , 
@@ -9,6 +10,8 @@ AL-ITKAN job Application form adjustment """
 
 class ItkApplForm(models.Model):
     _inherit="hr.applicant"
+
+    filling_time = fields.Char("Filling Time", readonly=True)
 
     SKILL_LEVEL = [("not familiar","Not Familiar"),
                     ("beginner","Beginner"),
@@ -439,6 +442,57 @@ class ItkApplForm(models.Model):
     skype_id = fields.Char(string="Skype ID")
     external_ref = fields.Char(string="External Reference")
 
+    def create_employee_from_applicant(self):
+        """ Create an hr.employee from the hr.applicants """
+        employee = False
+        for applicant in self:
+            contact_name = False
+            if applicant.partner_id:
+                address_id = applicant.partner_id.address_get(['contact'])['contact']
+                contact_name = applicant.partner_id.display_name
+            else:
+                if not applicant.partner_name:
+                    raise UserError(_('You must define a Contact Name for this applicant.'))
+                new_partner_id = self.env['res.partner'].create({
+                    'is_company': False,
+                    'name': applicant.partner_name,
+                    'email': applicant.email_from,
+                    'phone': applicant.partner_phone,
+                    'mobile': applicant.partner_mobile
+                })
+                address_id = new_partner_id.address_get(['contact'])['contact']
+            if applicant.partner_name or contact_name:
+                employee = self.env['hr.employee'].create({
+                     'name': applicant.partner_name or contact_name,
+                     'job_id': applicant.job_id.id or False,
+                     'job_title': applicant.job_id.name,
+                     'address_home_id': address_id,
+                     'department_id': applicant.department_id.id or False,
+                     'address_id': applicant.company_id and applicant.company_id.partner_id
+                              and applicant.company_id.partner_id.id or False,
+                     'work_email': applicant.department_id and applicant.department_id.company_id
+                              and applicant.department_id.company_id.email or False,
+                     'work_phone': applicant.department_id and applicant.department_id.company_id
+                              and applicant.department_id.company_id.phone or False,
+                     'applicant_id': applicant.id   #edited
+                     })
+                applicant.write({'emp_id': employee.id})
+                if applicant.job_id:
+                    applicant.job_id.write({'no_of_hired_employee': applicant.job_id.no_of_hired_employee + 1})
+                    applicant.job_id.message_post(
+                        body=_('New Employee %s Hired') % applicant.partner_name if applicant.partner_name else applicant.name,
+                        subtype="hr_recruitment.mt_job_applicant_hired")
+                applicant.message_post_with_view(
+                    'hr_recruitment.applicant_hired_template',
+                    values={'applicant': applicant},
+                    subtype_id=self.env.ref("hr_recruitment.mt_applicant_hired").id)
+
+        employee_action = self.env.ref('hr.open_view_employee_list')
+        dict_act_window = employee_action.read([])[0]
+        dict_act_window['context'] = {'form_view_initial_mode': 'edit'}
+        dict_act_window['res_id'] = employee.id
+        return dict_act_window
+
 
 
 
@@ -470,6 +524,7 @@ class ItkanProduct(models.Model):
 class ItkanEmployee(models.Model):
    _inherit = "hr.employee"
    
+   applicant_id = fields.Many2one("hr.applicant", "Employee Application")
    DIVISIONS = [("GM office","GM office"),("Technical","Technical"),("Sales","Sales"),("Finance","Finance"),("HRA","HRA"),("Logistics","Logistics")]
    UNITS = [("Arab North, Middle and South","Arab North, Middle and South"),
             ("Baghdad","Baghdad"),
