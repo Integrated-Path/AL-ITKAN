@@ -9,6 +9,8 @@
                 <field name="address_id" position="after">
                     <field name="opening_date"/>
                     <field name="card_image"/>
+                    <field name="internal_ref"/>
+
                 </field>
             
 

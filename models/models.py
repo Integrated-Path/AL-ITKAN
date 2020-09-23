@@ -501,12 +501,38 @@ class ItkanJob(models.Model):
 
    opening_date = fields.Date(string="Vacancy Opening Date",default=datetime.datetime.now())
    card_image = fields.Binary(string="Vacany Card Image")
+   internal_ref = fields.Char(string="Internal Reference",readonly=True)
+
+       
+
+
+
+   def create_internal_ref(self):
+    if self.internal_ref:
+        old_ref = self.internal_ref
+    else:
+        rec_name=self.name
+        date=datetime.datetime.now()
+        
+        internal_ref =  str(date)[0:4] + str(date)[6:7] + str(1)
+        return internal_ref
+            
 
 
    def set_recruit(self):
       self.opening_date = datetime.datetime.now()
+      
       res = super(ItkanJob,self).set_recruit()
       
+      return res
+
+
+   @api.model
+   def create(self,vals):
+      
+      res = super(ItkanJob,self).create(vals)
+      res.write({"internal_ref":res.create_internal_ref()})
+
       return res
 
 
@@ -600,3 +626,11 @@ class ItkanEmployee(models.Model):
    divisions = fields.Selection(DIVISIONS,string="Division")
    units = fields.Selection(UNITS,string="Unit")
    subunits = fields.Selection(SUBUNITS,string="Subunit")
+   
+
+
+
+class ItkanSale(models.Model):
+    _inherit="sale.order"
+
+    date_order = fields.Date(string="Order Date",default=datetime.datetime.now())
