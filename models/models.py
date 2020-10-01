@@ -283,7 +283,7 @@ class ItkApplForm(models.Model):
 
     """ Employment History """
 
-    contact_disclaimer = fields.Boolean(string="Can we contact your previous employer(s)")
+    contact_disclaimer = fields.Boolean(string="Can we contact your previous employer(s) ?")
 
     employer_name = fields.Char(string="Employer Names")
     job_title = fields.Char(string="Job Title")
@@ -329,6 +329,7 @@ class ItkApplForm(models.Model):
 
     """ Additional Information """
     union_member = fields.Selection([("yes","YES"),("no","NO")],string="Are you a member of the Iraqi Engineers union?")
+    union_memebr_date = fields.Date("Sense when were you a memeber ?")
     driver_license = fields.Selection([("yes","YES"),("no","NO")],string="Do you have a valid drivers license?")
     driver_license_date = fields.Date(string="Driver license issue Date")
     means_of_transport = fields.Char(string="What is your means of transport?(Personal Car, Public, etc.")
@@ -393,51 +394,6 @@ class ItkApplForm(models.Model):
     no_crim_req = fields.Binary(string="No Criminal Record")
     letter_rec_1 = fields.Binary(string="Letter of Recommendation 1")
     letter_rec_2 = fields.Binary(string="Letter of Recommendation 1")
-
-
-
-    """ To be filled by Company """
-    int_name_1 = fields.Char(string="Name")
-    int_name_2 = fields.Char(string="Name")
-    int_name_3 = fields.Char(string="Name")
-    int_name_4 = fields.Char(string="Name")
-
-    english_1 = fields.Char(string="English")
-    english_2 = fields.Char(string="English")
-    english_3 = fields.Char(string="English")
-    english_4 = fields.Char(string="English")
-    
-    comp_1 = fields.Char(string="Computer")
-    comp_2 = fields.Char(string="Computer")
-    comp_3 = fields.Char(string="Computer")
-    comp_4 = fields.Char(string="Computer")
-
-    personality_1 = fields.Char(string="Personality")
-    personality_2 = fields.Char(string="Personality")
-    personality_3 = fields.Char(string="Personality")
-    personality_4 = fields.Char(string="Personality")
-
-    look_1 = fields.Char(string="Look")
-    look_2 = fields.Char(string="Look")
-    look_3 = fields.Char(string="Look")
-    look_4 = fields.Char(string="Look")
-
-    logic_1 =fields.Char(string="Logic")
-    logic_2 =fields.Char(string="Logic")
-    logic_3 =fields.Char(string="Logic")
-    logic_4 =fields.Char(string="Logic")
-
-
-    iq_1=fields.Char(string="IQ")
-    iq_2=fields.Char(string="IQ")
-    iq_3=fields.Char(string="IQ")
-    iq_4=fields.Char(string="IQ")
-
-    comment_1 = fields.Char(string="Comment")
-    comment_2 = fields.Char(string="Comment")
-    comment_3 = fields.Char(string="Comment")
-    comment_4 = fields.Char(string="Comment")
-
 
     skype_id = fields.Char(string="Skype ID")
     external_ref = fields.Char(string="External Reference")
