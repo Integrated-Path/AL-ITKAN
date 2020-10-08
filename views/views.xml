@@ -210,8 +210,12 @@
                     </group>
                   </group>
                   <group colspan="2" col="2" string="Employment History">
-                     <group>
-                      <field name="employer_name"/>
+                    <div class="d-flex">
+                      <label for="contact_disclaimer"/> <field name="contact_disclaimer" style="width: 30px;"/>
+                      <span class="font-weight-bold" attrs="{'invisible': [('contact_disclaimer', '=', False)]}">YES</span>
+                      <span class="font-weight-bold" attrs="{'invisible': [('contact_disclaimer', '=', True)]}">NO</span>
+                    </div>
+                    <group class="border-top border-black pb-8" attrs="{'invisible': [('contact_disclaimer', '=', False)]}">                      <field name="employer_name"/>
                       <field name="job_title"/>
                       <field name="employer_address"/>
                       <field name="employer_province"/> 
@@ -225,7 +229,7 @@
                       <field name="super_phone"/> 
                       <field name="reason_for_leaving"/>                           
                     </group>
-                    <group>
+                    <group attrs="{'invisible': [('contact_disclaimer', '=', False)]}">
                       <field name="employer_name_0"/>
                       <field name="job_title_0"/>
                       <field name="employer_address_0"/>
@@ -240,7 +244,7 @@
                       <field name="super_phone_0"/> 
                       <field name="reason_for_leaving_0"/>                           
                     </group>
-                    <group>
+                    <group attrs="{'invisible': [('contact_disclaimer', '=', False)]}">
                       <field name="employer_name_1"/>
                       <field name="job_title_1"/>
                       <field name="employer_address_1"/>
@@ -315,52 +319,6 @@
                   <group string="Signature">
                     <field name="signature"/>
                     <field name="sig_date"/>
-                  </group>
-                  <group colspan="2" col="2" string="To be filled by company">
-                    <group>
-                      <field name="int_name_1"/>
-                      <field name="english_1"/>
-                      <field name="comp_1"/>
-                      <field name="personality_1"/>
-                      <field name="look_1"/>
-                      <field name="logic_1"/>
-                      <field name="iq_1"/>
-                      <field name="comment_1"/>
-                    </group>
-                    <group>
-                      <field name="int_name_2"/>
-                      <field name="english_2"/>
-                      <field name="comp_2"/>
-                      <field name="personality_2"/>
-                      <field name="look_2"/>
-                      <field name="logic_2"/>
-                      <field name="iq_2"/>
-                      <field name="comment_2"/>
-                    </group>
-                      
-                      <group>
-                      <field name="int_name_3"/>
-                      <field name="english_3"/>
-                      <field name="comp_3"/>
-                      <field name="personality_3"/>
-                      <field name="look_3"/>
-                      <field name="logic_3"/>
-                      <field name="iq_3"/>
-                      <field name="comment_3"/>
-                    </group>
-                      
-                      <group>
-                      <field name="int_name_4"/>
-                      <field name="english_4"/>
-                      <field name="comp_4"/>
-                      <field name="personality_4"/>
-                      <field name="look_4"/>
-                      <field name="logic_4"/>
-                      <field name="iq_4"/>
-                      <field name="comment_4"/>
-                    </group>
-                      
-                      
                   </group>
                 </xpath>
 

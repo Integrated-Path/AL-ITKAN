@@ -283,8 +283,8 @@ class ItkApplForm(models.Model):
 
     """ Employment History """
 
-    contact_disclaimer = fields.Boolean(string="Can we contact your previous employer(s)")
-
+    contact_disclaimer = fields.Boolean(string="Can we contact your previous employer(s) ?")
+    
     employer_name = fields.Char(string="Employer Names")
     job_title = fields.Char(string="Job Title")
     employer_address = fields.Char(string="Employer addres")
@@ -329,6 +329,7 @@ class ItkApplForm(models.Model):
 
     """ Additional Information """
     union_member = fields.Selection([("yes","YES"),("no","NO")],string="Are you a member of the Iraqi Engineers union?")
+    union_memebr_date = fields.Date("Sense when were you a memeber ?")
     driver_license = fields.Selection([("yes","YES"),("no","NO")],string="Do you have a valid drivers license?")
     driver_license_date = fields.Date(string="Driver license issue Date")
     means_of_transport = fields.Char(string="What is your means of transport?(Personal Car, Public, etc.")
@@ -395,50 +396,6 @@ class ItkApplForm(models.Model):
     letter_rec_2 = fields.Binary(string="Letter of Recommendation 1")
 
 
-
-    """ To be filled by Company """
-    int_name_1 = fields.Char(string="Name")
-    int_name_2 = fields.Char(string="Name")
-    int_name_3 = fields.Char(string="Name")
-    int_name_4 = fields.Char(string="Name")
-
-    english_1 = fields.Char(string="English")
-    english_2 = fields.Char(string="English")
-    english_3 = fields.Char(string="English")
-    english_4 = fields.Char(string="English")
-    
-    comp_1 = fields.Char(string="Computer")
-    comp_2 = fields.Char(string="Computer")
-    comp_3 = fields.Char(string="Computer")
-    comp_4 = fields.Char(string="Computer")
-
-    personality_1 = fields.Char(string="Personality")
-    personality_2 = fields.Char(string="Personality")
-    personality_3 = fields.Char(string="Personality")
-    personality_4 = fields.Char(string="Personality")
-
-    look_1 = fields.Char(string="Look")
-    look_2 = fields.Char(string="Look")
-    look_3 = fields.Char(string="Look")
-    look_4 = fields.Char(string="Look")
-
-    logic_1 =fields.Char(string="Logic")
-    logic_2 =fields.Char(string="Logic")
-    logic_3 =fields.Char(string="Logic")
-    logic_4 =fields.Char(string="Logic")
-
-
-    iq_1=fields.Char(string="IQ")
-    iq_2=fields.Char(string="IQ")
-    iq_3=fields.Char(string="IQ")
-    iq_4=fields.Char(string="IQ")
-
-    comment_1 = fields.Char(string="Comment")
-    comment_2 = fields.Char(string="Comment")
-    comment_3 = fields.Char(string="Comment")
-    comment_4 = fields.Char(string="Comment")
-
-
     skype_id = fields.Char(string="Skype ID")
     external_ref = fields.Char(string="External Reference")
 
@@ -497,62 +454,62 @@ class ItkApplForm(models.Model):
 
 
 class ItkanJob(models.Model):
-   _inherit="hr.job"
+    _inherit="hr.job"
 
-   opening_date = fields.Date(string="Vacancy Opening Date",default=datetime.datetime.now())
-   card_image = fields.Binary(string="Vacany Card Image")
-   internal_ref = fields.Char(string="Internal Reference",readonly=True)
+    governorate = fields.Char("Governorate")
+    opening_date = fields.Date(string="Vacancy Opening Date",default=datetime.datetime.now())
+    card_image = fields.Binary(string="Vacany Card Image")
+    internal_ref = fields.Char(string="Internal Reference",readonly=True)
 
        
 
 
 
-   def create_internal_ref(self):
-    if self.internal_ref:
-        old_ref = self.internal_ref
-    else:
-        rec_name=self.name
-        date=datetime.datetime.now()
-        
-        internal_ref =  str(date)[0:4] + str(date)[6:7] + str(1)
-        return internal_ref
+    def create_internal_ref(self):
+        if self.internal_ref:
+            old_ref = self.internal_ref
+        else:
+            rec_name=self.name
+            date=datetime.datetime.now()
+            
+            internal_ref =  str(date)[0:4] + str(date)[6:7] + str(1)
+            return internal_ref
             
 
 
-   def set_recruit(self):
-      self.opening_date = datetime.datetime.now()
+    def set_recruit(self):
+        self.opening_date = datetime.datetime.now()
       
-      res = super(ItkanJob,self).set_recruit()
+        res = super(ItkanJob,self).set_recruit()
       
-      return res
+        return res
 
 
-   @api.model
-   def create(self,vals):
+    @api.model
+    def create(self,vals):
       
-      res = super(ItkanJob,self).create(vals)
-      res.write({"internal_ref":res.create_internal_ref()})
-
-      return res
+        res = super(ItkanJob,self).create(vals)
+        res.write({"internal_ref":res.create_internal_ref()})
+        return res
 
 
 class ItkanProduct(models.Model):
-   _inherit="product.template"
-   SELECTIONS=[("Dangerous Good","Dangerous Good"),("Dry Ice","Dry Ice")]
+    _inherit="product.template"
+    SELECTIONS=[("Dangerous Good","Dangerous Good"),("Dry Ice","Dry Ice")]
 
-   country_of_origin = fields.Char(string="Country of Origin")
-   dangerous_goods = fields.Selection(SELECTIONS,string="Dangerous Goods and Storage")
+    country_of_origin = fields.Char(string="Country of Origin")
+    dangerous_goods = fields.Selection(SELECTIONS,string="Dangerous Goods and Storage")
 
 
    
 
 
 class ItkanEmployee(models.Model):
-   _inherit = "hr.employee"
-   
-   applicant_id = fields.Many2one("hr.applicant", "Employee Application")
-   DIVISIONS = [("GM office","GM office"),("Technical","Technical"),("Sales","Sales"),("Finance","Finance"),("HRA","HRA"),("Logistics","Logistics")]
-   UNITS = [("Arab North, Middle and South","Arab North, Middle and South"),
+    _inherit = "hr.employee"
+    
+    applicant_id = fields.Many2one("hr.applicant", "Employee Application")
+    DIVISIONS = [("GM office","GM office"),("Technical","Technical"),("Sales","Sales"),("Finance","Finance"),("HRA","HRA"),("Logistics","Logistics")]
+    UNITS = [("Arab North, Middle and South","Arab North, Middle and South"),
             ("Baghdad","Baghdad"),
             ("Cleaning Staff","Cleaning Staff"),
             ("DX","DX"),
@@ -582,7 +539,7 @@ class ItkanEmployee(models.Model):
             ("Technicians","Technicians"),
             ("Training","Training")]
 
-   SUBUNITS=[("Arab North","Arab North"),
+    SUBUNITS=[("Arab North","Arab North"),
             ("AT","AT"),
             ("AT/MM","AT/MM"),
             ("Baghdad, karbalaa and Babel and Karkook","Baghdad, Karbalaa and Babel and Karkook"),
@@ -623,9 +580,9 @@ class ItkanEmployee(models.Model):
             ("XP/MM","XP/MM")]
 
 
-   divisions = fields.Selection(DIVISIONS,string="Division")
-   units = fields.Selection(UNITS,string="Unit")
-   subunits = fields.Selection(SUBUNITS,string="Subunit")
+    divisions = fields.Selection(DIVISIONS,string="Division")
+    units = fields.Selection(UNITS,string="Unit")
+    subunits = fields.Selection(SUBUNITS,string="Subunit")
    
 
 
