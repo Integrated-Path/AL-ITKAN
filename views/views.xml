@@ -215,7 +215,8 @@
                       <span class="font-weight-bold" attrs="{'invisible': [('contact_disclaimer', '=', False)]}">YES</span>
                       <span class="font-weight-bold" attrs="{'invisible': [('contact_disclaimer', '=', True)]}">NO</span>
                     </div>
-                    <group class="border-top border-black pb-8" attrs="{'invisible': [('contact_disclaimer', '=', False)]}">                      <field name="employer_name"/>
+                    <group class="border-top border-black pb-8" attrs="{'invisible': [('contact_disclaimer', '=', False)]}">
+                      <field name="employer_name"/>
                       <field name="job_title"/>
                       <field name="employer_address"/>
                       <field name="employer_province"/> 
