@@ -9,7 +9,7 @@
                 <field name="address_id" position="after">
                     <field name="opening_date"/>
                     <field name="card_image"/>
-                    <field name="governorate"/>
+                    <field name="city" invisible="1"/>
                     <field name="internal_ref"/>
                 </field>
             
