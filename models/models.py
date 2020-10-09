@@ -395,10 +395,6 @@ class ItkApplForm(models.Model):
     letter_rec_1 = fields.Binary(string="Letter of Recommendation 1")
     letter_rec_2 = fields.Binary(string="Letter of Recommendation 1")
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 73722e5ca37c6fe07fbcde77e9e70518e389341b
     skype_id = fields.Char(string="Skype ID")
     external_ref = fields.Char(string="External Reference")
 
