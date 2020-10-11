@@ -630,7 +630,17 @@ class ItkanEmployee(models.Model):
 
 
 
-class ItkanSale(models.Model):
+class ItkanSale(models.Model): #this is implemented because they wanted the sale order date to be editable
     _inherit="sale.order"
 
     date_order = fields.Date(string="Order Date",default=datetime.datetime.now())
+
+
+
+
+class ItkanHelpDeskTicket(models.Model):
+    _inherit="helpdesk.ticket"
+
+
+    uploaded_file = fields.Binary("Uploaded file") 
+    

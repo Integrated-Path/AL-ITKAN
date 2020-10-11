@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ITK_HELPDESK" model="ir.ui.view">
+            <field name="name">ITK_HELPDESK</field>
+            <field name="model">helpdesk.ticket</field>
+            <field name="inherit_id" ref="helpdesk.helpdesk_ticket_view_form"/>
+            <field name="arch" type="xml">
+                <field name="partner_email" position="after">
+                    <field name="uploaded_file"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</odoo>
