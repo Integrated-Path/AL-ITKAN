@@ -15,7 +15,7 @@ AL-ITKAN job Application form adjustment """
 class ItkanJob(models.Model):
     _inherit="hr.job"
 
-    governorate = fields.Char("Governorate")
+    city = fields.Char("City", related="address_id.city")
     opening_date = fields.Date(string="Vacancy Opening Date",default=datetime.datetime.now())
     card_image = fields.Binary(string="Vacany Card Image")
     internal_ref = fields.Char(string="Internal Reference",readonly=True)
@@ -46,7 +46,7 @@ class ItkanJob(models.Model):
         jobs = self.env['hr.job'].search([('internal_ref', 'like', self.format_ref(year, month))], order="internal_ref desc")
         # raise UserError( str( jobs.read(['internal_ref'])) )
         if not jobs:
-            values.update({"internal_ref": self.format_ref(year, month, '0001') })
+            values.update({"internal_ref": self.format_ref(year, month, 1) })
         else:
             job = jobs[0]
             # raise UserError( str(job) )
