@@ -18,7 +18,7 @@ class ItkApplForm(models.Model):
     """ Personal Details """
 
     surname = fields.Char(string="Surname",help="Applicant Surname")
-    arabic_name = fields.Char(string="Arabic Name") #added new
+    arabic_name = fields.Char(string="Arabic Name")
     address = fields.Char(string="address",help="Applicant Address")
     hai = fields.Char(string="Hai",help="address - Hai")
     sec = fields.Char(string="Sec.",help="address - Sec")
@@ -160,7 +160,7 @@ class ItkApplForm(models.Model):
 
 
     highest_acad = fields.Char(string="Highest Academic Qalification")
-    major = fields.Char(string="Major") #added new
+    major = fields.Char(string="Major")
     highest_grad_year = fields.Integer(string="Graduation Year")
     highest_uni = fields.Char(string="University")
     highest_country = fields.Char(string="Country")
@@ -327,7 +327,7 @@ class ItkApplForm(models.Model):
 
     """ Additional Information """
     union_member = fields.Selection([("yes","YES"),("no","NO")],string="Are you a member of the Iraqi Engineers union?")
-    union_memebr_date = fields.Date("Sense when were you a memeber ?")
+    union_member_date = fields.Date("If yes Sense when were you a memeber ?")
     driver_license = fields.Selection([("yes","YES"),("no","NO")],string="Do you have a valid drivers license?")
     driver_license_date = fields.Date(string="Driver license issue Date")
     means_of_transport = fields.Char(string="What is your means of transport?(Personal Car, Public, etc.")
@@ -342,12 +342,12 @@ class ItkApplForm(models.Model):
 
     "Skills 2"
     SKILLS_SET_2 = [("excellent","Excellent"),
-                    ("very good","Very Good"),
+                    ("very_good","Very Good"),
                     ("good","Good"),
                     ("average","Average"),
-                    ("below average","Below Average"),
+                    ("below_average","Below Average"),
                     ("poor","Poor"),
-                    ("very poor","Very Poor")]
+                    ("very_poor","Very Poor")]
 
    
     team_work = fields.Selection(SKILLS_SET_2,string="Team Work skills")

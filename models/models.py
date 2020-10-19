@@ -19,7 +19,12 @@ class ItkanJob(models.Model):
     opening_date = fields.Date(string="Vacancy Opening Date",default=datetime.datetime.now())
     card_image = fields.Binary(string="Vacany Card Image")
     internal_ref = fields.Char(string="Internal Reference",readonly=True)
-
+    type_of_position = fields.Selection([("full_time", "Full Time"), ("part_time", "Part Time")],
+        string="Type Of Position", default="full_time")
+    technical_knowledge = fields.Text("Technical knowledge")
+    behavioral_competencies = fields.Text("Behavioral Competencies")
+    education_language_requirements = fields.Text("Education & Language Requirements")
+    notes = fields.Text("Notes")
 
     def set_recruit(self):
         self.opening_date = datetime.datetime.now()

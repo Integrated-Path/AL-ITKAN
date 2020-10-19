@@ -119,12 +119,12 @@
                       <field name="college_years"/>
                       <field name="college_avg"/>
                     </group>
-                    <group  string="Other Education">
+                    <group  string="Other Education 1">
                       <field name="other_0_name"/>
                       <field name="other_0_years"/>
                       <field name="other_0_avg"/>
                     </group>      
-                    <group  string="Other Education">
+                    <group  string="Other Education 2">
                       <field name="other_1_name"/>
                       <field name="other_1_years"/>
                       <field name="other_1_avg"/>
@@ -285,6 +285,7 @@
                   <group colspan="2" col="2" string="Additional Information">
                     <group>
                       <field name="union_member"/>
+                      <field name="union_member_date" attrs="{'invisible': [('union_member', '!=', 'yes')]}"/>
                       <field name="driver_license"/>
                       <field name="driver_license_date"/>
                       <field name="means_of_transport"/>
