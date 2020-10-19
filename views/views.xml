@@ -337,6 +337,7 @@
                       <field name="no_crim_req"/>
                       <field name="letter_rec_1"/>
                       <field name="letter_rec_2"/>
+                      <field name="cv"/>
                     </group>
                   </group>
                   <group string="Signature">

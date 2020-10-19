@@ -392,6 +392,7 @@ class ItkApplForm(models.Model):
     no_crim_req = fields.Binary(string="No Criminal Record")
     letter_rec_1 = fields.Binary(string="Letter of Recommendation 1")
     letter_rec_2 = fields.Binary(string="Letter of Recommendation 1")
+    cv=fields.Binary(string="CV")
 
     skype_id = fields.Char(string="Skype ID")
     external_ref = fields.Char(string="External Reference")
