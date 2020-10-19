@@ -264,6 +264,7 @@
                   <group colspan="2" col="2" string="Additional Information">
                     <group>
                       <field name="union_member"/>
+                      <field name="union_member_date" attrs="{'invisible': [('union_member', '!=', 'yes')]}"/>
                       <field name="driver_license"/>
                       <field name="driver_license_date"/>
                       <field name="means_of_transport"/>

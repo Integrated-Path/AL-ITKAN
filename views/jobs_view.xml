@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record id="ITK_Job" model="ir.ui.view">
-            <field name="name">ITK_Job</field>
+        <record id="hr_job_form_itkan_extention" model="ir.ui.view">
+            <field name="name">hr_job_form_itkan_extenstoin</field>
             <field name="model">hr.job</field>
             <field name="inherit_id" ref="hr.view_hr_job_form"/>
             <field name="arch" type="xml">
@@ -12,9 +12,30 @@
                     <field name="city" invisible="1"/>
                     <field name="internal_ref"/>
                 </field>
+
+                <field name="no_of_recruitment" position="after">
+                    <field name="type_of_position"/>
+                </field>
+                
+                <xpath expr="//sheet" position="inside">
+                    <div>
+                        <label for="technical_knowledge"/>
+                        <field name="technical_knowledge"/>
+                        <br/>
+
+                        <label for="behavioral_competencies"/>
+                        <field name="behavioral_competencies"/>
+                        <br/>
+
+                        <label for="education_language_requirements"/>
+                        <field name="education_language_requirements"/>
+                        <br/>
+
+                        <label for="notes"/>
+                        <field name="notes"/>
+                    </div>                    
+                </xpath>
             
-
-
             </field>
 
         </record>

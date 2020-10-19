@@ -324,7 +324,7 @@ class ItkApplForm(models.Model):
 
     """ Additional Information """
     union_member = fields.Selection([("yes","YES"),("no","NO")],string="Are you a member of the Iraqi Engineers union?")
-    union_memebr_date = fields.Date("Sense when were you a memeber ?")
+    union_member_date = fields.Date("If yes Sense when were you a memeber ?")
     driver_license = fields.Selection([("yes","YES"),("no","NO")],string="Do you have a valid drivers license?")
     driver_license_date = fields.Date(string="Driver license issue Date")
     means_of_transport = fields.Char(string="What is your means of transport?(Personal Car, Public, etc.")
@@ -339,12 +339,12 @@ class ItkApplForm(models.Model):
 
     "Skills 2"
     SKILLS_SET_2 = [("excellent","Excellent"),
-                    ("very good","Very Good"),
+                    ("very_good","Very Good"),
                     ("good","Good"),
                     ("average","Average"),
-                    ("below average","Below Average"),
+                    ("below_average","Below Average"),
                     ("poor","Poor"),
-                    ("very poor","Very Poor")]
+                    ("very_poor","Very Poor")]
 
    
     team_work = fields.Selection(SKILLS_SET_2)
