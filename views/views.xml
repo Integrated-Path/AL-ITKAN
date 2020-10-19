@@ -119,12 +119,12 @@
                       <field name="college_years"/>
                       <field name="college_avg"/>
                     </group>
-                    <group  string="Other Education">
+                    <group  string="Other Education 1">
                       <field name="other_0_name"/>
                       <field name="other_0_years"/>
                       <field name="other_0_avg"/>
                     </group>      
-                    <group  string="Other Education">
+                    <group  string="Other Education 2">
                       <field name="other_1_name"/>
                       <field name="other_1_years"/>
                       <field name="other_1_avg"/>

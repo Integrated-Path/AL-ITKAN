@@ -18,7 +18,7 @@ class ItkApplForm(models.Model):
     """ Personal Details """
 
     surname = fields.Char(string="Surname",help="Applicant Surname")
-    arabic_name = fields.Char(string="Arabic Name") #added new
+    arabic_name = fields.Char(string="Arabic Name")
     address = fields.Char(string="address",help="Applicant Address")
     hai = fields.Char(string="Hai",help="address - Hai")
     sec = fields.Char(string="Sec.",help="address - Sec")
@@ -160,7 +160,7 @@ class ItkApplForm(models.Model):
 
 
     highest_acad = fields.Char(string="Highest Academic Qalification")
-    major = fields.Char(string="Major") #added new
+    major = fields.Char(string="Major")
     highest_grad_year = fields.Integer(string="Graduation Year")
     highest_uni = fields.Char(string="University")
     highest_country = fields.Char(string="Country")
