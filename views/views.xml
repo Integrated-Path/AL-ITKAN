@@ -9,6 +9,8 @@
                 <field name="partner_name" position="after">
                     <label for="surname">Surname</label>
                     <field name="surname"/>
+                    <label for="arabic_name">Arabic Name</label>
+                    <field name="arabic_name"/>
                 </field>
                 <field name="partner_mobile" position="after">
                     <field name="address"/>
@@ -113,9 +115,28 @@
                     </group>
                     <group  string="College">
                       <field name="college_name"/>
+                      <field name="college_major"/>
                       <field name="college_years"/>
                       <field name="college_avg"/>
-                    </group>        
+                    </group>
+                    <group  string="Other Education">
+                      <field name="other_0_name"/>
+                      <field name="other_0_years"/>
+                      <field name="other_0_avg"/>
+                    </group>      
+                    <group  string="Other Education">
+                      <field name="other_1_name"/>
+                      <field name="other_1_years"/>
+                      <field name="other_1_avg"/>
+                    </group>            
+
+                    <group string="Highest academic qualification">
+                      <field name="highest_acad"/>
+                      <field name="major"/>
+                      <field name="highest_grad_year"/>
+                      <field name="highest_uni"/>
+                      <field name="highest_country"/>
+                    </group>
                   </group>
                   <group colspan="2" col="2"  string="Technical Skills">
                     <group >

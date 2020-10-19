@@ -6,7 +6,7 @@ import datetime
 class ItkApplForm(models.Model):
     _inherit="hr.applicant"
 
-    filling_time = fields.Char("Filling Time", readonly=True)
+    filling_time = fields.Char("Filling Time", readonly=True,help="Time it took for applicant to fill out the form")
 
     SKILL_LEVEL = [("not familiar","Not Familiar"),
                     ("beginner","Beginner"),
@@ -17,13 +17,14 @@ class ItkApplForm(models.Model):
 
     """ Personal Details """
 
-    surname = fields.Char(string="Surname")
-    address = fields.Char(string="address")
-    hai = fields.Char(string="Hai")
-    sec = fields.Char(string="Sec.")
-    st = fields.Char(string="Street")
-    house = fields.Char(string="House")
-    nearest = fields.Char(string="Nearest POR")
+    surname = fields.Char(string="Surname",help="Applicant Surname")
+    arabic_name = fields.Char(string="Arabic Name") #added new
+    address = fields.Char(string="address",help="Applicant Address")
+    hai = fields.Char(string="Hai",help="address - Hai")
+    sec = fields.Char(string="Sec.",help="address - Sec")
+    st = fields.Char(string="Street",help="address - Street")
+    house = fields.Char(string="House",help="address - house No.")
+    nearest = fields.Char(string="Nearest POR",help="Nearest point of reference to the applicant address")
     birthdate = fields.Date(string="Birthdate")
     place_of_birth = fields.Char(string="Place of Birth")
     gender = fields.Selection([("male","Male"),("female","Female")])
@@ -77,13 +78,13 @@ class ItkApplForm(models.Model):
                                      ("very poor","Very Poor")],string="Your Health Status?")
 
     """ Have you suffered or are you suffering from any Terminal Illness or Chronic Disease?"""
-    disease = fields.Selection([("yes","YES"),("no","NO")])
+    disease = fields.Selection([("yes","YES"),("no","NO")],help="Have the applicant ever suffered from Illness or disease")
 
     """ Are there any limitations on your ability to perform in your prospective field of work?"""
-    limitaions = fields.Selection([("yes","YES"),("no","NO")])
+    limitaions = fields.Selection([("yes","YES"),("no","NO")],help="Are there any limitations on your ability to perform in your prospective field of work?")
 
     """Are there any limitations on your ability to engage in all types of travel? Inside or outside Iraq"""
-    limitaions_travel = fields.Selection([("yes","YES"),("no","NO")])
+    limitaions_travel = fields.Selection([("yes","YES"),("no","NO")],help="Are there any limitations on your ability to engage in all types of travel? Inside or outside Iraq?")
 
 
 
@@ -143,6 +144,7 @@ class ItkApplForm(models.Model):
 
 
     college_name = fields.Char(string="College or Institte")
+    college_major=fields.Char(string="Major")
     college_years = fields.Integer(string="# of Years")
     college_avg = fields.Integer(string="Average(%)")
 
@@ -158,6 +160,7 @@ class ItkApplForm(models.Model):
 
 
     highest_acad = fields.Char(string="Highest Academic Qalification")
+    major = fields.Char(string="Major") #added new
     highest_grad_year = fields.Integer(string="Graduation Year")
     highest_uni = fields.Char(string="University")
     highest_country = fields.Char(string="Country")
@@ -173,37 +176,37 @@ class ItkApplForm(models.Model):
 
     preffered_fow = fields.Selection([("technical","Technical"),
                                     ("sales","Sales"),
-                                    ("administration","Administration")])
+                                    ("administration","Administration")],help="Preffered Field of work")
     
     preferred_cp = fields.Selection([("3 years","3 Years"),
                                     ("5 years","5 Years"),
-                                    ("10 years","10 Years")])
+                                    ("10 years","10 Years")],help="Preferred contract Period")
 
     """ Technical Skills """
 
-    skill_0_Desc = fields.Char(string="")
-    skill_0_level = fields.Selection(SKILL_LEVEL)
+    skill_0_Desc = fields.Char(string="Skill description")
+    skill_0_level = fields.Selection(SKILL_LEVEL,string="Skill level")
     
 
-    skill_1_Desc = fields.Char(string="")
-    skill_1_level = fields.Selection(SKILL_LEVEL)                                    
+    skill_1_Desc = fields.Char(string="Skill description")
+    skill_1_level = fields.Selection(SKILL_LEVEL,string="Skill level")                                    
 
 
-    skill_2_Desc = fields.Char(string="")
-    skill_2_level = fields.Selection(SKILL_LEVEL)
+    skill_2_Desc = fields.Char(string="Skill description")
+    skill_2_level = fields.Selection(SKILL_LEVEL,string="Skill level")
 
 
-    skill_3_Desc = fields.Char(string="")
-    skill_3_level = fields.Selection(SKILL_LEVEL)
+    skill_3_Desc = fields.Char(string="Skill description")
+    skill_3_level = fields.Selection(SKILL_LEVEL,string="Skill level")
 
 
 
-    skill_4_Desc = fields.Char(string="")
-    skill_4_level = fields.Selection(SKILL_LEVEL)
+    skill_4_Desc = fields.Char(string="Skill description")
+    skill_4_level = fields.Selection(SKILL_LEVEL,string="Skill level")
 
 
-    skill_5_Desc = fields.Char(string="")
-    skill_5_level = fields.Selection(SKILL_LEVEL)
+    skill_5_Desc = fields.Char(string="Skill description")
+    skill_5_level = fields.Selection(SKILL_LEVEL,string="Skill level")
 
     
     
@@ -227,20 +230,20 @@ class ItkApplForm(models.Model):
 
     """ Sales Skills """
 
-    relationship_building_skill_level= fields.Selection(SKILL_LEVEL)
-    time_management_skill_level= fields.Selection(SKILL_LEVEL)
-    research_information_gathering_skill_level= fields.Selection(SKILL_LEVEL)
-    medical_product_knowledge_skill_level= fields.Selection(SKILL_LEVEL)
-    business_communication_skill_level= fields.Selection(SKILL_LEVEL)
-    client_engagement_skill_level= fields.Selection(SKILL_LEVEL)
-    sales_presentations_demos_skill_level= fields.Selection(SKILL_LEVEL)
-    contract_negotiation_skill_level= fields.Selection(SKILL_LEVEL)
-    closing_skills_skill_level= fields.Selection(SKILL_LEVEL)
-    self_motivated_ambitious_skill_level= fields.Selection(SKILL_LEVEL)
-    adaptability_skill_level= fields.Selection(SKILL_LEVEL)
-    responsibility_skill_level= fields.Selection(SKILL_LEVEL)
-    goal_oriented_skill_level= fields.Selection(SKILL_LEVEL)
-    passionate_about_selling_skill_level= fields.Selection(SKILL_LEVEL)
+    relationship_building_skill_level= fields.Selection(SKILL_LEVEL,string="RelationShip building skill level")
+    time_management_skill_level= fields.Selection(SKILL_LEVEL,string="time management skill level")
+    research_information_gathering_skill_level= fields.Selection(SKILL_LEVEL,string="Research and information gethering skill level")
+    medical_product_knowledge_skill_level= fields.Selection(SKILL_LEVEL,string="medical product knowledge skill level")
+    business_communication_skill_level= fields.Selection(SKILL_LEVEL,string="business communication skill level")
+    client_engagement_skill_level= fields.Selection(SKILL_LEVEL,string="client management skill level")
+    sales_presentations_demos_skill_level= fields.Selection(SKILL_LEVEL,string="sales presentation skill level")
+    contract_negotiation_skill_level= fields.Selection(SKILL_LEVEL,string="contact negotiation skill level")
+    closing_skills_skill_level= fields.Selection(SKILL_LEVEL,string="closing skills skill level")
+    self_motivated_ambitious_skill_level= fields.Selection(SKILL_LEVEL,string="self motivation")
+    adaptability_skill_level= fields.Selection(SKILL_LEVEL,string="Adaptability skill level")
+    responsibility_skill_level= fields.Selection(SKILL_LEVEL,string="responsibility skill level")
+    goal_oriented_skill_level= fields.Selection(SKILL_LEVEL,string="goal oriented skill level")
+    passionate_about_selling_skill_level= fields.Selection(SKILL_LEVEL,string="Passion about selling")
 
 
 
@@ -347,9 +350,9 @@ class ItkApplForm(models.Model):
                     ("very_poor","Very Poor")]
 
    
-    team_work = fields.Selection(SKILLS_SET_2)
-    pressure = fields.Selection(SKILLS_SET_2)
-    travel = fields.Selection(SKILLS_SET_2)
+    team_work = fields.Selection(SKILLS_SET_2,string="Team Work skills")
+    pressure = fields.Selection(SKILLS_SET_2,string="Work under pressure")
+    travel = fields.Selection(SKILLS_SET_2,string="Ability To Travel")
 
 
     """ references non relatives  """
