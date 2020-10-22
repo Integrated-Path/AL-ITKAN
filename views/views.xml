@@ -158,44 +158,44 @@
                   </group>
                   <group colspan="2" col="2" string="Administration Skills">
                     <group>
-                      <field name="business_correspondence_skill_level"/>
-                      <field name="effective_communication_skill_level"/>
-                      <field name="customer_service_skill_level"/>
-                      <field name="team_work_skill_level"/>
-                      <field name="Internet_and_research_skill_level"/>
-                      <field name="ms_office_and_outlook_skill_level"/>
-                      <field name="office_machine_skill_level"/>
-                      <field name="typing_skill_level"/>
+                      <field style="padding-bottom: 28px;" name="business_correspondence_skill_level"/>
+                      <field style="padding-bottom: 28px;" name="effective_communication_skill_level"/>
+                      <field style="padding-bottom: 28px;" name="customer_service_skill_level"/>
+                      <field style="padding-bottom: 28px;" name="team_work_skill_level"/>
+                      <field style="padding-bottom: 28px;" name="Internet_and_research_skill_level"/>
+                      <field style="padding-bottom: 28px;" name="ms_office_and_outlook_skill_level"/>
+                      <field style="padding-bottom: 28px;" name="office_machine_skill_level"/>
+                      <field style="padding-bottom: 28px;" name="typing_skill_level"/>
                     </group>
                     <group>
-                      <field name="time_management_skill_level"/>
-                      <field name="attention_to_detail_level"/>
-                      <field name="goal_oriented_skill_level"/>
-                      <field name="multi_tasking_skill_level"/>
-                      <field name="follow_up_skill_level"/>
-                      <field name="employee_relation_skill_level"/>
-                      <field name="supervision_skill_level"/>
+                      <field style="padding-bottom: 28px;" name="time_management_skill_level"/>
+                      <field style="padding-bottom: 28px;" name="attention_to_detail_level"/>
+                      <field style="padding-bottom: 28px;" name="goal_oriented_skill_level"/>
+                      <field style="padding-bottom: 28px;" name="multi_tasking_skill_level"/>
+                      <field style="padding-bottom: 28px;" name="follow_up_skill_level"/>
+                      <field style="padding-bottom: 28px;" name="employee_relation_skill_level"/>
+                      <field style="padding-bottom: 28px;" name="supervision_skill_level"/>
                     </group>
 
                   </group>
                   <group colspan="2" col="2" string="Sales Skills">
                     <group>
-                      <field name="relationship_building_skill_level"/>
-                      <field name="time_management_skill_level"/>
-                      <field name="research_information_gathering_skill_level"/>
-                      <field name="medical_product_knowledge_skill_level"/>
-                      <field name="business_communication_skill_level"/>
-                      <field name="client_engagement_skill_level"/>
-                      <field name="sales_presentations_demos_skill_level"/>                      
+                      <field style="padding-bottom: 28px;" name="relationship_building_skill_level"/>
+                      <field style="padding-bottom: 28px;" name="time_management_skill_level"/>
+                      <field style="padding-bottom: 28px;" name="research_information_gathering_skill_level"/>
+                      <field style="padding-bottom: 28px;" name="medical_product_knowledge_skill_level"/>
+                      <field style="padding-bottom: 28px;" name="business_communication_skill_level"/>
+                      <field style="padding-bottom: 28px;" name="client_engagement_skill_level"/>
+                      <field style="padding-bottom: 28px;" name="sales_presentations_demos_skill_level"/>                      
                     </group>
                     <group>
-                      <field name="contract_negotiation_skill_level"/>
-                      <field name="closing_skills_skill_level"/>
-                      <field name="self_motivated_ambitious_skill_level"/>
-                      <field name="adaptability_skill_level"/>
-                      <field name="responsibility_skill_level"/>
-                      <field name="goal_oriented_skill_level"/>
-                      <field name="passionate_about_selling_skill_level"/>
+                      <field style="padding-bottom: 28px;" name="contract_negotiation_skill_level"/>
+                      <field style="padding-bottom: 28px;" name="closing_skills_skill_level"/>
+                      <field style="padding-bottom: 28px;" name="self_motivated_ambitious_skill_level"/>
+                      <field style="padding-bottom: 28px;" name="adaptability_skill_level"/>
+                      <field style="padding-bottom: 28px;" name="responsibility_skill_level"/>
+                      <field style="padding-bottom: 28px;" name="goal_oriented_skill_level"/>
+                      <field style="padding-bottom: 28px;" name="passionate_about_selling_skill_level"/>
                     </group>
                   </group>
                   <group colspan="2" col="2" string="Training and Certifications">
@@ -278,20 +278,20 @@
                   </group>
                   <group colspan="2" col="2" string="Additional Information">
                     <group>
-                      <field name="union_member"/>
-                      <field name="union_member_date" attrs="{'invisible': [('union_member', '!=', 'yes')]}"/>
-                      <field name="driver_license"/>
-                      <field name="driver_license_date"/>
-                      <field name="means_of_transport"/>
-                      <field name="good_appoint"/>
-                      <field name="smoking"/>
+                      <field style="padding-bottom: 28px;" name="union_member"/>
+                      <field style="padding-bottom: 28px;" name="union_member_date" attrs="{'invisible': [('union_member', '!=', 'yes')]}"/>
+                      <field style="padding-bottom: 28px;" name="driver_license"/>
+                      <field style="padding-bottom: 28px;" name="driver_license_date"/>
+                      <field style="padding-bottom: 28px;" name="means_of_transport"/>
+                      <field style="padding-bottom: 28px;" name="good_appoint"/>
+                      <field style="padding-bottom: 28px;" name="smoking"/>
                     </group>
                     <group>
-                      <field name="long_hours"/>
-                      <field name="start_date"/>
-                      <field name="planning_to_study"/>
-                      <field name="presently_employed"/>
-                      <field name="contact_employer"/>
+                      <field style="padding-bottom: 28px;" name="long_hours"/>
+                      <field style="padding-bottom: 28px;" name="start_date"/>
+                      <field style="padding-bottom: 28px;" name="planning_to_study"/>
+                      <field style="padding-bottom: 28px;" name="presently_employed"/>
+                      <field style="padding-bottom: 28px;" name="contact_employer"/>
                     </group>
                   </group>
                   <group colspan="2" col="2" string="Other References">

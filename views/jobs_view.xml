@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <!-- job extention -->
         <record id="hr_job_form_itkan_extention" model="ir.ui.view">
             <field name="name">hr_job_form_itkan_extenstoin</field>
             <field name="model">hr.job</field>
@@ -38,6 +39,35 @@
             
             </field>
 
+        </record>
+
+        <!-- recruitment tree extention -->
+        <record id="hr_applicant_list_Itkan" model="ir.ui.view">
+            <field name="name">hr_applicant.list.itkan</field>
+            <field name="model">hr.applicant</field>
+            <field name="inherit_id" ref="hr_recruitment.crm_case_tree_view_job"/>
+            <field name="arch" type="xml">
+
+                <field name="partner_name" position="replace">
+                    <field name="external_ref"/>
+                </field>
+
+            </field>
+        </record>
+
+
+        <!-- recruitment search tree extention -->
+        <record id="hr_applicant_search_Itkan" model="ir.ui.view">
+            <field name="name">hr_applicant.search.itkan</field>
+            <field name="model">hr.applicant</field>
+            <field name="inherit_id" ref="hr_recruitment.hr_applicant_view_search_bis"/>
+            <field name="arch" type="xml">
+
+                <field name="job_id" position="before">
+                    <field name="external_ref"/>
+                </field>
+
+            </field>
         </record>
 
     </data>

@@ -36,9 +36,9 @@ class ItkanJob(models.Model):
 
     def format_ref(self, year, month, id=False):
         if id:
-            return year + '-' +  month + '-' + f'{id:04}'
+            return year + month + f'{id:04}'
         else:
-            return year + '-' +  month
+            return year + month
 
 
     @api.model
@@ -55,7 +55,7 @@ class ItkanJob(models.Model):
         else:
             job = jobs[0]
             # raise UserError( str(job) )
-            vaccany_number = int(job.internal_ref[6:10]) + 1
+            vaccany_number = int(job.internal_ref[4:8]) + 1
             formated_ref = self.format_ref(year, month, vaccany_number)
             values.update({"internal_ref": formated_ref })
 

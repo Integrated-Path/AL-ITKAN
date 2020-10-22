@@ -1,10 +1,12 @@
 from odoo import models, fields, api
+from odoo.exceptions import UserError
 from odoo.tools.translate import _
 import datetime
 
 
 class ItkApplForm(models.Model):
     _inherit="hr.applicant"
+
 
     filling_time = fields.Char("Filling Time", readonly=True,help="Time it took for applicant to fill out the form")
 
@@ -391,11 +393,43 @@ class ItkApplForm(models.Model):
     medical = fields.Binary(string="Medical Test")
     no_crim_req = fields.Binary(string="No Criminal Record")
     letter_rec_1 = fields.Binary(string="Letter of Recommendation 1")
-    letter_rec_2 = fields.Binary(string="Letter of Recommendation 1")
+    letter_rec_2 = fields.Binary(string="Letter of Recommendation 2")
     cv=fields.Binary(string="CV")
 
     skype_id = fields.Char(string="Skype ID")
     external_ref = fields.Char(string="External Reference")
+
+
+
+    @api.model
+    def create(self, values):
+        BINARY_FILES = [('photo', 'Photo'), ('national_id', "National ID"), ('citizenship_cert', "Citizenship Certificate"),
+            ('accomodation_id',"Accomodation ID"),  ('uni_degree', "University Degree"), ('medical', "Medical Record"),
+            ('no_crim_req', "No Criminal Record Proof"), ('letter_rec_1', "Letter Of Recommendation 1"), ('letter_rec_2', "Letter Of Recommendation 2"),
+            ('cv', "CV")]
+        record = super(ItkApplForm, self).create(values)
+        # raise UserError(str(values))
+        for attach in BINARY_FILES:
+            if values[attach[0]]:
+                record.message_post(body="%s Attachment" % (attach[1]), attachments=[(attach[1], values[attach[0]])])
+            else:
+                pass
+        return record
+    
+    
+    def write(self, values):
+        BINARY_FILES = [('photo', 'Photo'), ('national_id', "National ID"), ('citizenship_cert', "Citizenship Certificate"),
+            ('accomodation_id',"Accomodation ID"),  ('uni_degree', "University Degree"), ('medical', "Medical Record"),
+            ('no_crim_req', "No Criminal Record Proof"), ('letter_rec_1', "Letter Of Recommendation 1"), ('letter_rec_2', "Letter Of Recommendation 2"),
+            ('cv', "CV")]
+        for attach in BINARY_FILES:
+            if attach[0] in values:
+                self.message_post(body="%s Attachment" % (attach[1]), attachments=[(attach[1], values[attach[0]])])
+            else:
+                pass
+        res = super(ItkApplForm, self).write(values)
+        return res
+
 
     def create_employee_from_applicant(self):
         """ Create an hr.employee from the hr.applicants """
