@@ -245,8 +245,6 @@
                       <field name="to_date"/>
                       <field name="starting_slry"/>
                       <field name="ending_slry"/>
-                      <field name="from_date"/>
-                      <field name="to_date"/>
                       <field name="supervisor"/>
                       <field name="super_phone"/> 
                       <field name="reason_for_leaving"/>                           
@@ -260,8 +258,6 @@
                       <field name="to_date_0"/>
                       <field name="starting_slry_0"/>
                       <field name="ending_slry_0"/>
-                      <field name="from_date_0"/>
-                      <field name="to_date_0"/>
                       <field name="supervisor_0"/>
                       <field name="super_phone_0"/> 
                       <field name="reason_for_leaving_0"/>                           
@@ -275,8 +271,6 @@
                       <field name="to_date_1"/>
                       <field name="starting_slry_1"/>
                       <field name="ending_slry_1"/>
-                      <field name="from_date_1"/>
-                      <field name="to_date_1"/>
                       <field name="supervisor_1"/>
                       <field name="super_phone_1"/> 
                       <field name="reason_for_leaving_1"/>                           
