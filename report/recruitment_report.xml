@@ -45,7 +45,7 @@
         <template id="print_hr_applicant_record">
             <t t-call="web.html_container">
                 <t t-set="o" t-value="docs"/>
-                <t t-call="AL-ITKAN.custom_external_layout">
+                <t t-call="al-itkan.custom_external_layout">
                     <div class="page h-100">
                         <style>
                             table, th,td{
@@ -154,12 +154,13 @@
                                 <b>Father</b>
                                 <span t-esc="o.father_profession"
                                       style="border-bottom: 1px dotted;min-width:100px;"/>
+                                <br/>
                                 The Profession of your
                                 <b>Mother</b>
                                 <span t-esc="o.mother_profession"
                                       style="border-bottom: 1px dotted;min-width:100px;"/>
-                                List the <b>1 st Name</b> and <b>profession</b> of <b>your Brothers and Sisters
-                                </b> (Including<b>Yourself</b>) in <b>chronological</b> order:
+                                <br/>
+                                Brother &amp; Sisters :
                             </p>
                             <table border="1" width="100%" style="border-collapse: collapse;">
                                 <thead>
@@ -175,33 +176,26 @@
                                 <tbody>
                                     <tr>
                                         <td style="text-align:center;">1</td>
-                                        <td style="text-align:center;" t-esc="o.first_name"></td>
-                                        <td style="text-align:center;" t-esc="o.profession"></td>
-                                        <td style="text-align:center;">5</td>
-                                        <td style="text-align:center;" t-esc="o.first_name_3"></td>
-                                        <td style="text-align:center;" t-esc="o.profession_3"></td>
+                                        <td style="text-align:center;"><span t-esc="o.first_name"/></td>
+                                        <td style="text-align:center;"><span t-esc="o.profession"/></td>
+                                        <td style="text-align:center;">4</td>
+                                        <td style="text-align:center;"><span t-esc="o.first_name_2"/></td>
+                                        <td style="text-align:center;"><span t-esc="o.profession_2"/></td>
                                     </tr>
                                     <tr>
                                         <td style="text-align:center;">2</td>
-                                        <td style="text-align:center;" t-esc="o.first_name_0"></td>
-                                        <td style="text-align:center;" t-esc="o.profession_0"></td>
-                                        <td style="text-align:center;">6</td>
-                                        <td style="text-align:center;"></td>
-                                        <td style="text-align:center;"></td>
+                                        <!-- <td style="text-align:center;" t-esc="o.first_name_0"></td> -->
+                                        <td style="text-align:center;"><span t-esc="o.first_name_0"/></td>
+                                        <td style="text-align:center;"><span t-esc="o.profession_0"/></td>
+                                        <td style="text-align:center;">5</td>
+                                        <td style="text-align:center;"><span t-esc="o.first_name_3"/></td>
+                                        <td style="text-align:center;"><span t-esc="o.profession_3"/></td>
                                     </tr>
                                     <tr>
                                         <td style="text-align:center;">3</td>
                                         <td style="text-align:center;" t-esc="o.first_name_1"></td>
                                         <td style="text-align:center;" t-esc="o.profession_1"></td>
-                                        <td style="text-align:center;">7</td>
-                                        <td style="text-align:center;"></td>
-                                        <td style="text-align:center;"></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="text-align:center;">4</td>
-                                        <td style="text-align:center;" t-esc="o.first_name_2"></td>
-                                        <td style="text-align:center;" t-esc="o.profession_2"></td>
-                                        <td style="text-align:center;">8</td>
+                                        <td style="text-align:center;">6</td>
                                         <td style="text-align:center;"></td>
                                         <td style="text-align:center;"></td>
                                     </tr>
@@ -494,7 +488,9 @@
                                     <tr>
                                         <td style="text-align:center;">College or Institute</td>
                                         <td style="text-align:center;">
-                                            <t t-esc="o.college_name"/>
+                                            <p> Name: <span t-esc="o.college_name"/>
+                                            | Major: <span t-esc="o.college_major"/>
+                                            </p>
                                         </td>
                                         <td style="text-align:center;">
                                             <t t-esc="o.college_years"/>
@@ -518,18 +514,30 @@
                                 </tbody>
                             </table>
                             <p>
-                                <span style="border-bottom: 1px solid;">Highest Academic Qualification:
+                                <span style="border-bottom: 1px solid; margin-top: 10px;">Highest Academic Qualification: 
                                 </span>
-                                <span></span>
+                                <span t-esc="o.highest_acad"/>
                             </p>
                             <p>
                                 <span>
-                                    <span style="border-bottom: 1px solid;">Graduation Year:</span>
-                                    <span>.........................</span>
+                                    <span style="border-bottom: 1px solid;">Major: </span>
+                                    <span t-esc="o.major"/>
+                                    &#8194;
                                 </span>
                                 <span>
-                                    <span style="border-bottom: 1px solid;">University/ Country:</span>
-                                    <span>...........................</span>
+                                    <span style="border-bottom: 1px solid;">Graduation Year:</span>
+                                    <span t-esc="o.highest_grad_year"/>
+                                    &#8194;
+                                </span>
+                                <span>
+                                    <span style="border-bottom: 1px solid;">University:</span>
+                                    <span t-esc="o.highest_uni"/>
+                                    &#8194;
+                                </span>
+                                <span>
+                                    <span style="border-bottom: 1px solid;">Country:</span>
+                                    <span t-esc="o.highest_country"/>
+                                    &#8194;
                                 </span>
                             </p>
                             <h3>
@@ -2239,17 +2247,23 @@
                             </table>
                         </div>
                         <div style="margin-top: 48px;">
-                            <h2 style="text-align:center;text-decoration: underline;margin-bottom: 36px;">EMPLOYMENT
-                                HISTORY
+                            <h2 style="text-align:center;text-decoration: underline;margin-bottom: 36px;">
+                                EMPLOYMENT HISTORY
                             </h2>
-                            <p>List names of employers with present or last employer listed first:</p>
+                            <p>May we contact current employers before you are offered a position?
+                                <span>
+                                    <t t-if="o.contact_disclaimer">
+                                        Yes
+                                    </t>
+                                    <t t-else="">
+                                        No
+                                    </t>
+                                </span>
+                            </p>
                             <table border="1" width="100%" style="border-collapse: collapse;">
                                 <tbody>
                                     <tr>
-                                        <td colspan="2">May we contact current employers before you are offered a
-                                            position?
-                                            _____
-                                        </td>
+                                        <td colspan="2">List names of employers</td>
                                     </tr>
                                     <tr>
                                         <td style="height: 50px;vertical-align: top;">Name of Employer:
@@ -2260,33 +2274,35 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="height: 50px;vertical-align: top;">Address:</td>
+                                        <td style="height: 50px;vertical-align: top;">Address: <span t-esc="o.employer_address"/></td>
                                         <td style="height: 50px;vertical-align: top;">Dates of Employment:
                                             <p>
                                                 <span>From:</span>
-                                                <span></span>
+                                                <span t-esc="o.from_date"/>
+                                                <br/>
                                                 <span>To:</span>
-                                                <span></span>
+                                                <span t-esc="o.to_date"/>
                                             </p>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="height: 50px;vertical-align: top;">Province:</td>
+                                        <td style="height: 50px;vertical-align: top;">Province: <span t-esc="o.employer_province"/></td>
                                         <td style="height: 50px;vertical-align: top;">Salary:
                                             <p>
                                                 <span>Starting pay:</span>
-                                                <span></span>
+                                                <span t-esc="o.starting_slry"/>
+                                                <br/>
                                                 <span>Ending pay:</span>
-                                                <span></span>
+                                                <span t-esc="o.ending_slry" />
                                             </p>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td style="height: 50px;vertical-align: top;">
-                                            <p>Supervisor:</p>
-                                            <p>Telephone:</p>
+                                            <p>Supervisor Telephone:</p>
+                                            <span t-esc="super_phone"/>
                                         </td>
-                                        <td style="height: 50px;vertical-align: top;">Reason for Leaving:</td>
+                                        <td style="height: 50px;vertical-align: top;">Reason for Leaving: <span t-esc="o.reason_for_leaving"/></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -2295,7 +2311,6 @@
                             <h2 style="text-align:center;text-decoration: underline;margin-bottom: 36px;">ADDITIONAL
                                 INFORMATION
                             </h2>
-                            <p>List names of employers with present or last employer listed first:</p>
                             <ul>
                                 <li>Are you a Member of The Iraqi Engineers Union?
                                     <t t-if="o.union_member == 'yes'">
@@ -2417,7 +2432,7 @@
                                     <tr>
                                         <td>Team work capability</td>
                                         <td>
-                                            <t t-if="o.passionate_about_selling_skill_level == 'expert'">
+                                            <t t-if="o.team_work == 'excellent'">
                                                 True
                                             </t>
                                             <t t-else="">
@@ -2425,7 +2440,7 @@
                                             </t>
                                         </td>
                                         <td>
-                                            <t t-if="o.passionate_about_selling_skill_level == 'expert'">
+                                            <t t-if="o.team_work == 'very good' or o.team_work == 'very_good'">
                                                 True
                                             </t>
                                             <t t-else="">
@@ -2433,7 +2448,7 @@
                                             </t>
                                         </td>
                                         <td>
-                                            <t t-if="o.passionate_about_selling_skill_level == 'expert'">
+                                            <t t-if="o.team_work == 'good'">
                                                 True
                                             </t>
                                             <t t-else="">
@@ -2441,7 +2456,7 @@
                                             </t>
                                         </td>
                                         <td>
-                                            <t t-if="o.passionate_about_selling_skill_level == 'expert'">
+                                            <t t-if="o.team_work == 'average'">
                                                 True
                                             </t>
                                             <t t-else="">
@@ -2449,7 +2464,7 @@
                                             </t>
                                         </td>
                                         <td>
-                                            <t t-if="o.passionate_about_selling_skill_level == 'expert'">
+                                            <t t-if="o.team_work == 'below_average' or o.team_work == 'below average'">
                                                 True
                                             </t>
                                             <t t-else="">
@@ -2457,7 +2472,7 @@
                                             </t>
                                         </td>
                                         <td>
-                                            <t t-if="o.passionate_about_selling_skill_level == 'expert'">
+                                            <t t-if="o.team_work == 'poor'">
                                                 True
                                             </t>
                                             <t t-else="">
@@ -2465,7 +2480,7 @@
                                             </t>
                                         </td>
                                         <td>
-                                            <t t-if="o.passionate_about_selling_skill_level == 'expert'">
+                                            <t t-if="o.team_work == 'very_poor' or o.team_work == 'very poor'">
                                                 True
                                             </t>
                                             <t t-else="">
@@ -2475,37 +2490,124 @@
                                     </tr>
                                     <tr>
                                         <td>Working under pressure</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>
+                                            <t t-if="o.pressure == 'excellent'">
+                                                True
+                                            </t>
+                                            <t t-else="">
+                                                -
+                                            </t>
+                                        </td>
+                                        <td>
+                                            <t t-if="o.pressure == 'very good' or o.pressure == 'very_good'">
+                                                True
+                                            </t>
+                                            <t t-else="">
+                                                -
+                                            </t>
+                                        </td>
+                                        <td>
+                                            <t t-if="o.pressure == 'good'">
+                                                True
+                                            </t>
+                                            <t t-else="">
+                                                -
+                                            </t>
+                                        </td>
+                                        <td>
+                                            <t t-if="o.pressure == 'average'">
+                                                True
+                                            </t>
+                                            <t t-else="">
+                                                -
+                                            </t>
+                                        </td>
+                                        <td>
+                                            <t t-if="o.pressure == 'below_average' or o.pressure == 'below average'">
+                                                True
+                                            </t>
+                                            <t t-else="">
+                                                -
+                                            </t>
+                                        </td>
+                                        <td>
+                                            <t t-if="o.pressure == 'poor'">
+                                                True
+                                            </t>
+                                            <t t-else="">
+                                                -
+                                            </t>
+                                        </td>
+                                        <td>
+                                            <t t-if="o.pressure == 'very_poor' or o.pressure == 'very poor'">
+                                                True
+                                            </t>
+                                            <t t-else="">
+                                                -
+                                            </t>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>Long distances traveling</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>
+                                            <t t-if="o.travel == 'excellent'">
+                                                True
+                                            </t>
+                                            <t t-else="">
+                                                -
+                                            </t>
+                                        </td>
+                                        <td>
+                                            <t t-if="o.travel == 'very good' or o.travel == 'very_good'">
+                                                True
+                                            </t>
+                                            <t t-else="">
+                                                -
+                                            </t>
+                                        </td>
+                                        <td>
+                                            <t t-if="o.travel == 'good'">
+                                                True
+                                            </t>
+                                            <t t-else="">
+                                                -
+                                            </t>
+                                        </td>
+                                        <td>
+                                            <t t-if="o.travel == 'average'">
+                                                True
+                                            </t>
+                                            <t t-else="">
+                                                -
+                                            </t>
+                                        </td>
+                                        <td>
+                                            <t t-if="o.travel == 'below_average' or o.travel == 'below average'">
+                                                True
+                                            </t>
+                                            <t t-else="">
+                                                -
+                                            </t>
+                                        </td>
+                                        <td>
+                                            <t t-if="o.travel == 'poor'">
+                                                True
+                                            </t>
+                                            <t t-else="">
+                                                -
+                                            </t>
+                                        </td>
+                                        <td>
+                                            <t t-if="o.travel == 'very_poor' or o.travel == 'very poor'">
+                                                True
+                                            </t>
+                                            <t t-else="">
+                                                -
+                                            </t>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
-                            <ul>
-                                <li>
-                                    <h4>If you have any additional more skills please describe below:</h4>
-                                </li>
-                            </ul>
-                            <p>
-                                .......................................................
-                                .......................................................
-                                .......................................................
-                                .......................................................
-                            </p>
                         </div>
                         <div style="margin-top: 48px;" t-if="o.ref_name">
                             <h2 style="text-align:center;text-decoration: underline;margin-bottom: 36px;">REFRENCES
@@ -2673,8 +2775,29 @@
                                             <t t-else="">
                                                 <input type="checkbox" style="border: 1px solid;"/>
                                             </t>
-                                            (2) Reference letters and a letter of recommendation from the previous
-                                            employer if applicable.
+                                            Letter Of Recommendation 1
+                                        </span>
+                                    </p>
+                                    <p>
+                                        <span>
+                                            <t t-if="o.letter_rec_2">
+                                                <input type="checkbox" checked="checked" style="border: 1px solid;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <input type="checkbox" style="border: 1px solid;"/>
+                                            </t>
+                                            Letter Of Recommendation 2
+                                        </span>
+                                    </p>
+                                    <p>
+                                        <span>
+                                            <t t-if="o.cv">
+                                                <input type="checkbox" checked="checked" style="border: 1px solid;"/>
+                                            </t>
+                                            <t t-else="">
+                                                <input type="checkbox" style="border: 1px solid;"/>
+                                            </t>
+                                            C.V.
                                         </span>
                                     </p>
                                 </div>
@@ -2689,7 +2812,7 @@
                 string="HR Applicant"
                 model="hr.applicant"
                 report_type="qweb-pdf"
-                name="AL-ITKAN.print_hr_applicant_record"
-                file="AL-ITKAN.print_hr_applicant_record"/>
+                name="al-itkan.print_hr_applicant_record"
+                file="al-itkan.print_hr_applicant_record"/>
     </data>
 </odoo>
