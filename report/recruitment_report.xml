@@ -586,8 +586,8 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>
-                                            <t t-esc="o.skill_0_Desc" style="background-color:#DB6A6A;"/>
+                                        <td style="background-color:#DB6A6A;">
+                                            <t t-esc="o.skill_0_Desc"/>
                                         </td>
                                         <td>
                                             <t t-if="o.skill_0_level == 'not familiar'">
@@ -631,8 +631,8 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>
-                                            <t t-esc="o.skill_1_Desc" style="background-color:#DB6A6A;"/>
+                                        <td style="background-color:#DB6A6A;">
+                                            <t t-esc="o.skill_1_Desc"/>
                                         </td>
                                         <td>
                                             <t t-if="o.skill_1_level == 'not familiar'">
