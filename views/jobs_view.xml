@@ -3,7 +3,7 @@
     <data>
         <!-- job extention -->
         <record id="hr_job_form_itkan_extention" model="ir.ui.view">
-            <field name="name">hr_job_form_itkan_extenstoin</field>
+            <field name="name">hr_job_form_itkan_extenstion</field>
             <field name="model">hr.job</field>
             <field name="inherit_id" ref="hr.view_hr_job_form"/>
             <field name="arch" type="xml">
@@ -14,7 +14,16 @@
                     <field name="internal_ref"/>
                 </field>
 
-                <field name="no_of_recruitment" position="after">
+                <xpath expr="//h1" position="after">
+                    <h4>
+                        <!-- <field name="url" widget="html"/> -->
+                        <field name="url"/>
+                        <label for="private_job"/>
+                        <field name="private_job"/>
+                    </h4>
+                </xpath>
+
+                <field name="no_of_recruitment" position="before">
                     <field name="type_of_position"/>
                 </field>
                 

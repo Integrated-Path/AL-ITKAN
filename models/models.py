@@ -24,13 +24,20 @@ class ItkanJob(models.Model):
     technical_knowledge = fields.Text("Technical knowledge")
     behavioral_competencies = fields.Text("Behavioral Competencies")
     education_language_requirements = fields.Text("Education & Language Requirements")
+    url = fields.Html("URL", compute="_get_url")
+    private_job = fields.Boolean("PRIVATE JOB: ")
     notes = fields.Text("Notes")
+
+
+    def _get_url(self):
+        for rcd in self:
+            rcd.url = f"""
+                <a href='https://jobs.alitkan.com/jobs/description?job_id={rcd.id}' target='_blank'>
+                    https://jobs.alitkan.com/jobs/description?job_id={rcd.id}</a>"""
 
     def set_recruit(self):
         self.opening_date = datetime.datetime.now()
-      
         res = super(ItkanJob,self).set_recruit()
-      
         return res
 
 
@@ -57,9 +64,9 @@ class ItkanJob(models.Model):
             # raise UserError( str(job) )
             vaccany_number = int(job.internal_ref[4:8]) + 1
             formated_ref = self.format_ref(year, month, vaccany_number)
-            values.update({"internal_ref": formated_ref })
+            values.update({"internal_ref": formated_ref})
 
-
+        values.update({"state": "open"})
         return super(ItkanJob, self).create(values)
 
 
@@ -169,5 +176,11 @@ class ItkanHelpDeskTicket(models.Model):
     _inherit="helpdesk.ticket"
 
 
-    uploaded_file = fields.Binary("Uploaded file") 
-    
+    uploaded_file = fields.Binary() 
+    phone_number = fields.Char()
+    hospital_name = fields.Char()
+    province = fields.Char()
+    unit_type = fields.Char()
+    unit_serial_number = fields.Char()
+    user_description = fields.Text()
+    brand_name = fields.Char()
