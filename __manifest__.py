@@ -30,7 +30,7 @@
         'views/product_view.xml',
         "views/employee_view.xml",
         "views/jobs_view.xml",
-        "report/recruitment_report.xml"
+        "report/recruitment_report.xml",
     ],
     # only loaded in demonstration mode
     'demo': [
