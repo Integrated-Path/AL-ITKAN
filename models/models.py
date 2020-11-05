@@ -8,10 +8,6 @@ import datetime
 AL-ITKAN job Application form adjustment """
 
 
-
-
-
-
 class ItkanJob(models.Model):
     _inherit="hr.job"
 
@@ -168,19 +164,3 @@ class ItkanSale(models.Model): #this is implemented because they wanted the sale
     _inherit="sale.order"
 
     date_order = fields.Date(string="Order Date",default=datetime.datetime.now())
-
-
-
-
-class ItkanHelpDeskTicket(models.Model):
-    _inherit="helpdesk.ticket"
-
-
-    uploaded_file = fields.Binary() 
-    phone_number = fields.Char()
-    hospital_name = fields.Char()
-    province = fields.Char()
-    unit_type = fields.Char()
-    unit_serial_number = fields.Char()
-    user_description = fields.Text()
-    brand_name = fields.Char()
