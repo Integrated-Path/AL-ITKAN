@@ -411,7 +411,7 @@ class ItkApplForm(models.Model):
         # raise UserError(str(values))
         for attach in BINARY_FILES:
             if values[attach[0]]:
-                record.message_post(body="%s Attachment" % (attach[1]), attachments=[(attach[1], values[attach[0]])])
+                record.message_post(body="%s Attachment" % (attach[1]), attachments=[(attach[1] + '.pdf', values[attach[0]])])
             else:
                 pass
         return record
@@ -424,7 +424,7 @@ class ItkApplForm(models.Model):
             ('cv', "CV")]
         for attach in BINARY_FILES:
             if attach[0] in values:
-                self.message_post(body="%s Attachment" % (attach[1]), attachments=[(attach[1], values[attach[0]])])
+                self.message_post(body="%s Attachment" % (attach[1]), attachments=[(attach[1] +  '.pdf', values[attach[0]])])
             else:
                 pass
         res = super(ItkApplForm, self).write(values)
