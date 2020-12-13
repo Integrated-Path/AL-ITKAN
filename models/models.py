@@ -76,7 +76,11 @@ class ItkanProduct(models.Model):
 
    
 
+class EmployeePublic(models.Model):
+    _inherit = 'hr.employee.public'
 
+    applicant_id = fields.Many2one("hr.applicant", "Employee Application")
+        
 class ItkanEmployee(models.Model):
     _inherit = "hr.employee"
     
