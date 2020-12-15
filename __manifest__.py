@@ -32,8 +32,4 @@
         "views/jobs_view.xml",
         "report/recruitment_report.xml",
     ],
-    # only loaded in demonstration mode
-    'demo': [
-        'demo/demo.xml',
-    ],
 }

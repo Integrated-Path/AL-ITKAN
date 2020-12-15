@@ -9,7 +9,8 @@
                 <xpath expr="//sheet//group//group//field[@name='department_id']" position="after">
                     
                     <field name="divisions"/>
-                    <field name = "units"/>
+                    <field name="units"/>
+                    <field name="start_date"/>
                 </xpath>
                     
                 <xpath expr="//sheet//group//group//field[@name='work_location']" position="after">
