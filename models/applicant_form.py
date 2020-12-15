@@ -131,39 +131,39 @@ class ItkApplForm(models.Model):
 
     """ Education """
     primary_name = fields.Char(string="Name")
-    primary_years = fields.Integer(string="# of Years")
+    primary_years = fields.Char(string="# of Years")
     primary_avg = fields.Integer(string="Average(%)")
 
 
     Intermediate_name = fields.Char(string="Integerermediate")
-    Intermediate_years = fields.Integer(string="# of Years")
+    Intermediate_years = fields.Char(string="# of Years")
     Intermediate_avg = fields.Integer(string="Average(%)")
 
 
     secondary_name = fields.Char(string="Secondary")
-    secondary_years = fields.Integer(string="# of Years")
+    secondary_years = fields.Char(string="# of Years")
     secondary_avg = fields.Integer(string="Average(%)")
 
 
     college_name = fields.Char(string="College or Institte")
     college_major=fields.Char(string="Major")
-    college_years = fields.Integer(string="# of Years")
+    college_years = fields.Char(string="# of Years")
     college_avg = fields.Integer(string="Average(%)")
 
 
     other_0_name = fields.Char(string="Other ")
-    other_0_years = fields.Integer(string="# of Years")
+    other_0_years = fields.Char(string="# of Years")
     other_0_avg = fields.Integer(string="Average(%)")
 
 
     other_1_name = fields.Char(string="Other 1")
-    other_1_years = fields.Integer(string="# of Years")
+    other_1_years = fields.Char(string="# of Years")
     other_1_avg = fields.Integer(string="Average(%)")
 
 
     highest_acad = fields.Char(string="Highest Academic Qalification")
     major = fields.Char(string="Major")
-    highest_grad_year = fields.Integer(string="Graduation Year")
+    highest_grad_year = fields.Char(string="Graduation Year")
     highest_uni = fields.Char(string="University")
     highest_country = fields.Char(string="Country")
 
@@ -252,32 +252,32 @@ class ItkApplForm(models.Model):
     "Training and Certifications"
 
     t0 = fields.Char(string="Certifiacate 1")
-    t0_year = fields.Integer(string="Year")
+    t0_year = fields.Char(string="Year")
     t0_awarded_by = fields.Char(string="Awarded By")
     t0_country_city = fields.Char(string="Country/City")
 
     t1 = fields.Char(string="Certifiacate 2")
-    t1_year = fields.Integer(string="Year")
+    t1_year = fields.Char(string="Year")
     t1_awarded_by = fields.Char(string="Awarded By")
     t1_country_city = fields.Char(string="Country/City")
 
     t2 = fields.Char(string="Certifiacate 3")
-    t2_year = fields.Integer(string="Year")
+    t2_year = fields.Char(string="Year")
     t2_awarded_by = fields.Char(string="Awarded By")
     t2_country_city = fields.Char(string="Country/City")
 
     t3 = fields.Char(string="Certifiacate 4")
-    t3_year = fields.Integer(string="Year")
+    t3_year = fields.Char(string="Year")
     t3_awarded_by = fields.Char(string="Awarded By")
     t3_country_city = fields.Char(string="Country/City")
 
     t4 = fields.Char(string="Certifiacate 5")
-    t4_year = fields.Integer(string="Year")
+    t4_year = fields.Char(string="Year")
     t4_awarded_by = fields.Char(string="Awarded By")
     t4_country_city = fields.Char(string="Country/City")
 
     t5 = fields.Char(string="Certifiacate 6")
-    t5_year = fields.Integer(string="Year")
+    t5_year = fields.Char(string="Year")
     t5_awarded_by = fields.Char(string="Awarded By")
     t5_country_city = fields.Char(string="Country/City")
 
@@ -411,7 +411,7 @@ class ItkApplForm(models.Model):
         # raise UserError(str(values))
         for attach in BINARY_FILES:
             if values[attach[0]]:
-                record.message_post(body="%s Attachment" % (attach[1]), attachments=[(attach[1], values[attach[0]])])
+                record.message_post(body="%s Attachment" % (attach[1]), attachments=[(attach[1] + '.pdf', values[attach[0]])])
             else:
                 pass
         return record
@@ -424,7 +424,7 @@ class ItkApplForm(models.Model):
             ('cv', "CV")]
         for attach in BINARY_FILES:
             if attach[0] in values:
-                self.message_post(body="%s Attachment" % (attach[1]), attachments=[(attach[1], values[attach[0]])])
+                self.message_post(body="%s Attachment" % (attach[1]), attachments=[(attach[1] +  '.pdf', values[attach[0]])])
             else:
                 pass
         res = super(ItkApplForm, self).write(values)
