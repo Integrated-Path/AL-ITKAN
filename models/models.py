@@ -72,6 +72,7 @@ class ItkanProduct(models.Model):
 
     country_of_origin = fields.Char(string="Country of Origin")
     dangerous_goods = fields.Selection(SELECTIONS,string="Dangerous Goods and Storage")
+    moq = fields.Integer(string="Minimum Order Quantity")
 
 
    
