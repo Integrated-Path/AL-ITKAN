@@ -12,6 +12,8 @@
                         <field name="country_of_origin"/>
                         <field name="dangerous_goods"  />
                         <field name="moq"/>
+                        <field name="specifications"/>
+                        <field name="length"/>
 
                 </xpath>
                 
