@@ -70,76 +70,76 @@
                             <div>
                                 <p style="line-height: 35px;margin: 0;">
                                     <span style="margin:0px 4px 0px 2px;">
-                                        <b style="border-bottom: 1px solid;background-color:#DB6A6A;">Reference:</b>
+                                        <b style="border-bottom: 1px solid;background-color:#FAEBD7;">Reference:</b>
                                         <span t-esc="o.external_ref" style="border-bottom: 1px dotted;min-width:150px;"/>
                                     </span>
                                     <span style="margin:0px 4px 0px 2px;">
-                                        <b style="border-bottom: 1px solid;background-color:#DB6A6A;">Surname:</b>
+                                        <b style="border-bottom: 1px solid;background-color:#FAEBD7;">Surname:</b>
                                         <span t-esc="o.surname" style="border-bottom: 1px dotted;min-width:150px;"/>
                                     </span>
                                     <span style="margin:0px 4px 0px 2px;">
-                                        <b style="border-bottom: 1px solid;background-color:#DB6A6A;">Telephone Number:</b>
+                                        <b style="border-bottom: 1px solid;background-color:#FAEBD7;">Telephone Number:</b>
                                         <span t-esc="o.partner_phone"
                                               style="border-bottom: 1px dotted;min-width:150px;"/>
                                     </span>
                                     <span style="margin:0px 4px 0px 2px;">
-                                        <b style="border-bottom: 1px solid;background-color:#DB6A6A;">Email Address:</b>
+                                        <b style="border-bottom: 1px solid;background-color:#FAEBD7;">Email Address:</b>
                                         <span t-esc="o.email_from" style="border-bottom: 1px dotted;min-width:150px;"/>
                                     </span>
                                     <span style="margin:0px 4px 0px 2px;">
-                                        <b style="border-bottom: 1px solid;background-color:#DB6A6A;">Address:</b>
+                                        <b style="border-bottom: 1px solid;background-color:#FAEBD7;">Address:</b>
                                         <span t-esc="o.address" style="border-bottom: 1px dotted;min-width:100px;"/>
                                     </span>
                                     <span style="margin:0px 4px 0px 2px;">
-                                        <b style="border-bottom: 1px solid;background-color:#DB6A6A;">Hai:</b>
+                                        <b style="border-bottom: 1px solid;background-color:#FAEBD7;">Hai:</b>
                                         <span t-esc="o.hai" style="border-bottom: 1px dotted;min-width:100px;"/>
                                     </span>
                                     <span style="margin:0px 4px 0px 2px;">
-                                        <b style="border-bottom: 1px solid;background-color:#DB6A6A;">Sec:</b>
+                                        <b style="border-bottom: 1px solid;background-color:#FAEBD7;">Sec:</b>
                                         <span t-esc="o.sec" style="border-bottom: 1px dotted;min-width:100px;"/>
                                     </span>
                                     <span style="margin:0px 4px 0px 2px;">
-                                        <b style="border-bottom: 1px solid;background-color:#DB6A6A;">St:</b>
+                                        <b style="border-bottom: 1px solid;background-color:#FAEBD7;">St:</b>
                                         <span t-esc="o.st" style="border-bottom: 1px dotted;width:100px;"/>
                                     </span>
                                     <span style="margin:0px 4px 0px 2px;">
-                                        <b style="border-bottom: 1px solid;background-color:#DB6A6A;">House:</b>
+                                        <b style="border-bottom: 1px solid;background-color:#FAEBD7;">House:</b>
                                         <span t-esc="o.house" style="border-bottom: 1px dotted;width:100px;"/>
                                     </span>
                                     <span style="margin:0px 4px 0px 2px;">
-                                        <b style="border-bottom: 1px solid;background-color:#DB6A6A;">Nearest Point of Reference:</b>
+                                        <b style="border-bottom: 1px solid;background-color:#FAEBD7;">Nearest Point of Reference:</b>
                                         <span t-esc="o.nearest" style="border-bottom: 1px dotted;width:100px;"/>
                                     </span>
                                     <span style="margin:0px 4px 0px 2px;">
-                                        <b style="border-bottom: 1px solid;background-color:#DB6A6A;">Date of Birth:</b>
+                                        <b style="border-bottom: 1px solid;background-color:#FAEBD7;">Date of Birth:</b>
                                         <span t-esc="o.birthdate" style="border-bottom: 1px dotted;width:100px;"/>
                                     </span>
                                     <span style="margin:0px 4px 0px 2px;">
-                                        <b style="border-bottom: 1px solid;background-color:#DB6A6A;">Place of Birth:</b>
+                                        <b style="border-bottom: 1px solid;background-color:#FAEBD7;">Place of Birth:</b>
                                         <span t-esc="o.place_of_birth" style="border-bottom: 1px dotted;width:100px;"/>
                                     </span>
                                     <span style="margin:0px 4px 0px 2px;">
-                                        <b style="border-bottom: 1px solid;background-color:#DB6A6A;">Gender:</b>
+                                        <b style="border-bottom: 1px solid;background-color:#FAEBD7;">Gender:</b>
                                         <span t-esc="o.gender" style="border-bottom: 1px dotted;width:100px;"/>
                                     </span>
                                     <span style="margin:0px 4px 0px 2px;">
-                                        <b style="border-bottom: 1px solid;background-color:#DB6A6A;">Height:</b>
+                                        <b style="border-bottom: 1px solid;background-color:#FAEBD7;">Height:</b>
                                         <span t-esc="o.height" style="border-bottom: 1px dotted;width:100px;"/>
                                     </span>
                                     <span style="margin:0px 4px 0px 2px;">
-                                        <b style="border-bottom: 1px solid;background-color:#DB6A6A;">Weight:</b>
+                                        <b style="border-bottom: 1px solid;background-color:#FAEBD7;">Weight:</b>
                                         <span t-esc="o.weight" style="border-bottom: 1px dotted;width:100px;"/>
                                     </span>
                                     <span style="margin:0px 4px 0px 2px;">
-                                        <b style="border-bottom: 1px solid;background-color:#DB6A6A;">Citizenship:</b>
+                                        <b style="border-bottom: 1px solid;background-color:#FAEBD7;">Citizenship:</b>
                                         <span t-esc="o.citizenship" style="border-bottom: 1px dotted;width:100px;"/>
                                     </span>
                                     <span style="margin:0px 4px 0px 2px;">
-                                        <b style="border-bottom: 1px solid;background-color:#DB6A6A;">Religion:</b>
+                                        <b style="border-bottom: 1px solid;background-color:#FAEBD7;">Religion:</b>
                                         <span t-esc="o.religion" style="border-bottom: 1px dotted;width:100px;"/>
                                     </span>
                                     <span style="margin:0px 4px 0px 2px;">
-                                        <b style="border-bottom: 1px solid;background-color:#DB6A6A;">Social Status:</b>
+                                        <b style="border-bottom: 1px solid;background-color:#FAEBD7;">Social Status:</b>
                                         <span t-esc="o.social_status" style="border-bottom: 1px dotted;width:100px;"/>
                                     </span>
                                 </p>
@@ -151,12 +151,12 @@
                                 INFORMATION
                             </h2>
                             <p style="line-height: 158%;">The Profession of your
-                                <b style="background-color:#DB6A6A;">Father</b>
+                                <b style="background-color:#FAEBD7;">Father</b>
                                 <span t-esc="o.father_profession"
                                       style="border-bottom: 1px dotted;min-width:100px;"/>
                                 <br/>
                                 The Profession of your
-                                <b style="background-color:#DB6A6A;">Mother</b>
+                                <b style="background-color:#FAEBD7;">Mother</b>
                                 <span t-esc="o.mother_profession"
                                       style="border-bottom: 1px dotted;min-width:100px;"/>
                                 <br/>
@@ -208,7 +208,7 @@
                                 LIMITATIONS
                             </h2>
                             <p>
-                                <span style="background-color:#DB6A6A;">
+                                <span style="background-color:#FAEBD7;">
                                     Your Health Status?
                                 </span>
                                 <span>
@@ -268,7 +268,7 @@
                             </p>
                             <p>
                                 <span>
-                                    <span style="background-color:#DB6A6A;">
+                                    <span style="background-color:#FAEBD7;">
                                         Have you suffered or are you suffering from any Terminal Illness or Chronic
                                         Disease?
                                     </span>
@@ -289,7 +289,7 @@
                                 </span>
                             </p>
                             <p>
-                                <span style="background-color:#DB6A6A;">Are there any limitations on your ability to perform in your prospective field
+                                <span style="background-color:#FAEBD7;">Are there any limitations on your ability to perform in your prospective field
                                     of work?
                                 </span>
                                 <span>
@@ -310,7 +310,7 @@
                                 </span>
                             </p>
                             <p>
-                                <span style="background-color:#DB6A6A;">Are there any limitations on your ability to engage in all types of travel?
+                                <span style="background-color:#FAEBD7;">Are there any limitations on your ability to engage in all types of travel?
                                     Inside
                                     or
                                     outside Iraq
@@ -363,7 +363,7 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">ARABIC</td>
+                                        <td style="background-color:#FAEBD7;">ARABIC</td>
                                         <td>
                                             <t t-esc="o.ar_r"/>
                                         </td>
@@ -381,7 +381,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">ENGLISH</td>
+                                        <td style="background-color:#FAEBD7;">ENGLISH</td>
                                         <td>
                                             <t t-esc="o.en_r"/>
                                         </td>
@@ -455,7 +455,7 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td style="text-align:center; background-color:#DB6A6A;">Primary</td>
+                                        <td style="text-align:center; background-color:#FAEBD7;">Primary</td>
                                         <td style="text-align:center;">
                                             <t t-esc="o.primary_name"/>
                                         </td>
@@ -467,7 +467,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="text-align:center; background-color:#DB6A6A;">Intermediate</td>
+                                        <td style="text-align:center; background-color:#FAEBD7;">Intermediate</td>
                                         <td style="text-align:center;">
                                             <t t-esc="o.Intermediate_name"/>
                                         </td>
@@ -479,7 +479,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="text-align:center; background-color:#DB6A6A;">Secondary</td>
+                                        <td style="text-align:center; background-color:#FAEBD7;">Secondary</td>
                                         <td style="text-align:center;">
                                             <t t-esc="o.secondary_name"/>
                                         </td>
@@ -491,7 +491,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="text-align:center; background-color:#DB6A6A;">College or Institute</td>
+                                        <td style="text-align:center; background-color:#FAEBD7;">College or Institute</td>
                                         <td style="text-align:center;">
                                             <p> Name: <span t-esc="o.college_name"/>
                                             | Major: <span t-esc="o.college_major"/>
@@ -519,28 +519,28 @@
                                 </tbody>
                             </table>
                             <p>
-                                <span style="border-bottom: 1px solid;background-color:#DB6A6A;">Highest Academic Qualification:
+                                <span style="border-bottom: 1px solid;background-color:#FAEBD7;">Highest Academic Qualification:
                                 </span>
                                 <span t-esc="o.highest_acad"/>
                             </p>
                             <p>
                                 <span>
-                                    <span style="border-bottom: 1px solid; background-color:#DB6A6A;">Major: </span>
+                                    <span style="border-bottom: 1px solid; background-color:#FAEBD7;">Major: </span>
                                     <span t-esc="o.major"/>
                                     &#8194;
                                 </span>
                                 <span>
-                                    <span style="border-bottom: 1px solid; background-color:#DB6A6A;">Graduation Year:</span>
+                                    <span style="border-bottom: 1px solid; background-color:#FAEBD7;">Graduation Year:</span>
                                     <span t-esc="o.highest_grad_year"/>
                                     &#8194;
                                 </span>
                                 <span>
-                                    <span style="border-bottom: 1px solid; background-color:#DB6A6A;">University:</span>
+                                    <span style="border-bottom: 1px solid; background-color:#FAEBD7;">University:</span>
                                     <span t-esc="o.highest_uni"/>
                                     &#8194;
                                 </span>
                                 <span>
-                                    <span style="border-bottom: 1px solid; background-color:#DB6A6A;">Country:</span>
+                                    <span style="border-bottom: 1px solid; background-color:#FAEBD7;">Country:</span>
                                     <span t-esc="o.highest_country"/>
                                     &#8194;
                                 </span>
@@ -586,7 +586,7 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">
+                                        <td style="background-color:#FAEBD7;">
                                             <t t-esc="o.skill_0_Desc"/>
                                         </td>
                                         <td>
@@ -631,7 +631,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">
+                                        <td style="background-color:#FAEBD7;">
                                             <t t-esc="o.skill_1_Desc"/>
                                         </td>
                                         <td>
@@ -877,7 +877,7 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">Business Correspondence</td>
+                                        <td style="background-color:#FAEBD7;">Business Correspondence</td>
                                         <td>
                                             <t t-if="o.business_correspondence_skill_level == 'not familiar'">
                                                 True
@@ -920,7 +920,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">Effective Communication</td>
+                                        <td style="background-color:#FAEBD7;">Effective Communication</td>
                                         <td>
                                             <t t-if="o.effective_communication_skill_level == 'not familiar'">
                                                 True
@@ -963,7 +963,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">Customer Service</td>
+                                        <td style="background-color:#FAEBD7;">Customer Service</td>
                                         <td>
                                             <t t-if="o.customer_service_skill_level == 'not familiar'">
                                                 True
@@ -1006,7 +1006,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">Teamwork</td>
+                                        <td style="background-color:#FAEBD7;">Teamwork</td>
                                         <td>
                                             <t t-if="o.team_work_skill_level == 'not familiar'">
                                                 True
@@ -1092,7 +1092,7 @@
                                         </td>
                                     </tr>-->
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">Microsoft Office and Outlook</td>
+                                        <td style="background-color:#FAEBD7;">Microsoft Office and Outlook</td>
                                         <td>
                                             <t t-if="o.ms_office_and_outlook_skill_level == 'not familiar'">
                                                 True
@@ -1135,7 +1135,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">Office Machines and Equipment</td>
+                                        <td style="background-color:#FAEBD7;">Office Machines and Equipment</td>
                                         <td>
                                             <t t-if="o.office_machine_skill_level == 'not familiar'">
                                                 True
@@ -1178,7 +1178,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">Typing</td>
+                                        <td style="background-color:#FAEBD7;">Typing</td>
                                         <td>
                                             <t t-if="o.typing_skill_level == 'not familiar'">
                                                 True
@@ -1221,7 +1221,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">Time Management and Prioritizing</td>
+                                        <td style="background-color:#FAEBD7;">Time Management and Prioritizing</td>
                                         <td>
                                             <t t-if="o.time_management_skill_level == 'not familiar'">
                                                 True
@@ -1264,7 +1264,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">Attention to Detail</td>
+                                        <td style="background-color:#FAEBD7;">Attention to Detail</td>
                                         <td>
                                             <t t-if="o.attention_to_detail_level == 'not familiar'">
                                                 True
@@ -1307,7 +1307,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">Goal-Oriented</td>
+                                        <td style="background-color:#FAEBD7;">Goal-Oriented</td>
                                         <td>
                                             <t t-if="o.goal_oriented_skill_level == 'not familiar'">
                                                 True
@@ -1350,7 +1350,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">Multi-Tasking</td>
+                                        <td style="background-color:#FAEBD7;">Multi-Tasking</td>
                                         <td>
                                             <t t-if="o.multi_tasking_skill_level == 'not familiar'">
                                                 True
@@ -1393,7 +1393,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">Follow up</td>
+                                        <td style="background-color:#FAEBD7;">Follow up</td>
                                         <td>
                                             <t t-if="o.follow_up_skill_level == 'not familiar'">
                                                 True
@@ -1436,7 +1436,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">Employee Relations</td>
+                                        <td style="background-color:#FAEBD7;">Employee Relations</td>
                                         <td>
                                             <t t-if="o.employee_relation_skill_level == 'not familiar'">
                                                 True
@@ -1479,7 +1479,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">Supervision</td>
+                                        <td style="background-color:#FAEBD7;">Supervision</td>
                                         <td>
                                             <t t-if="o.supervision_skill_level == 'not familiar'">
                                                 True
@@ -1543,7 +1543,7 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">Relationship Building</td>
+                                        <td style="background-color:#FAEBD7;">Relationship Building</td>
                                         <td>
                                             <t t-if="o.relationship_building_skill_level == 'not familiar'">
                                                 True
@@ -1586,7 +1586,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">Time Management</td>
+                                        <td style="background-color:#FAEBD7;">Time Management</td>
                                         <td>
                                             <t t-if="o.time_management_skill_level == 'not familiar'">
                                                 True
@@ -1629,7 +1629,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">Research / Information Gathering</td>
+                                        <td style="background-color:#FAEBD7;">Research / Information Gathering</td>
                                         <td>
                                             <t t-if="o.research_information_gathering_skill_level == 'not familiar'">
                                                 True
@@ -1672,7 +1672,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">Medical Product Knowledge</td>
+                                        <td style="background-color:#FAEBD7;">Medical Product Knowledge</td>
                                         <td>
                                             <t t-if="o.medical_product_knowledge_skill_level == 'not familiar'">
                                                 True
@@ -1715,7 +1715,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">Business Communication</td>
+                                        <td style="background-color:#FAEBD7;">Business Communication</td>
                                         <td>
                                             <t t-if="o.business_communication_skill_level == 'not familiar'">
                                                 True
@@ -1758,7 +1758,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">Client Engagement</td>
+                                        <td style="background-color:#FAEBD7;">Client Engagement</td>
                                         <td>
                                             <t t-if="o.client_engagement_skill_level == 'not familiar'">
                                                 True
@@ -1801,7 +1801,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">Sales Presentations / Demos</td>
+                                        <td style="background-color:#FAEBD7;">Sales Presentations / Demos</td>
                                         <td>
                                             <t t-if="o.sales_presentations_demos_skill_level == 'not familiar'">
                                                 True
@@ -1844,7 +1844,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">Contract Negotiation</td>
+                                        <td style="background-color:#FAEBD7;">Contract Negotiation</td>
                                         <td>
                                             <t t-if="o.contract_negotiation_skill_level == 'not familiar'">
                                                 True
@@ -1887,7 +1887,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">Closing Skills</td>
+                                        <td style="background-color:#FAEBD7;">Closing Skills</td>
                                         <td>
                                             <t t-if="o.closing_skills_skill_level == 'not familiar'">
                                                 True
@@ -1930,7 +1930,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">Self-Motivated / Ambitious</td>
+                                        <td style="background-color:#FAEBD7;">Self-Motivated / Ambitious</td>
                                         <td>
                                             <t t-if="o.self_motivated_ambitious_skill_level == 'not familiar'">
                                                 True
@@ -1973,7 +1973,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">Adaptability</td>
+                                        <td style="background-color:#FAEBD7;">Adaptability</td>
                                         <td>
                                             <t t-if="o.adaptability_skill_level == 'not familiar'">
                                                 True
@@ -2016,7 +2016,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">Responsibility</td>
+                                        <td style="background-color:#FAEBD7;">Responsibility</td>
                                         <td>
                                             <t t-if="o.responsibility_skill_level == 'not familiar'">
                                                 True
@@ -2059,7 +2059,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">Goal-Oriented</td>
+                                        <td style="background-color:#FAEBD7;">Goal-Oriented</td>
                                         <td>
                                             <t t-if="o.goal_oriented_skill_level == 'not familiar'">
                                                 True
@@ -2102,7 +2102,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">Passionate About Selling</td>
+                                        <td style="background-color:#FAEBD7;">Passionate About Selling</td>
                                         <td>
                                             <t t-if="o.passionate_about_selling_skill_level == 'not familiar'">
                                                 True
@@ -2163,7 +2163,7 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">
+                                        <td style="background-color:#FAEBD7;">
                                             <t t-esc="o.t0"/>
                                         </td>
                                         <td>
@@ -2254,7 +2254,7 @@
                                 EMPLOYMENT HISTORY
                             </h2>
                             <p>
-                                <span style="background-color:#DB6A6A;">
+                                <span style="background-color:#FAEBD7;">
                                     May we contact current employers before you are offered a position?
                                 </span>
                                 <span>
@@ -2631,7 +2631,7 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td style="background-color:#DB6A6A;">
+                                        <td style="background-color:#FAEBD7;">
                                             <t t-esc="o.ref_name"/>
                                         </td>
                                         <td>
@@ -2697,7 +2697,7 @@
                                 </h3>
                                 <div style="list-style-type:square;">
                                     <p>
-                                        <span style="background-color:#DB6A6A;">
+                                        <span style="background-color:#FAEBD7;">
                                             <t t-if="o.national_id">
                                                 <input type="checkbox" checked="checked" style="border: 1px solid;"/>
                                             </t>
@@ -2708,7 +2708,7 @@
                                         </span>
                                     </p>
                                     <p>
-                                        <span style="background-color:#DB6A6A;">
+                                        <span style="background-color:#FAEBD7;">
                                             <t t-if="o.citizenship_cert">
                                                 <input type="checkbox" checked="checked" style="border: 1px solid;"/>
                                             </t>
@@ -2719,7 +2719,7 @@
                                         </span>
                                     </p>
                                     <p>
-                                        <span style="background-color:#DB6A6A;">
+                                        <span style="background-color:#FAEBD7;">
                                             <t t-if="o.accomodation_id">
                                                 <input type="checkbox" checked="checked" style="border: 1px solid;"/>
                                             </t>
@@ -2730,7 +2730,7 @@
                                         </span>
                                     </p>
                                     <p>
-                                        <span style="background-color:#DB6A6A;">
+                                        <span style="background-color:#FAEBD7;">
                                             <t t-if="o.uni_degree">
                                                 <input type="checkbox" checked="checked" style="border: 1px solid;"/>
                                             </t>
@@ -2741,7 +2741,7 @@
                                         </span>
                                     </p>
                                     <p>
-                                        <span style="background-color:#DB6A6A;">
+                                        <span style="background-color:#FAEBD7;">
                                             <!--<t t-if="o.medical">
                                                 <input type="checkbox" checked="checked" style="border: 1px solid;"/>
                                             </t>
@@ -2752,7 +2752,7 @@
                                         </span>
                                     </p>
                                     <p>
-                                        <span style="background-color:#DB6A6A;">
+                                        <span style="background-color:#FAEBD7;">
                                             <t t-if="o.medical">
                                                 <input type="checkbox" checked="checked" style="border: 1px solid;"/>
                                             </t>
@@ -2763,7 +2763,7 @@
                                         </span>
                                     </p>
                                     <p>
-                                        <span style="background-color:#DB6A6A;">
+                                        <span style="background-color:#FAEBD7;">
                                             <t t-if="o.no_crim_req">
                                                 <input type="checkbox" checked="checked" style="border: 1px solid;"/>
                                             </t>
@@ -2774,8 +2774,8 @@
                                         </span>
                                     </p>
                                     <p>
-                                        <span style="background-color:#DB6A6A;">
-                                            <t t-if="o.letter_rec_1" style="background-color:#DB6A6A;">
+                                        <span style="background-color:#FAEBD7;">
+                                            <t t-if="o.letter_rec_1" style="background-color:#FAEBD7;">
                                                 <input type="checkbox" checked="checked" style="border: 1px solid;"/>
                                             </t>
                                             <t t-else="">
@@ -2785,7 +2785,7 @@
                                         </span>
                                     </p>
                                     <p>
-                                        <span style="background-color:#DB6A6A;">
+                                        <span style="background-color:#FAEBD7;">
                                             <t t-if="o.letter_rec_2">
                                                 <input type="checkbox" checked="checked" style="border: 1px solid;"/>
                                             </t>
@@ -2796,7 +2796,7 @@
                                         </span>
                                     </p>
                                     <p>
-                                        <span style="background-color:#DB6A6A;">
+                                        <span style="background-color:#FAEBD7;">
                                             <t t-if="o.cv">
                                                 <input type="checkbox" checked="checked" style="border: 1px solid;"/>
                                             </t>
