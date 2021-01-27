@@ -20,16 +20,17 @@
     'version': '1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'hr_recruitment', 'product', 'sale_management'],
+    'depends': ['base', 'hr_recruitment', 'product', 'sale_management', 'hr_expense'],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
         'views/views.xml',
-        'views/templates.xml',
+        'views/expenses_sheet_view.xml',
         'views/product_view.xml',
         "views/employee_view.xml",
         "views/jobs_view.xml",
         "report/recruitment_report.xml",
+        "data/expense_sheet_record_rule.xml",
     ],
 }
