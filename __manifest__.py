@@ -31,5 +31,7 @@
         "views/employee_view.xml",
         "views/jobs_view.xml",
         "report/recruitment_report.xml",
+        "views/res_partner_view.xml"
+        
     ],
 }
