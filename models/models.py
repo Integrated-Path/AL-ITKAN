@@ -250,13 +250,13 @@ class ItkanSale(models.Model): #this is implemented because they wanted the sale
 
 
 
-class ItkanResPartnerArName(models.Model):
+# class ItkanResPartnerArName(models.Model):
 
-    _inherit = "res.partner"
-    _rec_name = "display_name"
+#     _inherit = "res.partner"
+#     _rec_name = "display_name"
 
-    arabic_name = fields.Char(string="Arabic Name")
-    display_name = fields.Char()
+#     arabic_name = fields.Char(string="Arabic Name")
+#     display_name = fields.Char()
 
 
     # @api.onchange("name","arabic_name")
