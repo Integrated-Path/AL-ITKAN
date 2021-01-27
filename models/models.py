@@ -259,10 +259,10 @@ class ItkanResPartnerArName(models.Model):
     display_name = fields.Char()
 
 
-    @api.onchange("name","arabic_name")
-    def compute_mixed_name(self):
-        for item in self:
-            if item.arabic_name and item.name:
-                item.display_name = item.arabic_name + " - " + item.name
-            else:
-                item.display_name = item.name
+    # @api.onchange("name","arabic_name")
+    # def compute_mixed_name(self):
+    #     for item in self:
+    #         if item.arabic_name and item.name:
+    #             item.display_name = item.arabic_name + " - " + item.name
+    #         else:
+    #             item.display_name = item.name
