@@ -5,11 +5,13 @@ class HrExpenses(models.Model):
     _inherit = "hr.expense"
     
     analytic_account_id = fields.Many2one("account.analytic.account", readonly=True)
+    product_id = fields.Many2one(states={'draft': [('readonly', False)], 'reported': [('readonly', False)], 'approved': [('readonly', False)], 'refused': [('readonly', False)]})
 
 class HrExpensesSheet(models.Model):
     _inherit = "hr.expense.sheet"
 
     analytic_account_id = fields.Many2one("account.analytic.account", string="Budget", domain="[('company_id', 'in', [company_id, False] )]")
+    expense_line_ids = fields.One2many(states={'done': [('readonly', True)], 'post': [('readonly', True)]})
 
     @api.constrains("analytic_account_id", "expense_line_ids")
     def _get_analytic_account(self):
