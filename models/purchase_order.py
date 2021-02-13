@@ -25,7 +25,7 @@ class PurchaseOrderLine(models.Model):
                 raise UserError(_(f"A Product with SMN {smn} was not  found"))
             
         else:
-          pass
+            pass
 
         result = super(PurchaseOrderLine, self).create(values)
         
