@@ -12,7 +12,7 @@ class ResPartner(models.Model):
         """ Itakn DataBase is suffering from an issue with creating record.
         This function is to handle that error """
         na_record = self.env['res.partner'].browse([21362])
-        if values.get("name"):
+        if values.get("name", False):
             result = super(ResPartner, self).create(values)    
             return result
         else:
