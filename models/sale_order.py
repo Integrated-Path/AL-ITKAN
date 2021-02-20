@@ -9,11 +9,24 @@ class ItkanSale(models.Model): #this is implemented because they wanted the sale
 
     date_order = fields.Date(string="Order Date", default=datetime.datetime.now())
 
+    def action_confirm(self):
+        for line in self.order_line:
+            if line.product_id.categ_id.id == 1:
+                raise UserError(_(f"Please set a category for product {line.product_id.display_name} before confirming this sale order"))
+                return
+            else:
+                pass
+
+        res = super(ItkanSale, self).action_confirm()
+        return res
+
+
 class SaleOrderLine(models.Model):
     _inherit = "sale.order.line"
 
     product_smn = fields.Char(string="SMN")
-
+        
+    # For Importing Product By SMN
     @api.model
     def create(self, values):
         if values.get("product_smn"):

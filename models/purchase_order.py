@@ -4,12 +4,27 @@ from odoo.exceptions import UserError
 from odoo.tools import DEFAULT_SERVER_DATETIME_FORMAT
 from datetime import datetime
 
+class PurchaseOrder(models.Model):
+    _inherit = "purchase.order"
+
+    def button_confirm(self):
+        for line in self.order_line:
+            if line.product_id.categ_id.id == 1:
+                raise UserError(_(f"Please set a category for product {line.product_id.display_name} before confirming this purchase order"))
+                return
+            else:
+                pass
+
+        res = super(PurchaseOrder, self).button_confirm()
+        return res
+
+
 class PurchaseOrderLine(models.Model):
     _inherit = "purchase.order.line"
 
     product_smn = fields.Char(string="SMN")
-    # product_id = fields.Many2one(readonly=False)
 
+    # For importing products by SMN
     @api.model
     def create(self, values):
         if values.get("product_smn"): #Adding Product By Just Import SMN code
