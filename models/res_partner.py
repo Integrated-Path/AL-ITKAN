@@ -19,8 +19,10 @@ class ResPartner(models.Model):
             return na_record
 
     def unlink(self):
-        if self.id == 21362:
-            raise UserError(_("You can not delete this contact cause it is being used by the support team"))
-        else:
-            res = super().unlink()
-            return res
+        for line in self:
+            if line.id == 21362:
+                raise UserError(_("You can not delete this contact cause it is being used by the support team"))
+            else:
+                res = super(ResPartner, line).unlink()
+                return res
+    
