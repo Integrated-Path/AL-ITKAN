@@ -1,5 +1,4 @@
 <odoo>
-
     <data>
 
         <record id="res_partner_ar_name_inh_form" model="ir.ui.view">
@@ -15,14 +14,5 @@
             </field>
         </record>
 
-
-
-
-
     </data>
-
-
-
-
-
 </odoo>

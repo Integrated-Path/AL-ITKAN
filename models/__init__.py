@@ -6,3 +6,4 @@ from . import expenses_sheet
 from . import sale_order
 from . import purchase_order
 from . import res_partner
+from . import calendar_event

@@ -30,6 +30,7 @@
         'views/product_view.xml',
         "views/employee_view.xml",
         "views/jobs_view.xml",
+        "views/calendar_event_view.xml",
         "report/recruitment_report.xml",
         "data/expense_sheet_record_rule.xml",
     ],
