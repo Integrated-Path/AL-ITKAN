@@ -20,7 +20,7 @@
     'version': '1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'hr_recruitment', 'product', 'sale_management', 'hr_expense', 'hr'],
+    'depends': ['base', 'hr_recruitment', 'product', 'sale_management', 'hr_expense', 'hr', 'approvals'],
 
     # always loaded
     'data': [
@@ -31,7 +31,9 @@
         "views/employee_view.xml",
         "views/jobs_view.xml",
         "views/calendar_event_view.xml",
+        "views/approval_category_view.xml",
         "report/recruitment_report.xml",
         "data/expense_sheet_record_rule.xml",
+        "data/approval_category_record_rule.xml",
     ],
 }

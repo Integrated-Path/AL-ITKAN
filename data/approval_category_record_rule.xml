@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+
+        <record id="approval_category_rule" model="ir.rule">
+            <field name="name">Approval Limited Users</field>
+            <field name="model_id" ref="approvals.model_approval_category"/>
+            <field name="domain_force">['|', ('limited_users_ids.id', '=', user.id), ('limited_users_ids', '=', False)]</field>
+        </record>
+
+    </data>
+</odoo>
