@@ -162,6 +162,7 @@ class EmployeePublic(models.Model):
 class ItkanEmployee(models.Model):
     _inherit = "hr.employee"
     
+    arabic_name = fields.Char("الإسم العربي")
     start_date = fields.Date(related="contract_id.date_start")
     applicant_id = fields.Many2one("hr.applicant", "Employee Application")
     DIVISIONS = [("GM office","GM office"),("Technical","Technical"),("Sales","Sales"),("Finance","Finance"),("HRA","HRA"),("Logistics","Logistics")]
