@@ -20,7 +20,7 @@
     'version': '1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'hr_recruitment', 'product', 'sale_management', 'hr_expense', 'hr'],
+    'depends': ['base', 'hr_recruitment', 'product', 'sale_management', 'hr_expense', 'hr','purchase'],
 
     # always loaded
     'data': [
