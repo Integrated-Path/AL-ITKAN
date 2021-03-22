@@ -2819,6 +2819,7 @@
                 model="hr.applicant"
                 report_type="qweb-pdf"
                 name="al-itkan.print_hr_applicant_record"
-                file="al-itkan.print_hr_applicant_record"/>
+                file="al-itkan.print_hr_applicant_record"
+                print_report_name="'%s - %s' % (object.partner_name,object.external_ref)"/>
     </data>
 </odoo>
