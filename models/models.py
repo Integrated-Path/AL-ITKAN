@@ -81,8 +81,9 @@ class ItkanProduct(models.Model):
 class EmployeePublic(models.Model):
     _inherit = 'hr.employee.public'
 
+    arabic_name = fields.Char("الإسم العربي")
     applicant_id = fields.Many2one("hr.applicant", "Employee Application")
-    DIVISIONS = [("GM office","GM office"),("Technical","Technical"),("Sales","Sales"),("Finance","Finance"),("HRA","HRA"),("Logistics","Logistics")]
+    DIVISIONS = [("GM office","GM office"), ("MD office", "MD office"), ("Technical","Technical"),("Sales","Sales"),("Finance","Finance"),("HRA","HRA"),("Logistics","Logistics")]
     UNITS = [("Arab North, Middle and South","Arab North, Middle and South"),
             ("Baghdad","Baghdad"),
             ("Cleaning Staff","Cleaning Staff"),
@@ -165,7 +166,7 @@ class ItkanEmployee(models.Model):
     arabic_name = fields.Char("الإسم العربي")
     start_date = fields.Date(related="contract_id.date_start")
     applicant_id = fields.Many2one("hr.applicant", "Employee Application")
-    DIVISIONS = [("GM office","GM office"),("Technical","Technical"),("Sales","Sales"),("Finance","Finance"),("HRA","HRA"),("Logistics","Logistics")]
+    DIVISIONS = [("GM office","GM office"), ("MD office", "MD office"), ("Technical","Technical"),("Sales","Sales"),("Finance","Finance"),("HRA","HRA"),("Logistics","Logistics")]
     UNITS = [("Arab North, Middle and South","Arab North, Middle and South"),
             ("Baghdad","Baghdad"),
             ("Cleaning Staff","Cleaning Staff"),
