@@ -8,6 +8,7 @@ class ItkanSale(models.Model): #this is implemented because they wanted the sale
     _inherit="sale.order"
 
     date_order = fields.Date(string="Order Date", default=datetime.datetime.now())
+    company_report_id = fields.Many2one('res.company', string="Company Report", default=lambda self: self.env.company)
 
     def action_confirm(self):
         for line in self.order_line:

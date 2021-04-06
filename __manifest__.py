@@ -31,7 +31,10 @@
         "views/employee_view.xml",
         "views/jobs_view.xml",
         "views/calendar_event_view.xml",
+        "views/sale_order_view.xml",
+        "views/account_move_view.xml",
         "report/recruitment_report.xml",
+        "report/external_layout_standard.xml",
         "data/expense_sheet_record_rule.xml",
     ],
 }
