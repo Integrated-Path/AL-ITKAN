@@ -20,7 +20,8 @@
     'version': '1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'hr_recruitment', 'product', 'sale_management', 'hr_expense', 'hr','purchase'],
+    'depends': ['base', 'hr_recruitment', 'product', 'sale_management', 'hr_expense', 'hr','purchase',
+        'mai_sale_order_lot_selection', 'access_units'],
 
     # always loaded
     'data': [
@@ -33,6 +34,7 @@
         "views/calendar_event_view.xml",
         "views/sale_order_view.xml",
         "views/account_move_view.xml",
+        "views/stock_quant_view.xml",
         "report/recruitment_report.xml",
         "report/external_layout_standard.xml",
         "data/expense_sheet_record_rule.xml",

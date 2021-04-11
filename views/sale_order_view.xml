@@ -16,5 +16,19 @@
             </field>
         </record>
 
+        <record id="sale_order_mai_lot_form" model="ir.ui.view">
+            <field name="name">sale.order.form.mai.lot</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="mai_sale_order_lot_selection.view_order_tree_lot"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='order_line']/tree/field[@name='lot_id']" position="attributes">
+                    <attribute name="groups">access_units.sale_confirm_sale_order</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/form//field[@name='lot_id']" position="attributes">
+                    <attribute name="groups">access_units.sale_confirm_sale_order</attribute>
+                </xpath>
+            </field>
+        </record>
+
     </data>
 </odoo>
