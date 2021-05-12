@@ -21,15 +21,13 @@ class PurchaseOrder(models.Model):
             channel_id = self.env['mail.channel'].create({'name': 'Modality Managers'})
 
         # creating 2 messages intead of one to avoid entering & reading PO chances (they are itkan)
-        message_values = {
-            'body': html_body,
-            'author_id': self.env.user.partner_id.id,
-            'channel_ids': [channel_id.id],
-            'message_type': 'notification',
-            # its not sending notification
-            # 'partner_ids': [partner_id.id for partner_id in channel_id.channel_partner_ids]
-        }
-        self.env['mail.message'].create(message_values)
+        channel_id.message_post(
+            body= html_body ,
+            message_type='notification',
+            subtype='mail.mt_comment',
+            partner_ids= [partner_id.id for partner_id in channel_id.channel_partner_ids]
+            )
+
         self.message_post(
             body= html_body ,
             message_type='notification',
