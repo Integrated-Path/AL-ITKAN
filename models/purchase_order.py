@@ -7,6 +7,37 @@ from datetime import datetime
 class PurchaseOrder(models.Model):
     _inherit = "purchase.order"
 
+    sent_prouduct_info = fields.Boolean(copy=False, help="To know if this PO info was send to the Discuss group")
+
+    def send_proudct_info_button(self):
+        # sending products info to discuss channel (grouop)
+        html_body = f'Order Number: {self.name}<br/><ul>'
+        for line in self.order_line:
+            html_body += f'<li>{line.product_id.name}: {line.product_qty} Quantity</li>'
+        html_body += '</ul>'
+        channel_id = self.env['mail.channel'].search([('name', '=', 'Modality Managers')], limit=1)
+
+        if not channel_id:
+            channel_id = self.env['mail.channel'].create({'name': 'Modality Managers'})
+
+        # creating 2 messages intead of one to avoid entering & reading PO chances (they are itkan)
+        message_values = {
+            'body': html_body,
+            'author_id': self.env.user.partner_id.id,
+            'channel_ids': [channel_id.id],
+            'message_type': 'notification',
+            # its not sending notification
+            # 'partner_ids': [partner_id.id for partner_id in channel_id.channel_partner_ids]
+        }
+        self.env['mail.message'].create(message_values)
+        self.message_post(
+            body= html_body ,
+            message_type='notification',
+            subtype='mail.mt_comment',
+            )
+
+        self.sent_prouduct_info = True
+
     def button_confirm(self):
         for line in self.order_line:
             if line.product_id.categ_id.id == 1:
