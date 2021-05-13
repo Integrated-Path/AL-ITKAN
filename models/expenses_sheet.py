@@ -4,7 +4,6 @@ from odoo.exceptions import UserError
 class HrExpenses(models.Model):
     _inherit = "hr.expense"
     
-    analytic_account_id = fields.Many2one("account.analytic.account", readonly=True)
     product_id = fields.Many2one(states={'draft': [('readonly', False)], 'reported': [('readonly', False)], 'approved': [('readonly', False)], 'refused': [('readonly', False)]})
 
 class HrExpensesSheet(models.Model):
