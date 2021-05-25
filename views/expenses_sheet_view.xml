@@ -8,7 +8,7 @@
             <field name="arch" type="xml">
 
                 <field name="company_id" position="after">
-                    <field name="analytic_account_id" options="{'no_create': True, 'no_open': True}" />
+                    <field name="analytic_account_id" options="{'no_create': True, 'no_open': True}" context="{'tree_view_ref': 'al-itkan.analytic_account_custom_tree'}" />
                 </field>
 
             </field>
