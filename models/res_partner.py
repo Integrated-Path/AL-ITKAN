@@ -29,3 +29,9 @@ class ResPartner(models.Model):
 
         res = super(ResPartner, self).unlink()
         return res
+
+    @api.model
+    def name_search(self, name='', args=None, operator="ilike", limit=100):
+        args = args or []
+        domain = args + ['|', ('display_name', 'ilike', name)]
+        return super(ProductProduct, self).search(domain, limit=limit).name_get()
