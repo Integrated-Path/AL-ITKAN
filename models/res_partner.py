@@ -33,5 +33,6 @@ class ResPartner(models.Model):
     @api.model
     def name_search(self, name='', args=None, operator="ilike", limit=100):
         args = args or []
+        name = name.replace('\t', '')
         domain = args + [('display_name', 'ilike', name)]
         return super(ResPartner, self).search(domain, limit=limit).name_get()
