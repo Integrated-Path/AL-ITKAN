@@ -42,4 +42,5 @@
         "data/expense_sheet_record_rule.xml",
         
     ],
+    'css':['static/src/css/style.css'],
 }

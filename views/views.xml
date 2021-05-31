@@ -1,209 +1,256 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+ 
+
         <record id="ITK" model="ir.ui.view">
             <field name="name">ITK_HR_APPL</field>
             <field name="model">hr.applicant</field>
             <field name="inherit_id" ref="hr_recruitment.hr_applicant_view_form"/>
             <field name="arch" type="xml">
-                <field name="partner_name" position="after">
-                    <label for="surname">Surname</label>
-                    <field name="surname"/>
-                    <label for="arabic_name">Arabic Name</label>
-                    <field name="arabic_name"/>
-                </field>
-                <field name="partner_mobile" position="after">
-                    <field name="address"/>
-                    <field name="hai"/>
-                    <field name="st"/>
-                    <field name="sec"/>
-                    <field name="house"/>
-                    <field name="nearest"/>
-                    <field name="citizenship"/>
-                    <field name="social_status"/>
-                    <field name="skype_id"/>
-                    <field name="external_ref" readonly="1"/>
-                    
-                </field>
-                <field name="source_id" position="after">
-                  
-                    <field name="birthdate"/>
-                    <field name="place_of_birth"/>
-                    <field name="gender"/>
-                    <field name="height"/>
-                    <field name="weight"/>
-                    <field name="religion"/>
-                    <field name="filling_time"/>
-                </field>
+              <xpath expr="//field[@name='partner_name']" position="attributes">
+                <attribute name="style">margin-bottom:13px;</attribute>
+              </xpath>
 
-                <!-- Famiily Information-->
+                    <field name="partner_name" position="after">
+                      <div class="border border-dark" style="margin:10px; padding:10px;">
+                       <group >
+                        <label for="surname">Surname </label>
+                           <field  name="surname" />
+                        <label  for="arabic_name">Arabic Name</label>
+                           <field  name="arabic_name"/> 
+                       </group>
+                       </div>
+                    </field>
+
+                    <field name="partner_mobile" position="after">
+                      <div class="border border-dark" style="margin:10px; padding:10px;">
+                       <group>    
+                        <field  name="address"/>
+                        <field  name="hai"/>
+                        <field  name="st"/>
+                        <field  name="sec"/>
+                        <field  name="house"/>
+                        <field  name="nearest"/>
+                        <field  name="citizenship"/>
+                        <field  name="social_status"/>
+                        <field  name="skype_id"/>
+                        <field  name="external_ref" readonly="1" help="Number that sent to the user after submitting the ticket "/>
+                      </group>
+                      </div>
+                    </field>
+
+              
+                    <field name="source_id" position="after">
+                      <div class="border border-dark" style="margin:10px; padding:10px;">
+                        <group>  
+                          <field  name="birthdate"/>
+                          <field  name="place_of_birth"/>
+                          <field  name="gender"/>
+                          <field  name="height"/>
+                          <field  name="weight"/>
+                          <field  name="religion"/>
+                          <field  name="filling_time"/>
+                        </group>
+                      </div>
+                    </field>
+
+
+
+                <!-- Family Information-->
 
                 <xpath expr="/form/sheet/group/group[2]" position="after">
                   <group colspan="2" col="2" string="Family Information">
-                    <field name="father_profession"/>
-                    <field name="mother_profession"/>
-                    <field name="first_name" />
-                    <field name="profession" />
-                    <field name="first_name_0" />
-                    <field name="profession_0" />
-                    <field name="first_name_1"/>
-                    <field name="profession_1"/>
-                    <field name="first_name_2"/>
-                    <field name="profession_2"/>
-                    <field name="first_name_3"/>
-                    <field name="profession_3"/>
+                    <div class="border border-dark" style="margin:10px; padding:10px;">
+                      <group>
+                        <field  name="father_profession"/>
+                        <field  name="mother_profession"/>
+                        <field  help="First family member name " name="first_name" />
+                        <field  help="First family member profession " name="profession" />
+                        <field  help="Second family member name " name="first_name_0" />
+                        <field  help="Second family member profession " name="profession_0" />
+                
+                        <field  help="Third family member name "   name="first_name_1"/>
+                        <field  help="Third family member profession "   name="profession_1"/>
+                        <field  help="Forth family member name "   name="first_name_2"/>
+                        <field  help="Forth family member profession "   name="profession_2"/>
+                        <field  help="Fifth family member name "   name="first_name_3"/>
+                        <field  help="Fifth family member profession "   name="profession_3"/>
+                      </group>
+                    </div>
                   </group>
+
+                <div class="border border-dark" style="margin:10px; padding:10px;">
                   <group string="Health and Limitations">
-                    <field name="health_status"/>
-                    <field name="disease"/>
-                    <field name="limitaions"/>
-                    <field name="limitaions_travel"/>
+                      <field name="health_status"/>
+                      <field name="disease"/>
+                      <field  help="Any Health limitation" name="limitaions"/>
+                      <field  help="Can the applicate Travel? or has any Travel limitation"  name="limitaions_travel"/>
                   </group>
+                </div>
+
+                <div class="border border-dark" style="margin:10px; padding:10px;">
                   <group string="Referral Information">
                     <field name="referral_source"/>
                     <field name="other_referral_source"/>
-                    <field name="preffered_fow"/>
-                    <field name="preferred_cp"/>
+                    <field help="Preffered Field of Work"  name="preffered_fow"/>
+                    <field help="Preffered Contract Period"  name="preferred_cp"/>
                   </group>
+                </div>  
                   <group colspan="2" col="2" string="Languages and Proficiency">
+                   <div class="border border-dark" style="margin:10px; padding:10px;">
                     <group string="Arabic Language">
-                      <field name="ar_r"/>
-                      <field name="ar_w"/>
-                      <field name="ar_s"/>
-                      <field name="ar_u"/>
-                      <field name="ar_o"/>
+                      <field  help="Specify your reading grade " name="ar_r"/>
+                      <field  help="Specify your writing grade " name="ar_w"/>
+                      <field  help="Specify your speaking grade " name="ar_s"/>
+                      <field  help="Specify your understanding grade " name="ar_u"/>
+                      <field  help="Specify your overall grade " name="ar_o"/>
                     </group>
                     <group string="English Language">
-                      <field name="en_r"/>
-                      <field name="en_w"/>
-                      <field name="en_s"/>
-                      <field name="en_u"/>
-                      <field name="en_o"/>
+                      <field  help="Specify your reading grade "  name="en_r"/>
+                      <field  help="Specify your writing grade "  name="en_w"/>
+                      <field  help="Specify your speaking grade "  name="en_s"/>
+                      <field  help="Specify your understanding grade "  name="en_u"/>
+                      <field  help="Specify your overall grade "  name="en_o"/>
                     </group>
                     <group  string="Other">
                       <field name="other_name_0"/>
-                      <field name="other_r_0"/>
-                      <field name="other_w_0"/>
-                      <field name="other_s_0"/>
-                      <field name="other_u_0"/>
-                      <field name="other_o_0"/>
+                      <field help="Specify your reading grade "       name="other_r_0"/>
+                      <field help="Specify your writing grade "       name="other_w_0"/>
+                      <field help="Specify your speaking grade "      name="other_s_0"/>
+                      <field help="Specify your understanding grade " name="other_u_0"/>
+                      <field help="Specify your overall grade "       name="other_o_0"/>
                     </group>
                     <group  string="Other">
-                      <field name="other_name_1"/>
-                      <field name="other_r_1"/>
-                      <field name="other_w_1"/>
-                      <field name="other_s_1"/>
-                      <field name="other_u_1"/>
-                      <field name="other_o_1"/>
+                      <field           name="other_name_1"/>
+                      <field  help="Specify your reading grade " name="other_r_1"/>
+                      <field  help="Specify your writing grade " name="other_w_1"/>
+                      <field  help="Specify your speaking grade " name="other_s_1"/>
+                      <field  help="Specify your understanding grade " name="other_u_1"/>
+                      <field  help="Specify your overall grade "  name="other_o_1"/>
                     </group>
+                    </div>
                   </group>
                   <group colspan="2" col="2" string="Education">
+                    <div class="border border-dark" style="margin:10px; padding:10px;">
                     <group string="Primary">
-                      <field name="primary_name" />
-                      <field name="primary_years" />
-                      <field name="primary_avg"/>
+                      <field help="Specify primary school name "  name="primary_name" />
+                      <field help="Specify primary school years "  name="primary_years" />
+                      <field help="Specify primary school average "  name="primary_avg"/>
                     </group>
                       <group  string="Intermediate">
-                      <field name="Intermediate_name"/>
-                      <field name="Intermediate_years"/>
-                      <field name="Intermediate_avg"/>
-                    </group>
+                      <field help="Specify intermediate school name " name="Intermediate_name"/>
+                      <field help="Specify intermediate school years " name="Intermediate_years"/>
+                      <field help="Specify intermediate school average " name="Intermediate_avg"/>
+                      </group>
+                 
                       <group  string="Secondary">
-                      <field name="secondary_name"/>
-                      <field name="secondary_years"/>
-                      <field name="secondary_avg"/>
+                      <field help="Specify secondary school name " name="secondary_name"/>
+                      <field help="Specify secondary school years " name="secondary_years"/>
+                      <field help="Specify secondary school average " name="secondary_avg"/>
                     </group>
+
                     <group  string="College">
-                      <field name="college_name"/>
-                      <field name="college_major"/>
-                      <field name="college_years"/>
-                      <field name="college_avg"/>
+                      <field help="Specify college name " name="college_name"/>
+                      <field help="Specify college major " name="college_major"/>
+                      <field help="Specify college years " name="college_years"/>
+                      <field help="Specify college average " name="college_avg"/>
                     </group>
+
                     <group  string="Other Education 1">
-                      <field name="other_0_name"/>
-                      <field name="other_0_years"/>
-                      <field name="other_0_avg"/>
-                    </group>      
+                      <field help="Specify any other schoolor college  name " name="other_0_name"/>
+                      <field help="Specify any other schoolor college  years " name="other_0_years"/>
+                      <field help="Specify any other schoolor college  average " name="other_0_avg"/>
+                    </group> 
+
                     <group  string="Other Education 2">
-                      <field name="other_1_name"/>
-                      <field name="other_1_years"/>
-                      <field name="other_1_avg"/>
+                      <field help="Specify any other schoolor college  name " name="other_1_name"/>
+                      <field help="Specify any other schoolor college  years " name="other_1_years"/>
+                      <field help="Specify any other schoolor college  average " name="other_1_avg"/>
                     </group>            
 
                     <group string="Highest academic qualification">
-                      <field name="highest_acad"/>
-                      <field name="major"/>
-                      <field name="highest_grad_year"/>
-                      <field name="highest_uni"/>
-                      <field name="highest_country"/>
-                    </group>
-                  </group>
-                  <group colspan="2" col="2"  string="Technical Skills">
-                    <group >
-                      <field name="skill_0_Desc"/>
-                      <field name="skill_1_Desc"/>
-                      <field name="skill_2_Desc"/>
-                      <field name="skill_3_Desc"/>
-                      <field name="skill_4_Desc"/>
-                      <field name="skill_5_Desc"/>                  
-                    </group>
-                    <group >                    
-                      <field name="skill_0_level"/>
-                      <field name="skill_1_level"/>
-                      <field name="skill_2_level"/>
-                      <field name="skill_3_level"/>
-                      <field name="skill_4_level"/>
-                      <field name="skill_5_level"/> 
-                    </group>                                     
-                  </group>
-                  <group colspan="2" col="2" string="Administration Skills">
-                    <group>
-                      <field style="padding-bottom: 28px;" name="business_correspondence_skill_level"/>
-                      <field style="padding-bottom: 28px;" name="effective_communication_skill_level"/>
-                      <field style="padding-bottom: 28px;" name="customer_service_skill_level"/>
-                      <field style="padding-bottom: 28px;" name="team_work_skill_level"/>
-                      <field style="padding-bottom: 28px;" name="Internet_and_research_skill_level"/>
-                      <field style="padding-bottom: 28px;" name="ms_office_and_outlook_skill_level"/>
-                      <field style="padding-bottom: 28px;" name="office_machine_skill_level"/>
-                      <field style="padding-bottom: 28px;" name="typing_skill_level"/>
-                    </group>
-                    <group>
-                      <field style="padding-bottom: 28px;" name="time_management_skill_level"/>
-                      <field style="padding-bottom: 28px;" name="attention_to_detail_level"/>
-                      <field style="padding-bottom: 28px;" name="goal_oriented_skill_level"/>
-                      <field style="padding-bottom: 28px;" name="multi_tasking_skill_level"/>
-                      <field style="padding-bottom: 28px;" name="follow_up_skill_level"/>
-                      <field style="padding-bottom: 28px;" name="employee_relation_skill_level"/>
-                      <field style="padding-bottom: 28px;" name="supervision_skill_level"/>
+                      <field help="Specify the highest academic qualification name " name="highest_acad"/>
+                      <field help="Specify the highest academic qualification major  " name="major"/>
+                      <field help="Specify the highest academic qualification year " name="highest_grad_year"/>
+                      <field help="Specify the highest academic qualification unversity " name="highest_uni"/>
+                      <field help="Specify the highest academic qualification country " name="highest_country"/>
                     </group>
 
+                    </div>
+                  </group>
+                  <group colspan="2" col="2"  string="Technical Skills">
+                      <div class="border border-dark" style="margin:10px; padding:10px;">
+                    <group >
+                      <field help="Describe your strongest Technical skills " name="skill_0_Desc"/>
+                      <field help="Describe your strongest Technical skills " name="skill_1_Desc"/>
+                      <field help="Describe your strongest Technical skills " name="skill_2_Desc"/>
+                      <field help="Describe your strongest Technical skills " name="skill_3_Desc"/>
+                      <field help="Describe your strongest Technical skills " name="skill_4_Desc"/>
+                      <field help="Describe your strongest Technical skills " name="skill_5_Desc"/>                  
+                    </group>
+                    <group >                    
+                      <field help="Specify the level of your technical skills " name="skill_0_level"/>
+                      <field help="Specify the level of your technical skills " name="skill_1_level"/>
+                      <field help="Specify the level of your technical skills " name="skill_2_level"/>
+                      <field help="Specify the level of your technical skills " name="skill_3_level"/>
+                      <field help="Specify the level of your technical skills " name="skill_4_level"/>
+                      <field help="Specify the level of your technical skills " name="skill_5_level"/> 
+                    </group>  
+                    </div>                                   
+                  </group>
+                  <group colspan="2" col="2" string="Administration Skills">
+                    <div class="border border-dark" style="margin:10px; padding:10px;">
+                      <group>
+                        <field   help="Choose the level of your Bussines Correspondence skill level "   style="padding-bottom: 28px;" name="business_correspondence_skill_level"/>
+                        <field   help="Choose the level of your Bussines Communication skill level "   style="padding-bottom: 28px;" name="effective_communication_skill_level"/>
+                        <field   help="Choose the level of your Customer Service skill level "   style="padding-bottom: 28px;" name="customer_service_skill_level"/>
+                        <field   help="Choose the level of your Team Work skill level "   style="padding-bottom: 28px;" name="team_work_skill_level"/>
+                        <field   help="Choose the level of your Research skill level "   style="padding-bottom: 28px;" name="Internet_and_research_skill_level"/>
+                        <field   help="Choose the level of your Basic MS Office and E-mail skill level "   style="padding-bottom: 28px;" name="ms_office_and_outlook_skill_level"/>
+                        <field   help="Choose the level of your Office Equipment skill level "   style="padding-bottom: 28px;" name="office_machine_skill_level"/>
+                        <field   help="Choose the level of your Typing skill level "   style="padding-bottom: 28px;" name="typing_skill_level"/>
+                      </group>
+                      <group>
+                        <field  help="Choose the level of your Time Management skill level "  style="padding-bottom: 28px;" name="time_management_skill_level"/>
+                        <field  help="Choose the level of your Attention to details  skill level "  style="padding-bottom: 28px;" name="attention_to_detail_level"/>
+                        <field  help="Choose the level of orienting the goals skill level "  style="padding-bottom: 28px;" name="goal_oriented_skill_level"/>
+                        <field  help="Choose the level of Multi-Tasking skill level "  style="padding-bottom: 28px;" name="multi_tasking_skill_level"/>
+                        <field  help="Choose the level of your Following up skill level "  style="padding-bottom: 28px;" name="follow_up_skill_level"/>
+                        <field    style="padding-bottom: 28px;" name="employee_relation_skill_level"/>
+                        <field  help="Choose the level of your Supervision skill level "  style="padding-bottom: 28px;" name="supervision_skill_level"/>
+                      </group>
+                    </div>
                   </group>
                   <group colspan="2" col="2" string="Sales Skills">
-                    <group>
-                      <field style="padding-bottom: 28px;" name="relationship_building_skill_level"/>
-                      <field style="padding-bottom: 28px;" name="time_management_skill_level"/>
-                      <field style="padding-bottom: 28px;" name="research_information_gathering_skill_level"/>
-                      <field style="padding-bottom: 28px;" name="medical_product_knowledge_skill_level"/>
-                      <field style="padding-bottom: 28px;" name="business_communication_skill_level"/>
-                      <field style="padding-bottom: 28px;" name="client_engagement_skill_level"/>
-                      <field style="padding-bottom: 28px;" name="sales_presentations_demos_skill_level"/>                      
-                    </group>
-                    <group>
-                      <field style="padding-bottom: 28px;" name="contract_negotiation_skill_level"/>
-                      <field style="padding-bottom: 28px;" name="closing_skills_skill_level"/>
-                      <field style="padding-bottom: 28px;" name="self_motivated_ambitious_skill_level"/>
-                      <field style="padding-bottom: 28px;" name="adaptability_skill_level"/>
-                      <field style="padding-bottom: 28px;" name="responsibility_skill_level"/>
-                      <field style="padding-bottom: 28px;" name="goal_oriented_skill_level"/>
-                      <field style="padding-bottom: 28px;" name="passionate_about_selling_skill_level"/>
-                    </group>
+                   <div class="border border-dark" style="margin:10px; padding:10px;">
+                      <group>
+                        <field  help="Choose the level of your Relationship Building skill"  style="padding-bottom: 28px;" name="relationship_building_skill_level"/>
+                        <field  help="Choose the level of your Time Management skill"  style="padding-bottom: 28px;" name="time_management_skill_level"/>
+                        <field  help="Choose the level of your Research and Information Gathering skill"  style="padding-bottom: 28px;" name="research_information_gathering_skill_level"/>
+                        <field  help="Choose the level of your Knowledge to Medical Product skill"  style="padding-bottom: 28px;" name="medical_product_knowledge_skill_level"/>
+                        <field  help="Choose the level of your Bussines Communication skill"  style="padding-bottom: 28px;" name="business_communication_skill_level"/>
+                        <field  help="Choose the level of your Client Engagement  skill"  style="padding-bottom: 28px;" name="client_engagement_skill_level"/>
+                        <field  help="Choose the level of your Sales and Presentation demos skill"  style="padding-bottom: 28px;" name="sales_presentations_demos_skill_level"/>                      
+                      </group>
+                      <group>
+                        <field  help="Choose the level of your Negotiation skill "  style="padding-bottom: 28px;" name="contract_negotiation_skill_level"/>
+                        <field  help="Choose the level of your Closing skill "  style="padding-bottom: 28px;" name="closing_skills_skill_level"/>
+                        <field  help="Choose the level of your Self-Motivatation and ambitious skill "  style="padding-bottom: 28px;" name="self_motivated_ambitious_skill_level"/>
+                        <field  help="Choose the level of your Adaptability skill "  style="padding-bottom: 28px;" name="adaptability_skill_level"/>
+                        <field  help="Choose the level of your Responsibility skill "  style="padding-bottom: 28px;" name="responsibility_skill_level"/>
+                        <field    style="padding-bottom: 28px;" name="goal_oriented_skill_level"/>
+                        <field  help="Choose the level of how much you passionate about sales skill "  style="padding-bottom: 28px;" name="passionate_about_selling_skill_level"/>
+                      </group>
+                    </div>
                   </group>
                   <group colspan="2" col="2" string="Training and Certifications">
+                  <div class="border border-dark" style="margin:10px; padding:10px;">
                     <group>
-                      <field name="t0"/>
-                      <field name="t0_year"/>
-                      <field name="t0_awarded_by"/>
-                      <field name="t0_country_city"/>
+                      <field help="Specify the name of your cerificate " name="t0"/>
+                      <field help="Specify the year of your cerificate " name="t0_year"/>
+                      <field help="Specify the awarded of your cerificate " name="t0_awarded_by"/>
+                      <field help="Specify the city of your cerificate " name="t0_country_city"/>
                       <field name="t1"/>
                       <field name="t1_year"/>
                       <field name="t1_awarded_by"/>
@@ -229,115 +276,149 @@
                       <field name="t5_awarded_by"/>
                       <field name="t5_country_city"/>
                     </group>
+                   </div>
                   </group>
                   <group colspan="2" col="2" string="Employment History">
-                    <div class="d-flex">
-                      <label for="contact_disclaimer"/> <field name="contact_disclaimer" style="width: 30px;"/>
+                    <div class="d-flex border border-dark" style="margin:10px; padding:10px;">
+                      <label for="contact_disclaimer"/> <field help="Specify if there is any employee you know or not " name="contact_disclaimer" style="width: 30px;"/>
                       <span class="font-weight-bold" attrs="{'invisible': [('contact_disclaimer', '=', False)]}">YES</span>
                       <span class="font-weight-bold" attrs="{'invisible': [('contact_disclaimer', '=', True)]}">NO</span>
                     </div>
-                    <group class="border-top border-black pb-8" attrs="{'invisible': [('contact_disclaimer', '=', False)]}">
-                      <field name="employer_name"/>
-                      <field name="job_title"/>
-                      <field name="employer_address"/>
-                      <field name="employer_province"/> 
-                      <field name="from_date"/>
-                      <field name="to_date"/>
-                      <field name="starting_slry"/>
-                      <field name="ending_slry"/>
-                      <field name="supervisor"/>
-                      <field name="super_phone"/> 
-                      <field name="reason_for_leaving"/>                           
-                    </group>
+
                     <group attrs="{'invisible': [('contact_disclaimer', '=', False)]}">
-                      <field name="employer_name_0"/>
-                      <field name="job_title_0"/>
-                      <field name="employer_address_0"/>
-                      <field name="employer_province_0"/> 
-                      <field name="from_date_0"/>
-                      <field name="to_date_0"/>
-                      <field name="starting_slry_0"/>
-                      <field name="ending_slry_0"/>
-                      <field name="supervisor_0"/>
-                      <field name="super_phone_0"/> 
-                      <field name="reason_for_leaving_0"/>                           
+                      <div class="border border-dark" style="margin:10px; padding:5px;" >
+                        <group>
+                          <field name="employer_name"/>
+                          <field name="job_title"/>
+                          <field name="employer_address"/>
+                          <field name="employer_province"/> 
+                          <field name="from_date"/>
+                          <field name="to_date"/>
+                          <field name="starting_slry"/>
+                          <field name="ending_slry"/>
+                          <field name="supervisor"/>
+                          <field name="super_phone"/> 
+                          <field name="reason_for_leaving"/>  
+                        </group>                         
+                      </div>
                     </group>
+
                     <group attrs="{'invisible': [('contact_disclaimer', '=', False)]}">
-                      <field name="employer_name_1"/>
-                      <field name="job_title_1"/>
-                      <field name="employer_address_1"/>
-                      <field name="employer_province_1"/> 
-                      <field name="from_date_1"/>
-                      <field name="to_date_1"/>
-                      <field name="starting_slry_1"/>
-                      <field name="ending_slry_1"/>
-                      <field name="supervisor_1"/>
-                      <field name="super_phone_1"/> 
-                      <field name="reason_for_leaving_1"/>                           
-                    </group>                                                             
+                      <div class="border border-dark" style="margin:10px; padding:5px;" >
+                        <group>
+                        <field name="employer_name_0"/>
+                        <field name="job_title_0"/>
+                        <field name="employer_address_0"/>
+                        <field name="employer_province_0"/> 
+                        <field name="from_date_0"/>
+                        <field name="to_date_0"/>
+                        <field name="starting_slry_0"/>
+                        <field name="ending_slry_0"/>
+                        <field name="supervisor_0"/>
+                        <field name="super_phone_0"/> 
+                        <field name="reason_for_leaving_0"/>
+                        </group>
+                      </div>                            
+                    </group>
+
+                    <group attrs="{'invisible': [('contact_disclaimer', '=', False)]}">
+                      <div class="border border-dark" style="margin:10px; padding:5px;" >
+                        <group>
+                          <field name="employer_name_1"/>
+                          <field name="job_title_1"/>
+                          <field name="employer_address_1"/>
+                          <field name="employer_province_1"/> 
+                          <field name="from_date_1"/>
+                          <field name="to_date_1"/>
+                          <field name="starting_slry_1"/>
+                          <field name="ending_slry_1"/>
+                          <field name="supervisor_1"/>
+                          <field name="super_phone_1"/> 
+                          <field name="reason_for_leaving_1"/>  
+                        </group>   
+                      </div>                      
+                    </group>
+
                   </group>
                   <group colspan="2" col="2" string="Additional Information">
+                   <div class="border border-dark" style="margin:10px; padding:10px;">
                     <group>
                       <field style="padding-bottom: 28px;" name="union_member"/>
                       <field style="padding-bottom: 28px;" name="union_member_date" attrs="{'invisible': [('union_member', '!=', 'yes')]}"/>
-                      <field style="padding-bottom: 28px;" name="driver_license"/>
-                      <field style="padding-bottom: 28px;" name="driver_license_date"/>
-                      <field style="padding-bottom: 28px;" name="means_of_transport"/>
-                      <field style="padding-bottom: 28px;" name="good_appoint"/>
-                      <field style="padding-bottom: 28px;" name="smoking"/>
+                      <field help="Specify if you have driving license or not " style="padding-bottom: 28px;" name="driver_license"/>
+                      <field help="Specify the driving license date " style="padding-bottom: 28px;" name="driver_license_date"/>
+                      <field help="Specify your way of transportation " style="padding-bottom: 28px;" name="means_of_transport"/>
+                      <field help="Specify your good appoint " style="padding-bottom: 28px;" name="good_appoint"/>
+                      <field help="Specify if you smoke or not " style="padding-bottom: 28px;" name="smoking"/>
                     </group>
                     <group>
-                      <field style="padding-bottom: 28px;" name="long_hours"/>
-                      <field style="padding-bottom: 28px;" name="start_date"/>
-                      <field style="padding-bottom: 28px;" name="planning_to_study"/>
-                      <field style="padding-bottom: 28px;" name="presently_employed"/>
-                      <field style="padding-bottom: 28px;" name="contact_employer"/>
+                      <field help="Specify your way of transportation " style="padding-bottom: 28px;" name="long_hours"/>
+                      <field help="Specify the date when you joining and can start off" style="padding-bottom: 28px;" name="start_date"/>
+                      <field help="Specify how your planning to study " style="padding-bottom: 28px;" name="planning_to_study"/>
+                      <field help="Specify if you presently employed" style="padding-bottom: 28px;" name="presently_employed"/>
+                      <field help="Specify your contacted employer (if any ) " style="padding-bottom: 28px;" name="contact_employer"/>
                     </group>
+                   </div>
                   </group>
                   <group colspan="2" col="2" string="Other References">
-                    <group>
-                      <field name="ref_name"/>
-                      <field name="ref_relation"/>
-                      <field name="ref_phone"/>
-                    </group>
-                    <group>
-                      <field name="ref_name_1"/>
-                      <field name="ref_relation_1"/>
-                      <field name="ref_phone_1"/>
-                    </group>
+                    <div class="border border-dark" style="margin:10px; padding:10px;">
+                      <group>
+                        <field help="Specify your Reference name " name="ref_name"/>
+                        <field help="Specify your Reference relation " name="ref_relation"/>
+                        <field help="Specify your Reference phone " name="ref_phone"/>
+                      </group>
+                      <group>
+                        <field help="Specify your Reference name " name="ref_name_1"/>
+                        <field help="Specify your Reference relation " name="ref_relation_1"/>
+                        <field help="Specify your Reference phone " name="ref_phone_1"/>
+                      </group>
+                    </div>  
                   </group>
+
                   <group colspan="2" col="2" string="Relative References">
+                   <div class="border border-dark" style="margin:10px; padding:10px;">
+                    
                     <group>
-                      <field name="ref_r_name"/>
-                      <field name="ref_r_relation"/>
-                      <field name="ref_r_phone"/>
+                      <field help="Specify your Relative Reference name " name="ref_r_name"/>
+                      <field help="Specify your Relative Reference relation " name="ref_r_relation"/>
+                      <field help="Specify your Relative Reference phone " name="ref_r_phone"/>
                     </group>
+                  
                     <group>
-                      <field name="ref_r_name_1"/>
-                      <field name="ref_r_relation_1"/>
-                      <field name="ref_r_phone_1"/>
+                      <field help="Specify your Relative Reference name " name="ref_r_name_1"/>
+                      <field help="Specify your Relative Reference relation " name="ref_r_relation_1"/>
+                      <field help="Specify your Relative Reference phone " name="ref_r_phone_1"/>
                     </group>
+
+                   </div>
                   </group>
-                  <group colspan="2" col="2" string="Supporting Documetns">
-                    <group>
-                      <field name="photo"/> 
-                      <field name="national_id"/>
-                      <field name="citizenship_cert"/>
-                      <field name="accomodation_id"/>
-                      <field name="uni_degree"/>
+                  
+                  <group colspan="2" col="2" string="Supporting Documents">
+                   <div class="border border-dark" style="margin:10px; padding:10px;">
+                      <group>
+                        <field name="photo"/> 
+                        <field name="national_id"/>
+                        <field name="citizenship_cert"/>
+                        <field name="accomodation_id"/>
+                        <field name="uni_degree"/>
+                      </group>
+               
+                      <group>
+                        <field name="medical"/>
+                        <field name="no_crim_req"/>
+                        <field name="letter_rec_1"/>
+                        <field name="letter_rec_2"/>
+                        <field name="cv"/>
+                      </group>
+                    </div>
                     </group>
-                    <group>
-                      <field name="medical"/>
-                      <field name="no_crim_req"/>
-                      <field name="letter_rec_1"/>
-                      <field name="letter_rec_2"/>
-                      <field name="cv"/>
+                   
+                   <div class="border border-dark" style="margin:10px; padding:10px;">
+                    <group string="Signature">
+                      <field name="signature"/>
+                      <field name="sig_date"/>
                     </group>
-                  </group>
-                  <group string="Signature">
-                    <field name="signature"/>
-                    <field name="sig_date"/>
-                  </group>
+                  </div>
                 </xpath>
 
                 <!-- hidden existing fields that they dont need-->
@@ -348,9 +429,7 @@
                 <field name="source_id" position="replace">
                 </field>
                 
-                
-
-
+              
             </field>
         </record>
 

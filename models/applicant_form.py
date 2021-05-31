@@ -161,7 +161,7 @@ class ItkApplForm(models.Model):
     other_1_avg = fields.Integer(string="Average(%)")
 
 
-    highest_acad = fields.Char(string="Highest Academic Qalification")
+    highest_acad = fields.Char(string="Highest Academic Qualification")
     major = fields.Char(string="Major")
     highest_grad_year = fields.Char(string="Graduation Year")
     highest_uni = fields.Char(string="University")
@@ -233,18 +233,18 @@ class ItkApplForm(models.Model):
     """ Sales Skills """
 
     relationship_building_skill_level= fields.Selection(SKILL_LEVEL,string="RelationShip building skill level")
-    time_management_skill_level= fields.Selection(SKILL_LEVEL,string="time management skill level")
+    time_management_skill_level= fields.Selection(SKILL_LEVEL,string="Time Management skill level")
     research_information_gathering_skill_level= fields.Selection(SKILL_LEVEL,string="Research and information gethering skill level")
-    medical_product_knowledge_skill_level= fields.Selection(SKILL_LEVEL,string="medical product knowledge skill level")
-    business_communication_skill_level= fields.Selection(SKILL_LEVEL,string="business communication skill level")
-    client_engagement_skill_level= fields.Selection(SKILL_LEVEL,string="client management skill level")
-    sales_presentations_demos_skill_level= fields.Selection(SKILL_LEVEL,string="sales presentation skill level")
-    contract_negotiation_skill_level= fields.Selection(SKILL_LEVEL,string="contact negotiation skill level")
-    closing_skills_skill_level= fields.Selection(SKILL_LEVEL,string="closing skills skill level")
-    self_motivated_ambitious_skill_level= fields.Selection(SKILL_LEVEL,string="self motivation")
+    medical_product_knowledge_skill_level= fields.Selection(SKILL_LEVEL,string="Medical product knowledge skill level")
+    business_communication_skill_level= fields.Selection(SKILL_LEVEL,string="Business communication skill level")
+    client_engagement_skill_level= fields.Selection(SKILL_LEVEL,string="Client management skill level")
+    sales_presentations_demos_skill_level= fields.Selection(SKILL_LEVEL,string="Sales presentation skill level")
+    contract_negotiation_skill_level= fields.Selection(SKILL_LEVEL,string="Contact negotiation skill level")
+    closing_skills_skill_level= fields.Selection(SKILL_LEVEL,string="Closing skills skill level")
+    self_motivated_ambitious_skill_level= fields.Selection(SKILL_LEVEL,string="Self motivation")
     adaptability_skill_level= fields.Selection(SKILL_LEVEL,string="Adaptability skill level")
-    responsibility_skill_level= fields.Selection(SKILL_LEVEL,string="responsibility skill level")
-    goal_oriented_skill_level= fields.Selection(SKILL_LEVEL,string="goal oriented skill level")
+    responsibility_skill_level= fields.Selection(SKILL_LEVEL,string="Responsibility skill level")
+    goal_oriented_skill_level= fields.Selection(SKILL_LEVEL,string="Goal oriented skill level")
     passionate_about_selling_skill_level= fields.Selection(SKILL_LEVEL,string="Passion about selling")
 
 

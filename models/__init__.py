@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-from . import models
 from . import applicant_form
 from . import expenses_sheet
 from . import sale_order
@@ -10,3 +9,4 @@ from . import calendar_event
 from . import product_product
 from . import account_move
 from . import stock_quant
+from . import models

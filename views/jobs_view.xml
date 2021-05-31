@@ -71,7 +71,6 @@
             <field name="model">hr.applicant</field>
             <field name="inherit_id" ref="hr_recruitment.hr_applicant_view_search_bis"/>
             <field name="arch" type="xml">
-
                 <field name="job_id" position="before">
                     <field name="external_ref"/>
                 </field>
