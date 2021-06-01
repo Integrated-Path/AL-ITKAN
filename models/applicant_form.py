@@ -396,9 +396,76 @@ class ItkApplForm(models.Model):
     letter_rec_2 = fields.Binary(string="Letter of Recommendation 2")
     cv=fields.Binary(string="CV")
 
+    """ Supporting Documents File Names """
+    photo_filename = fields.Char(
+        string="Photo", compute="_get_photo_filename")
+    national_id_filename = fields.Char(
+        string="National ID", compute="_get_national_id_filename")
+    citizenship_cert_filename = fields.Char(
+        string="Citizenship Certificate", compute="_get_citizenship_cert_filename")
+    accomodation_id_filename = fields.Char(
+        string="Accomidation ID", compute="_get_accomodation_id_filename")
+    uni_degree_filename = fields.Char(
+        string="University Degree", compute="_get_uni_degree_filename")
+    medical_filename = fields.Char(
+        string="Medical Test", compute="_get_medical_filename")
+    no_crim_req_filename = fields.Char(
+        string="No Criminal Record", compute="_get_no_crim_req_filename")
+    letter_rec_1_filename = fields.Char(
+        string="Letter of Recommendation 1", compute="_get_letter_rec_1_filename")
+    letter_rec_2_filename = fields.Char(
+        string="Letter of Recommendation 2", compute="_get_letter_rec_2_filename")
+    cv_filename = fields.Char(
+        string="CV", compute="_get_cv_filename")
+
+    def _get_photo_filename(self):
+        self.photo_filename = f"{self.partner_name} - {self.external_ref} - Photo" if self.external_ref \
+            else f"{self.partner_name} - Photo"
+
+    def _get_national_id_filename(self):
+        self.national_id_filename = f"{self.partner_name} - {self.external_ref} - National ID" if self.external_ref \
+            else f"{self.partner_name} - National ID"
+
+    def _get_citizenship_cert_filename(self):
+        self.citizenship_cert_filename = f"{self.partner_name} - {self.external_ref} - Citizenship Certificate" if self.external_ref \
+            else f"{self.partner_name} - Citizenship Certificate"
+    
+    def _get_accomodation_id_filename(self):
+        self.accomodation_id_filename = f"{self.partner_name} - {self.external_ref} - Accomidation ID" if self.external_ref \
+            else f"{self.partner_name} - Accomidation ID"
+
+    def _get_uni_degree_filename(self):
+        self.uni_degree_filename = f"{self.partner_name} - {self.external_ref} - University Degree" if self.external_ref \
+            else f"{self.partner_name} - University Degree"
+
+    def _get_medical_filename(self):
+        self.medical_filename = f"{self.partner_name} - {self.external_ref} - Medical Test" if self.external_ref \
+            else f"{self.partner_name} - Medical Test"
+
+    def _get_no_crim_req_filename(self):
+        self.no_crim_req_filename = f"{self.partner_name} - {self.external_ref} - No Criminal Record" if self.external_ref \
+            else f"{self.partner_name} - No Criminal Record"
+
+    def _get_letter_rec_1_filename(self):
+        self.letter_rec_1_filename = f"{self.partner_name} - {self.external_ref} - Letter of Recommendation 1" if self.external_ref \
+            else f"{self.partner_name} - Letter of Recommendation 1"
+
+    def _get_letter_rec_2_filename(self):
+        self.photo_filename = f"{self.partner_name} - {self.external_ref} - Letter of Recommendation 2" if self.external_ref \
+            else f"{self.partner_name} - Letter of Recommendation 2"
+
+    def _get_cv_filename(self):
+        self.cv_filename = f"{self.partner_name} - {self.external_ref} - CV" if self.external_ref \
+            else f"{self.partner_name} - CV"
+
+
     skype_id = fields.Char(string="Skype ID")
     external_ref = fields.Char(string="External Reference")
 
+    is_accepted = fields.Boolean(
+        "Is Accepted ?", related="stage_id.is_accepted")
+    is_interview = fields.Boolean(
+        "Is Interview ?", related="stage_id.is_interview")
 
 
     @api.model
@@ -481,3 +548,11 @@ class ItkApplForm(models.Model):
         dict_act_window['context'] = {'form_view_initial_mode': 'edit'}
         dict_act_window['res_id'] = employee.id
         return dict_act_window
+
+    def button_approve(self):
+        accepted_stage = self.env['hr.recruitment.stage'].search([
+            ('is_accepted', '=', True),
+        ])
+
+        for record in self:
+            record.stage_id = accepted_stage

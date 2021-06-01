@@ -396,23 +396,23 @@
                   <group colspan="2" col="2" string="Supporting Documents">
                    <div class="border border-dark" style="margin:10px; padding:10px;">
                       <group>
-                        <field name="photo"/> 
-                        <field name="national_id"/>
-                        <field name="citizenship_cert"/>
-                        <field name="accomodation_id"/>
-                        <field name="uni_degree"/>
+                        <field name="photo" filename='photo_filename'/> 
+                        <field name="national_id" filename='national_id_filename'/>
+                        <field name="citizenship_cert" filename='citizenship_cert_filename'/>
+                        <field name="accomodation_id" filename='accomodation_id_filename'/>
+                        <field name="uni_degree" filename='uni_degree_filename'/>
                       </group>
-               
+
                       <group>
-                        <field name="medical"/>
-                        <field name="no_crim_req"/>
-                        <field name="letter_rec_1"/>
-                        <field name="letter_rec_2"/>
-                        <field name="cv"/>
+                        <field name="medical" filename='medical_filename'/>
+                        <field name="no_crim_req" filename='no_crim_req_filename'/>
+                        <field name="letter_rec_1" filename='letter_rec_1_filename'/>
+                        <field name="letter_rec_2" filename='letter_rec_2_filename'/>
+                        <field name="cv" filename='cv_filename'/>
                       </group>
                     </div>
                     </group>
-                   
+
                    <div class="border border-dark" style="margin:10px; padding:10px;">
                     <group string="Signature">
                       <field name="signature"/>

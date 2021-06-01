@@ -10,3 +10,4 @@ from . import product_product
 from . import account_move
 from . import stock_quant
 from . import models
+from . import hr_recruitment_stage

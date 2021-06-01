@@ -37,6 +37,8 @@
         "views/account_move_view.xml",
         "views/stock_quant_view.xml",
         "views/analytic_account_id_custom_tree.xml",
+        "views/hr_recruitment_stage_view.xml",
+        "views/hr_applicant_view.xml",
         "report/recruitment_report.xml",
         "report/external_layout_standard.xml",
         "data/expense_sheet_record_rule.xml",
