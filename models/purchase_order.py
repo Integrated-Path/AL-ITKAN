@@ -13,7 +13,15 @@ class PurchaseOrder(models.Model):
         # sending products info to discuss channel (grouop)
         html_body = f'Order Number: {self.name}<br/><ul>'
         for line in self.order_line:
-            html_body += f'<li>{line.product_id.name}: {line.product_qty} Quantity</li>'
+            html_body += f"<li>{line.product_id.display_name}:</li> <li class='o_indent'><ul>"
+
+            html_body += f'<li>Quantity: {line.product_qty}</li>'
+            if line.serial_number:
+                html_body += f'<li>Serial Number: {line.serial_number}</li>'
+            if line.customer_id:
+                html_body += f'<li>Customer: {line.customer_id.name}</li>'
+            html_body += "</ul></li><br/>"
+
         html_body += '</ul>'
         channel_id = self.env['mail.channel'].search([('name', '=', 'Modality Managers')], limit=1)
 
@@ -52,6 +60,8 @@ class PurchaseOrderLine(models.Model):
     _inherit = "purchase.order.line"
 
     product_smn = fields.Char(string="SMN")
+    serial_number = fields.Char(string="Serial Number", copy=False)
+    customer_id = fields.Many2one("res.partner", string="Customer", copy=False, domain="['|', ('company_id', '=', company_id), ('company_id', '=', False)]")
 
     # For importing products by SMN
     @api.model
