@@ -21,7 +21,7 @@
 
     # any module necessary for this one to work correctly
     'depends': ['base', 'hr_recruitment', 'product', 'sale_management', 'hr_expense', 'hr','purchase',
-        'mai_sale_order_lot_selection', 'access_units'],
+        'mai_sale_order_lot_selection', 'access_units', 'contracts'],
 
     # always loaded
     'data': [

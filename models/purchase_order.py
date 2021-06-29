@@ -20,6 +20,9 @@ class PurchaseOrder(models.Model):
                 html_body += f'<li>Serial Number: {line.serial_number}</li>'
             if line.customer_id:
                 html_body += f'<li>Customer: {line.customer_id.name}</li>'
+            if line.brand_id:
+                html_body += f'<li>Modality: {line.brand_id.name}</li>'
+
             html_body += "</ul></li><br/>"
 
         html_body += '</ul>'
@@ -62,6 +65,7 @@ class PurchaseOrderLine(models.Model):
     product_smn = fields.Char(string="SMN")
     serial_number = fields.Char(string="Serial Number", copy=False)
     customer_id = fields.Many2one("res.partner", string="Customer", copy=False, domain="['|', ('company_id', '=', company_id), ('company_id', '=', False)]")
+    brand_id = fields.Many2one('contract.modality', string="Modality", copy=False)
 
     # For importing products by SMN
     @api.model
