@@ -89,6 +89,6 @@ class PurchaseOrderLine(models.Model):
 #             product_id = self.env['product.product'].browse( values.get('product_id') )  
 #             values['name'] = product_id.name
 
-#         result = super(PurchaseOrderLine, self).create(values)
+        result = super(PurchaseOrderLine, self).create(values)
         
         return result
