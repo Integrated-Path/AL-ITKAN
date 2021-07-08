@@ -67,6 +67,15 @@ class PurchaseOrderLine(models.Model):
     customer_id = fields.Many2one("res.partner", string="Customer", copy=False, domain="['|', ('company_id', '=', company_id), ('company_id', '=', False)]")
     brand_id = fields.Many2one('contract.modality', string="Modality", copy=False)
 
+    @api.constrains('product_id')
+    def _check_product_impport(self):
+        """This function for importing"""
+        if self.product_id and not self.product_uom:
+            self.product_uom = self.product_id.uom_po_id.id
+
+        if self.product_id and not self.date_planned:
+            self.date_planned = datetime.today().strftime(DEFAULT_SERVER_DATETIME_FORMAT)
+
     # For importing products by SMN
     @api.model
     def create(self, values):
@@ -85,10 +94,6 @@ class PurchaseOrderLine(models.Model):
         else:
             pass
         
-#         if values.get('product_id') and not values.get('name'):
-#             product_id = self.env['product.product'].browse( values.get('product_id') )  
-#             values['name'] = product_id.name
-
         result = super(PurchaseOrderLine, self).create(values)
         
         return result
