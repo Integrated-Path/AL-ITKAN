@@ -67,15 +67,6 @@ class PurchaseOrderLine(models.Model):
     customer_id = fields.Many2one("res.partner", string="Customer", copy=False, domain="['|', ('company_id', '=', company_id), ('company_id', '=', False)]")
     brand_id = fields.Many2one('contract.modality', string="Modality", copy=False)
 
-    @api.constrains('product_id')
-    def _check_product_impport(self):
-        """This function for importing"""
-        if self.product_id and not self.product_uom:
-            self.product_uom = self.product_id.uom_po_id.id
-
-        if self.product_id and not self.date_planned:
-            self.date_planned = datetime.today().strftime(DEFAULT_SERVER_DATETIME_FORMAT)
-
     # For importing products by SMN
     @api.model
     def create(self, values):
@@ -90,9 +81,14 @@ class PurchaseOrderLine(models.Model):
                 values['date_planned'] = datetime.today().strftime(DEFAULT_SERVER_DATETIME_FORMAT)
             else:
                 raise UserError(_(f"A Product with SMN {smn} was not  found"))
-            
-        else:
-            pass
+        
+        # these 2 functions are fo handling accountable_required_fields sql_constains error
+        if values.get('product_id') and not values.get('product_uom'):
+            product_id = self.env['product.product'].browse( values['product_id'] )
+            values['product_uom'] = product_id.uom_po_id.id
+        
+        if values.get('product_id') and not values.get('date_planned'):
+            values['date_planned'] = datetime.today().strftime(DEFAULT_SERVER_DATETIME_FORMAT)
         
         result = super(PurchaseOrderLine, self).create(values)
         
