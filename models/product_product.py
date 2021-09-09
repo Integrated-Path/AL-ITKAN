@@ -9,5 +9,5 @@ class ProductProduct(models.Model):
     @api.model
     def name_search(self, name='', args=None, operator="ilike", limit=100):
         args = args or []
-        domain = args + ['|', ('name', operator, name), ('default_code', 'ilike', name)]
+        domain = args + ['|', ('display_name', operator, name), ('default_code', 'ilike', name)]
         return super(ProductProduct, self).search(domain, limit=limit).name_get()
